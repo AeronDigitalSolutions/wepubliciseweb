@@ -1,0 +1,8 @@
+node_modules
+node-v*
+*.tar.gz
+dist
+dist-ssr
+*.local
+.DS_Store
+*.log

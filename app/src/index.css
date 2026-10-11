@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-wine-dark: #3B0D11;
+  --color-wine-deep: #4A1016;
+  --color-wine: #722F37;
+  --color-wine-card: #521820;
+  --color-wine-bright: #9E2A3B;
+  --color-wine-accent: #E24A68;
+  --color-dark-bg: #0C0708;
+  --color-dark-surface: #140D0F;
+}
+
+@layer base {
+  body {
+    background-color: #0C0708;
+    color: #FFFFFF;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0708;
+}
+::-webkit-scrollbar-thumb {
+  background: #4A1016;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #722F37;
+}
