@@ -13,6 +13,7 @@ import {
   Bot,
 } from 'lucide-react';
 import PageWrapper from '../components/PageWrapper';
+import LiquidButton from '../components/LiquidButton';
 
 // Rotating dynamic hero words
 const dynamicWords = [
@@ -453,13 +454,13 @@ const Home = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <Link
+              <LiquidButton
                 to="/contact"
-                className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-[#E24A68]/60 hover:border-[#E24A68] bg-[#3B0D11]/40 hover:bg-[#722F37] text-sm uppercase tracking-wider font-semibold text-white transition-all duration-300 shadow-lg shadow-[#722F37]/20"
+                className="gap-3 border-[#E24A68]/60 bg-[#3B0D11]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#722F37]/20 group"
               >
                 <span>Let's Collaborate</span>
-                <ArrowRight size={16} className="text-[#E24A68]" />
-              </Link>
+                <ArrowRight size={16} className="text-[#E24A68] group-hover:text-white transition-colors" />
+              </LiquidButton>
             </motion.div>
           </div>
 
@@ -527,14 +528,15 @@ const Home = () => {
                             <p className="text-zinc-200 text-base sm:text-lg leading-relaxed">
                               {service.desc}
                             </p>
-                            <Link
+                            <LiquidButton
                               to="/services"
                               onClick={(e) => e.stopPropagation()}
-                              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0C0708] hover:bg-white hover:text-[#722F37] text-white text-xs uppercase tracking-widest font-bold transition-all duration-300 border border-white/10"
+                              size="sm"
+                              className="gap-2 bg-[#0C0708] border-white/15 text-white text-xs uppercase tracking-widest font-bold shadow-md"
                             >
                               <span>Learn More</span>
                               <ArrowUpRight size={14} />
-                            </Link>
+                            </LiquidButton>
                           </div>
 
                           <div className="md:col-span-5 flex justify-center md:justify-end">
@@ -572,13 +574,14 @@ const Home = () => {
                 Reimagining Creativity for a World That Demands Excellence
               </p>
             </div>
-            <Link
+            <LiquidButton
               to="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-zinc-700 hover:border-[#E24A68] bg-zinc-900/60 hover:bg-[#722F37]/30 text-xs uppercase tracking-widest font-semibold text-white transition-all w-fit"
+              size="sm"
+              className="gap-2 border-zinc-700 bg-zinc-900/60 text-white text-xs uppercase tracking-widest font-semibold w-fit group"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#E24A68]" />
-            </Link>
+              <ArrowRight size={14} className="text-[#E24A68] group-hover:text-white transition-colors" />
+            </LiquidButton>
           </div>
         </div>
 
@@ -683,13 +686,13 @@ const Home = () => {
             </div>
           </motion.div>
 
-          <Link
+          <LiquidButton
             to="/about"
-            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-[#E24A68]/60 hover:border-[#E24A68] bg-[#3B0D11]/40 hover:bg-[#722F37] text-sm uppercase tracking-wider font-semibold text-white transition-all duration-300 shadow-lg shadow-[#722F37]/20"
+            className="gap-3 border-[#E24A68]/60 bg-[#3B0D11]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#722F37]/20 group"
           >
             <span>Get To Know Us</span>
-            <ArrowRight size={16} className="text-[#E24A68]" />
-          </Link>
+            <ArrowRight size={16} className="text-[#E24A68] group-hover:text-white transition-colors" />
+          </LiquidButton>
         </div>
       </section>
 
@@ -736,13 +739,13 @@ const Home = () => {
               .
             </h3>
 
-            <Link
+            <LiquidButton
               to="/services"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-[#E24A68] bg-[#3B0D11]/40 hover:bg-[#722F37] text-xs uppercase tracking-widest font-bold text-white transition-all shadow-lg shadow-[#722F37]/20"
+              className="gap-2 border-[#E24A68] bg-[#3B0D11]/40 text-xs uppercase tracking-widest font-bold text-white shadow-lg shadow-[#722F37]/20 group"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#E24A68]" />
-            </Link>
+              <ArrowRight size={14} className="text-[#E24A68] group-hover:text-white transition-colors" />
+            </LiquidButton>
           </div>
         </div>
 
@@ -1043,12 +1046,12 @@ const Home = () => {
               </p>
             </div>
 
-            <Link
+            <LiquidButton
               to="/contact"
-              className="px-8 py-4 rounded-full bg-[#0C0708] hover:bg-white hover:text-[#722F37] text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 border border-white/20 whitespace-nowrap shadow-xl"
+              className="bg-[#0C0708] border-white/20 text-white font-bold text-xs uppercase tracking-widest whitespace-nowrap shadow-xl"
             >
-              Show Us What You Got
-            </Link>
+              <span>Show Us What You Got</span>
+            </LiquidButton>
           </div>
         </div>
       </section>

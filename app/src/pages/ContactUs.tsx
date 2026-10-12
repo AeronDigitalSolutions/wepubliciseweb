@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import PageWrapper from '../components/PageWrapper';
+import LiquidButton from '../components/LiquidButton';
 
 const ContactUs = () => {
   return (
@@ -39,9 +40,12 @@ const ContactUs = () => {
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Message</label>
               <textarea id="message" rows={5} className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-wine focus:border-brand-wine outline-none transition" placeholder="Tell us about your project..."></textarea>
             </div>
-            <button type="button" className="w-full bg-brand-wine text-white py-4 rounded-lg font-bold text-lg hover:bg-brand-wine-dark transition-colors">
-              Send Message
-            </button>
+            <LiquidButton
+              type="button"
+              className="w-full justify-center bg-brand-wine border-[#722F37] text-white py-4 rounded-xl font-bold text-lg shadow-xl"
+            >
+              <span>Send Message</span>
+            </LiquidButton>
           </form>
         </motion.div>
       </div>

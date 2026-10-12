@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import LiquidButton from './LiquidButton';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,16 +76,17 @@ const Navbar = () => {
               })}
             </div>
 
-            <Link
+            <LiquidButton
               to="/contact"
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-zinc-700/80 hover:border-[#E24A68] bg-zinc-900/60 hover:bg-[#722F37]/30 text-sm font-medium text-white transition-all duration-300 group shadow-sm hover:shadow-[#722F37]/20"
+              size="sm"
+              className="gap-2 border-zinc-700/80 bg-zinc-900/60 text-white group shadow-sm hover:shadow-[#722F37]/30"
             >
               <span>Get In Touch</span>
               <ArrowUpRight
-                size={16}
-                className="text-zinc-400 group-hover:text-[#E24A68] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                size={15}
+                className="text-zinc-400 group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
-            </Link>
+            </LiquidButton>
           </div>
 
           {/* Mobile hamburger button */}
@@ -122,13 +124,13 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4 border-t border-zinc-800">
-                <Link
+                <LiquidButton
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full text-center block py-3 rounded-full bg-gradient-to-r from-[#722F37] to-[#9E2A3B] text-white font-semibold text-sm shadow-md"
+                  className="w-full justify-center border-zinc-700/80 bg-zinc-900/60 text-white"
                 >
-                  Get In Touch
-                </Link>
+                  <span>Get In Touch</span>
+                </LiquidButton>
               </div>
             </div>
           </motion.div>
