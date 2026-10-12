@@ -474,7 +474,7 @@ const Home = () => {
                   onMouseEnter={() => setActiveService(index)}
                   className={`rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border ${
                     isExpanded
-                      ? 'bg-gradient-to-r from-[#5A1C24] via-[#722F37] to-[#4A1016] border-[#E24A68]/60 shadow-2xl shadow-[#722F37]/40'
+                      ? 'bg-[#4A1016] border-[#E24A68]/50 shadow-2xl shadow-[#4A1016]/40'
                       : 'bg-[#1E0D10]/70 hover:bg-[#2A1115] border-[#4A1016]/40 hover:border-[#722F37]'
                   }`}
                 >
@@ -1032,7 +1032,7 @@ const Home = () => {
 
         {/* Culture CTA Card: "Be A Part Of The Movement" (Image 5 from 2nd Batch) */}
         <div className="max-w-6xl mx-auto mt-20">
-          <div className="rounded-3xl bg-gradient-to-r from-[#5A1C24] via-[#722F37] to-[#4A1016] p-8 sm:p-14 border border-[#E24A68]/60 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="rounded-3xl bg-[#4A1016] p-8 sm:p-14 border border-[#E24A68]/50 shadow-2xl shadow-[#4A1016]/40 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-xl">
               <span className="text-xs uppercase font-mono tracking-widest text-[#FF849B]">
                 Work With The Best PR & Branding Agency
