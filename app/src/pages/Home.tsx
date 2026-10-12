@@ -219,7 +219,7 @@ const brandemicTools = [
     bgColor: '#0C0C1E',
     textColor: '#FFFFFF',
     tag: 'UI/UX & Prototyping',
-    accentBorder: '#722F37',
+    accentBorder: '#800020',
   },
   {
     name: 'Adobe Creative Suite',
@@ -328,15 +328,15 @@ const Home = () => {
       {/* Top scroll progress indicator bar */}
       <motion.div
         style={{ scaleX }}
-        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#722F37] via-[#9E2A3B] to-[#E24A68] origin-left z-50 pointer-events-none"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#800020] via-[#94102D] to-[#B81D42] origin-left z-50 pointer-events-none"
       />
 
       {/* ========================================================================= */}
       {/* 1. HERO (Image 3 from 1st Batch) */}
       {/* ========================================================================= */}
       <section className="relative min-h-screen pt-32 pb-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center overflow-hidden">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-[#722F37]/20 rounded-full blur-[130px] pointer-events-none" />
-        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-[#E24A68]/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] h-[350px] bg-[#800020]/20 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-[#B81D42]/15 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
           <div className="text-left mb-10 max-w-4xl">
@@ -357,7 +357,7 @@ const Home = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -25, opacity: 0 }}
                     transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#E24A68] to-[#FF849B] italic font-serif pr-2"
+                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] to-[#D83A60] italic font-serif pr-2"
                   >
                     {dynamicWords[currentWordIndex]}
                   </motion.span>
@@ -371,7 +371,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 50, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 0.9, delay: 0.2 }}
-            className="relative mx-auto rounded-3xl overflow-hidden border border-[#4A1016]/80 bg-gradient-to-b from-[#1E0D10] to-[#0A0506] shadow-2xl shadow-[#722F37]/30 group"
+            className="relative mx-auto rounded-3xl overflow-hidden border border-[#4A0514]/80 bg-gradient-to-b from-[#1B060C] to-[#0A0406] shadow-2xl shadow-[#800020]/30 group"
           >
             <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden flex items-center justify-center bg-black/60">
               <img
@@ -385,15 +385,15 @@ const Home = () => {
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                  className="mb-4 p-5 rounded-2xl bg-[#521820]/70 backdrop-blur-md border border-[#E24A68]/40 shadow-xl max-w-md w-full"
+                  className="mb-4 p-5 rounded-2xl bg-[#540A1D]/70 backdrop-blur-md border border-[#B81D42]/40 shadow-xl max-w-md w-full"
                 >
                   <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
                     <div className="flex gap-1.5">
-                      <span className="w-3 h-3 rounded-full bg-[#E24A68]"></span>
-                      <span className="w-3 h-3 rounded-full bg-[#9E2A3B]"></span>
-                      <span className="w-3 h-3 rounded-full bg-[#3B0D11]"></span>
+                      <span className="w-3 h-3 rounded-full bg-[#B81D42]"></span>
+                      <span className="w-3 h-3 rounded-full bg-[#94102D]"></span>
+                      <span className="w-3 h-3 rounded-full bg-[#38040F]"></span>
                     </div>
-                    <span className="text-xs uppercase tracking-widest text-[#E24A68] font-mono">
+                    <span className="text-xs uppercase tracking-widest text-[#B81D42] font-mono">
                       we Publicise :: 2D Core
                     </span>
                   </div>
@@ -406,13 +406,13 @@ const Home = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setIsVideoModalOpen(true)}
-                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#722F37] via-[#9E2A3B] to-[#E24A68] p-[3px] shadow-2xl shadow-[#E24A68]/40 flex items-center justify-center cursor-pointer"
+                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#800020] via-[#94102D] to-[#B81D42] p-[3px] shadow-2xl shadow-[#B81D42]/40 flex items-center justify-center cursor-pointer"
                   aria-label="Play Reel"
                 >
-                  <div className="w-full h-full rounded-full bg-[#140D0F] flex items-center justify-center hover:bg-[#722F37] transition-colors">
+                  <div className="w-full h-full rounded-full bg-[#13070A] flex items-center justify-center hover:bg-[#800020] transition-colors">
                     <Play
                       size={32}
-                      className="text-[#E24A68] ml-1 fill-[#E24A68] hover:text-white hover:fill-white transition-colors"
+                      className="text-[#B81D42] ml-1 fill-[#B81D42] hover:text-white hover:fill-white transition-colors"
                     />
                   </div>
                 </motion.button>
@@ -428,9 +428,9 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 2. ACCORDION SERVICES (Images 1 & 2 from 1st Batch) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-[#0F080A]">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-[#0E0507]">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-[#3B0D11]/60">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-[#38040F]/60">
             <div className="max-w-2xl">
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
@@ -440,7 +440,7 @@ const Home = () => {
               >
                 Back To The Simple,{' '}
                 <br />
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#E24A68] to-[#FF849B]">
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] to-[#D83A60]">
                   Intuitive And Inspiring.
                 </span>
               </motion.h2>
@@ -456,10 +456,10 @@ const Home = () => {
             >
               <LiquidButton
                 to="/contact"
-                className="gap-3 border-[#E24A68]/60 bg-[#3B0D11]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#722F37]/20 group"
+                className="gap-3 border-[#B81D42]/60 bg-[#38040F]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#800020]/20 group"
               >
                 <span>Let's Collaborate</span>
-                <ArrowRight size={16} className="text-[#E24A68] group-hover:text-white transition-colors" />
+                <ArrowRight size={16} className="text-[#B81D42] group-hover:text-white transition-colors" />
               </LiquidButton>
             </motion.div>
           </div>
@@ -474,8 +474,8 @@ const Home = () => {
                   onMouseEnter={() => setActiveService(index)}
                   className={`rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border ${
                     isExpanded
-                      ? 'bg-[#4A1016] border-[#E24A68]/50 shadow-2xl shadow-[#4A1016]/40'
-                      : 'bg-[#1E0D10]/70 hover:bg-[#2A1115] border-[#4A1016]/40 hover:border-[#722F37]'
+                      ? 'bg-[#4A0514] border-[#B81D42]/50 shadow-2xl shadow-[#4A0514]/40'
+                      : 'bg-[#1B060C]/70 hover:bg-[#260710] border-[#4A0514]/40 hover:border-[#800020]'
                   }`}
                 >
                   <div className="p-6 sm:p-8">
@@ -522,7 +522,7 @@ const Home = () => {
                       <div className="overflow-hidden">
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-2">
                           <div className="md:col-span-7 space-y-5">
-                            <span className="text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-black/40 text-[#FF849B] border border-white/10">
+                            <span className="text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-black/40 text-[#D83A60] border border-white/10">
                               {service.tag}
                             </span>
                             <p className="text-zinc-200 text-base sm:text-lg leading-relaxed">
@@ -580,7 +580,7 @@ const Home = () => {
               className="gap-2 border-zinc-700 bg-zinc-900/60 text-white text-xs uppercase tracking-widest font-semibold w-fit group"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#E24A68] group-hover:text-white transition-colors" />
+              <ArrowRight size={14} className="text-[#B81D42] group-hover:text-white transition-colors" />
             </LiquidButton>
           </div>
         </div>
@@ -604,7 +604,7 @@ const Home = () => {
             {[...featuredWorks, ...featuredWorks].map((work, idx) => (
               <div
                 key={`${work.title}-${idx}`}
-                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[460px] sm:h-[540px] rounded-3xl overflow-hidden bg-[#180E10] border border-[#3B0D11] hover:border-[#E24A68] transition-all duration-500 shadow-2xl shadow-black/80 cursor-pointer"
+                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[460px] sm:h-[540px] rounded-3xl overflow-hidden bg-[#18070B] border border-[#38040F] hover:border-[#B81D42] transition-all duration-500 shadow-2xl shadow-black/80 cursor-pointer"
               >
                 {/* Full-bleed high impact project imagery */}
                 <img
@@ -622,13 +622,13 @@ const Home = () => {
                     {work.badge}
                   </span>
                   <div className="w-9 h-9 rounded-full bg-[#0C0708]/70 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ArrowUpRight size={18} className="text-[#E24A68]" />
+                    <ArrowUpRight size={18} className="text-[#B81D42]" />
                   </div>
                 </div>
 
                 {/* Bottom Card Copy */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-10">
-                  <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#E24A68] transition-colors mb-1">
+                  <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#B81D42] transition-colors mb-1">
                     {work.title}
                   </h4>
                   <p className="text-sm text-zinc-300 font-medium">{work.category}</p>
@@ -644,14 +644,14 @@ const Home = () => {
       {/* ========================================================================= */}
       <section
         ref={teamSectionRef}
-        className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[#0F080A] to-[#080405] relative overflow-hidden"
+        className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[#0E0507] to-[#080405] relative overflow-hidden"
       >
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <div className="mb-14">
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3">
               We Are Your Design Partners In Turning{' '}
               <br />
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#E24A68] to-[#FF849B]">
+              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] to-[#D83A60]">
                 Ideas Into Magic
               </span>
             </h2>
@@ -660,7 +660,7 @@ const Home = () => {
           {/* Parallax Card Container with smooth upward glide */}
           <motion.div
             style={{ y: teamCardY }}
-            className="relative rounded-3xl overflow-hidden border border-[#722F37]/50 shadow-2xl shadow-[#722F37]/30 max-w-4xl mx-auto mb-12 group aspect-[16/10]"
+            className="relative rounded-3xl overflow-hidden border border-[#800020]/50 shadow-2xl shadow-[#800020]/30 max-w-4xl mx-auto mb-12 group aspect-[16/10]"
           >
             {/* Parallax Image inside that scrolls smoothly inside its frame */}
             <motion.img
@@ -679,8 +679,8 @@ const Home = () => {
                 <p className="text-lg font-bold text-white">The Creators at we Publicise</p>
                 <p className="text-xs text-zinc-300">Bengaluru &bull; Worldwide Delivery</p>
               </div>
-              <div className="flex items-center gap-2 bg-[#722F37]/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-lg">
-                <Sparkles size={14} className="text-[#FF849B]" />
+              <div className="flex items-center gap-2 bg-[#800020]/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-lg">
+                <Sparkles size={14} className="text-[#D83A60]" />
                 <span className="text-xs font-semibold text-white">100+ Projects Done</span>
               </div>
             </div>
@@ -688,10 +688,10 @@ const Home = () => {
 
           <LiquidButton
             to="/about"
-            className="gap-3 border-[#E24A68]/60 bg-[#3B0D11]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#722F37]/20 group"
+            className="gap-3 border-[#B81D42]/60 bg-[#38040F]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#800020]/20 group"
           >
             <span>Get To Know Us</span>
-            <ArrowRight size={16} className="text-[#E24A68] group-hover:text-white transition-colors" />
+            <ArrowRight size={16} className="text-[#B81D42] group-hover:text-white transition-colors" />
           </LiquidButton>
         </div>
       </section>
@@ -700,14 +700,14 @@ const Home = () => {
       {/* 5. BEHAVIOR-DRIVEN DESIGN PHILOSOPHY & TRUSTED LOGOS (Image 4 from 2nd Batch) */}
       {/* "Our Work Isn't Just Aesthetically Pleasing, It's Behavior-Driven..." */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#3B0D11]/40">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#38040F]/40">
         <div className="max-w-5xl mx-auto text-center relative z-10 mb-20">
           {/* Floating 2D mockup stickers on sides */}
           <div className="relative inline-block max-w-3xl">
             <motion.div
               animate={{ rotate: [-4, -8, -4], y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
-              className="hidden lg:block absolute -left-32 -top-10 w-28 h-28 rounded-2xl overflow-hidden border border-[#E24A68]/40 shadow-xl shadow-[#722F37]/30"
+              className="hidden lg:block absolute -left-32 -top-10 w-28 h-28 rounded-2xl overflow-hidden border border-[#B81D42]/40 shadow-xl shadow-[#800020]/30"
             >
               <img
                 src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=400&q=80"
@@ -719,7 +719,7 @@ const Home = () => {
             <motion.div
               animate={{ rotate: [6, 10, 6], y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
-              className="hidden lg:block absolute -right-32 -bottom-6 w-32 h-24 rounded-2xl overflow-hidden border border-[#E24A68]/40 shadow-xl shadow-[#722F37]/30"
+              className="hidden lg:block absolute -right-32 -bottom-6 w-32 h-24 rounded-2xl overflow-hidden border border-[#B81D42]/40 shadow-xl shadow-[#800020]/30"
             >
               <img
                 src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=400&q=80"
@@ -730,10 +730,10 @@ const Home = () => {
 
             <h3 className="text-2xl sm:text-4xl font-semibold text-zinc-100 leading-relaxed mb-8">
               Our Work Isn't Just Aesthetically Pleasing, It's{' '}
-              <span className="text-[#E24A68] font-bold">Behavior-Driven</span>. We Believe What
+              <span className="text-[#B81D42] font-bold">Behavior-Driven</span>. We Believe What
               Separates A Good Design From A Great One Is Its Ability To Solve Problems. We Try To
               Design-Think Through Everything We Do At{' '}
-              <span className="text-white underline decoration-[#E24A68] decoration-2 underline-offset-4">
+              <span className="text-white underline decoration-[#B81D42] decoration-2 underline-offset-4">
                 we Publicise
               </span>
               .
@@ -741,10 +741,10 @@ const Home = () => {
 
             <LiquidButton
               to="/services"
-              className="gap-2 border-[#E24A68] bg-[#3B0D11]/40 text-xs uppercase tracking-widest font-bold text-white shadow-lg shadow-[#722F37]/20 group"
+              className="gap-2 border-[#B81D42] bg-[#38040F]/40 text-xs uppercase tracking-widest font-bold text-white shadow-lg shadow-[#800020]/20 group"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#E24A68] group-hover:text-white transition-colors" />
+              <ArrowRight size={14} className="text-[#B81D42] group-hover:text-white transition-colors" />
             </LiquidButton>
           </div>
         </div>
@@ -752,7 +752,7 @@ const Home = () => {
         {/* OUR TRUSTED PARTNERS: Continuous right-to-left logo carousel in a 60% container */}
         <div className="w-full pt-16 border-t border-zinc-900/80">
           <div className="text-center mb-10">
-            <span className="text-xs uppercase font-mono tracking-widest text-[#E24A68] block mb-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#B81D42] block mb-3">
               Our Trusted Partners
             </span>
             <h3 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -807,7 +807,7 @@ const Home = () => {
       <section className="py-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[#0C0708] to-[#12080B] relative overflow-hidden">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-xs uppercase tracking-widest text-[#E24A68] font-mono block mb-2">
+            <span className="text-xs uppercase tracking-widest text-[#B81D42] font-mono block mb-2">
               Testimonials
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -824,10 +824,10 @@ const Home = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.4 }}
-                className="bg-[#1A0E12] border border-[#4A1016]/80 rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden"
+                className="bg-[#1A0E12] border border-[#4A0514]/80 rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden"
               >
                 {/* Huge stylized quote mark in the background */}
-                <div className="absolute right-8 bottom-6 text-[#722F37]/20 text-9xl font-serif select-none pointer-events-none leading-none">
+                <div className="absolute right-8 bottom-6 text-[#800020]/20 text-9xl font-serif select-none pointer-events-none leading-none">
                   “
                 </div>
 
@@ -837,7 +837,7 @@ const Home = () => {
 
                 <div className="flex items-center justify-between pt-6 border-t border-white/10 relative z-10">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#722F37] to-[#E24A68] flex items-center justify-center font-bold text-white shadow-md">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#800020] to-[#B81D42] flex items-center justify-center font-bold text-white shadow-md">
                       {testimonials[currentTestimonial].company.substring(0, 2)}
                     </div>
                     <div>
@@ -855,14 +855,14 @@ const Home = () => {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={prevTestimonial}
-                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#E24A68] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors"
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#B81D42] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors"
                       aria-label="Previous Testimonial"
                     >
                       <ChevronLeft size={20} />
                     </button>
                     <button
                       onClick={nextTestimonial}
-                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#E24A68] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors"
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#B81D42] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors"
                       aria-label="Next Testimonial"
                     >
                       <ChevronRight size={20} />
@@ -879,17 +879,17 @@ const Home = () => {
       {/* 7. TOOLS & MARQUEE COLLABORATION (Image 5 from 2nd Batch) */}
       {/* "Empowering Creativity With The Best Tools" + "Collaborate With we Publicise" Marquee */}
       {/* ========================================================================= */}
-      <section className="py-24 px-6 sm:px-8 bg-[#0C0708] relative overflow-hidden border-t border-[#3B0D11]/40">
+      <section className="py-24 px-6 sm:px-8 bg-[#0C0708] relative overflow-hidden border-t border-[#38040F]/40">
         <div className="max-w-6xl mx-auto mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5 space-y-5">
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E24A68] flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#E24A68] animate-pulse"></span>
+              <span className="text-xs uppercase font-mono tracking-widest text-[#B81D42] flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#B81D42] animate-pulse"></span>
                 Empowering Creativity
               </span>
               <h3 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
                 Empowering Creativity With The{' '}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#E24A68] to-[#FF849B]">
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] to-[#D83A60]">
                   Right Tools
                 </span>
               </h3>
@@ -909,7 +909,7 @@ const Home = () => {
                     onClick={() => setActiveToolIndex(i)}
                     className={`h-2 rounded-full transition-all duration-300 ${
                       activeToolIndex === i
-                        ? 'w-8 bg-[#E24A68]'
+                        ? 'w-8 bg-[#B81D42]'
                         : 'w-2 bg-zinc-700 hover:bg-zinc-500'
                     }`}
                     aria-label={`View tool ${i + 1}`}
@@ -1011,7 +1011,7 @@ const Home = () => {
         </div>
 
         {/* Infinite Kinetic Marquee Bar: "Collaborate With we Publicise ✦" */}
-        <div className="relative py-6 bg-gradient-to-r from-[#3B0D11] via-[#722F37] to-[#3B0D11] border-y border-[#E24A68]/40 overflow-hidden select-none -mx-8">
+        <div className="relative py-6 bg-gradient-to-r from-[#38040F] via-[#800020] to-[#38040F] border-y border-[#B81D42]/40 overflow-hidden select-none -mx-8">
           <motion.div
             animate={{ x: ['0%', '-50%'] }}
             transition={{ repeat: Infinity, duration: 18, ease: 'linear' }}
@@ -1020,11 +1020,11 @@ const Home = () => {
             {[...Array(6)].map((_, i) => (
               <div key={i} className="flex items-center gap-12">
                 <span>Collaborate With we Publicise</span>
-                <span className="text-[#FF849B]">✦</span>
+                <span className="text-[#D83A60]">✦</span>
                 <span>Turning Ideas Into Magic</span>
-                <span className="text-[#FF849B]">✦</span>
+                <span className="text-[#D83A60]">✦</span>
                 <span>Limitless Possibilities</span>
-                <span className="text-[#FF849B]">✦</span>
+                <span className="text-[#D83A60]">✦</span>
               </div>
             ))}
           </motion.div>
@@ -1032,9 +1032,9 @@ const Home = () => {
 
         {/* Culture CTA Card: "Be A Part Of The Movement" (Image 5 from 2nd Batch) */}
         <div className="max-w-6xl mx-auto mt-20">
-          <div className="rounded-3xl bg-[#4A1016] p-8 sm:p-14 border border-[#E24A68]/50 shadow-2xl shadow-[#4A1016]/40 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="rounded-3xl bg-[#4A0514] p-8 sm:p-14 border border-[#B81D42]/50 shadow-2xl shadow-[#4A0514]/40 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-3 max-w-xl">
-              <span className="text-xs uppercase font-mono tracking-widest text-[#FF849B]">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#D83A60]">
                 Work With The Best PR & Branding Agency
               </span>
               <h3 className="text-3xl sm:text-4xl font-bold text-white">
@@ -1060,17 +1060,17 @@ const Home = () => {
       {/* 8. FREQUENTLY ASKED QUESTIONS (Images 1 & 2 from 2nd Batch) */}
       {/* "FREQUENTLY ASKED QUESTIONS: Get Answers To Your Vision Or Our Services" */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#3B0D11]/40">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#38040F]/40">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Left Title Column */}
             <div className="lg:col-span-5 space-y-4">
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E24A68]">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#B81D42]">
                 Frequently Asked Questions
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
                 Get Answers To Your Vision{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E24A68] to-[#FF849B]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] to-[#D83A60]">
                   Or Our Services
                 </span>
               </h2>
@@ -1090,10 +1090,10 @@ const Home = () => {
                       onClick={() => setOpenFaq(isOpen ? null : index)}
                       className="w-full flex items-center justify-between text-left group"
                     >
-                      <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#E24A68] transition-colors pr-6">
+                      <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#B81D42] transition-colors pr-6">
                         {faq.q}
                       </span>
-                      <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-[#E24A68] transition-colors flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-[#B81D42] transition-colors flex-shrink-0">
                         {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                       </div>
                     </button>
@@ -1122,15 +1122,15 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 9. BRANDEMIC FOOTER ACCENT: "Ask AI" + GIANT "THINK LIMITLESS" (Image 1 from 2nd Batch) */}
       {/* ========================================================================= */}
-      <section className="pt-20 pb-12 px-6 sm:px-8 lg:px-12 bg-[#080405] border-t border-[#3B0D11]/60 relative overflow-hidden">
+      <section className="pt-20 pb-12 px-6 sm:px-8 lg:px-12 bg-[#080405] border-t border-[#38040F]/60 relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           {/* Top Row: Brand & Ask AI */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-16">
             <div>
               <Link to="/" className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#722F37] to-[#E24A68] flex items-center justify-center p-[2px]">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800020] to-[#B81D42] flex items-center justify-center p-[2px]">
                   <div className="w-full h-full bg-[#0C0708] rounded-full flex items-center justify-center">
-                    <span className="text-[#E24A68] font-black text-xl italic">w</span>
+                    <span className="text-[#B81D42] font-black text-xl italic">w</span>
                   </div>
                 </div>
                 <span className="text-2xl font-bold tracking-tight text-white">
@@ -1148,8 +1148,8 @@ const Home = () => {
 
             {/* "Ask AI About we Publicise" (Image 1 from 2nd Batch) */}
             <div className="space-y-3 sm:text-right">
-              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#E24A68]">
-                <span className="w-2 h-2 rounded-full bg-[#E24A68] animate-pulse"></span>
+              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#B81D42]">
+                <span className="w-2 h-2 rounded-full bg-[#B81D42] animate-pulse"></span>
                 <span>Ask AI About we Publicise</span>
               </div>
               <div className="flex items-center gap-2">
@@ -1157,7 +1157,7 @@ const Home = () => {
                   <div
                     key={ai}
                     title={ai}
-                    className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-[#E24A68] flex items-center justify-center text-zinc-400 hover:text-white text-xs font-mono transition-colors cursor-pointer"
+                    className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-[#B81D42] flex items-center justify-center text-zinc-400 hover:text-white text-xs font-mono transition-colors cursor-pointer"
                   >
                     <Bot size={16} />
                   </div>
@@ -1171,14 +1171,14 @@ const Home = () => {
             <a href="mailto:info@wepublicise.com" className="hover:text-white transition-colors">
               info@wepublicise.com
             </a>
-            <Link to="/contact" className="hover:text-[#E24A68] transition-colors">
+            <Link to="/contact" className="hover:text-[#B81D42] transition-colors">
               Connect Today &rarr;
             </Link>
           </div>
 
           {/* Giant "THINK LIMITLESS" Typography (Image 1 from 2nd Batch) */}
           <div className="w-full overflow-hidden select-none my-6">
-            <h1 className="text-5xl sm:text-7xl md:text-9xl lg:text-[140px] font-black tracking-tighter uppercase text-center text-transparent bg-clip-text bg-gradient-to-b from-[#722F37] via-[#5A1C24] to-[#1E0D10] leading-none">
+            <h1 className="text-5xl sm:text-7xl md:text-9xl lg:text-[140px] font-black tracking-tighter uppercase text-center text-transparent bg-clip-text bg-gradient-to-b from-[#800020] via-[#5B091E] to-[#1B060C] leading-none">
               Think Limitless
             </h1>
           </div>
@@ -1212,7 +1212,7 @@ const Home = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#140D0F] border border-[#722F37] p-6 rounded-3xl max-w-2xl w-full text-center relative"
+              className="bg-[#13070A] border border-[#800020] p-6 rounded-3xl max-w-2xl w-full text-center relative"
             >
               <button
                 onClick={() => setIsVideoModalOpen(false)}

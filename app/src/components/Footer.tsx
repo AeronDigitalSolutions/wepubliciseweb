@@ -3,22 +3,22 @@ import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#080405] text-white pt-20 pb-12 border-t border-[#4A1016]/40 overflow-hidden">
+    <footer className="relative bg-[#080405] text-white pt-20 pb-12 border-t border-[#4A0514]/40 overflow-hidden">
       {/* Background ambient wine glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#722F37]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#E24A68]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#800020]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#B81D42]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-6">
             <Link to="/" className="inline-flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#722F37] via-[#9E2A3B] to-[#E24A68] flex items-center justify-center p-[2px]">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800020] via-[#94102D] to-[#B81D42] flex items-center justify-center p-[2px]">
                 <div className="w-full h-full bg-[#0C0708] rounded-full flex items-center justify-center">
-                  <span className="text-[#E24A68] font-black text-xl italic">w</span>
+                  <span className="text-[#B81D42] font-black text-xl italic">w</span>
                 </div>
               </div>
-              <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#E24A68] transition-colors">
+              <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#B81D42] transition-colors">
                 we Publicise
               </span>
             </Link>
@@ -29,11 +29,11 @@ const Footer = () => {
 
             <div className="space-y-3 pt-2 text-sm text-zinc-400">
               <div className="flex items-center gap-3">
-                <MapPin size={16} className="text-[#E24A68]" />
+                <MapPin size={16} className="text-[#B81D42]" />
                 <span>HSR Layout Sector 6 - Bangalore, India</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={16} className="text-[#E24A68]" />
+                <Mail size={16} className="text-[#B81D42]" />
                 <a href="mailto:info@wepublicise.com" className="hover:text-white transition-colors">
                   info@wepublicise.com &bull; business@wepublicise.com
                 </a>
@@ -43,32 +43,32 @@ const Footer = () => {
 
           {/* Quick links */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-[#E24A68] font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-[#B81D42] font-bold">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-sm text-zinc-400">
               <li>
                 <Link to="/" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
                   <span>Home</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#E24A68]" />
+                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#B81D42]" />
                 </Link>
               </li>
               <li>
                 <Link to="/services" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
                   <span>Services</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#E24A68]" />
+                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#B81D42]" />
                 </Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
                   <span>About Us</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#E24A68]" />
+                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#B81D42]" />
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
                   <span>Contact</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#E24A68]" />
+                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#B81D42]" />
                 </Link>
               </li>
             </ul>
@@ -76,7 +76,7 @@ const Footer = () => {
 
           {/* Services Quicklist */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-[#E24A68] font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-[#B81D42] font-bold">
               Expertise
             </h4>
             <ul className="space-y-2.5 text-sm text-zinc-400">
@@ -90,7 +90,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-[#E24A68] font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-[#B81D42] font-bold">
               Legal
             </h4>
             <ul className="space-y-2.5 text-sm text-zinc-400">

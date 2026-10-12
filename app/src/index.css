@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-wine-dark: #3B0D11;
-  --color-wine-deep: #4A1016;
-  --color-wine: #722F37;
-  --color-wine-card: #521820;
-  --color-wine-bright: #9E2A3B;
-  --color-wine-accent: #E24A68;
+  --color-wine-dark: #38040F;
+  --color-wine-deep: #4A0514;
+  --color-wine: #800020;
+  --color-wine-card: #540A1D;
+  --color-wine-bright: #94102D;
+  --color-wine-accent: #B81D42;
   --color-dark-bg: #0C0708;
-  --color-dark-surface: #140D0F;
+  --color-dark-surface: #13070A;
 }
 
 @layer base {
@@ -28,11 +28,11 @@
   background: #0C0708;
 }
 ::-webkit-scrollbar-thumb {
-  background: #4A1016;
+  background: #4A0514;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #722F37;
+  background: #800020;
 }
 
 /* Liquid Wave Bubble Hover Animation */
@@ -46,9 +46,9 @@
   cursor: pointer;
   z-index: 1;
   isolation: isolate;
-  --liquid-fill: #8B1E2B;
-  --liquid-fill-sub: #722F37;
-  --liquid-border: #E24A68;
+  --liquid-fill: #800020;
+  --liquid-fill-sub: #540A1D;
+  --liquid-border: #B81D42;
 }
 
 .liquid-btn::before {
@@ -86,7 +86,7 @@
 .liquid-btn:hover {
   color: #ffffff !important;
   border-color: var(--liquid-border) !important;
-  box-shadow: 0 10px 30px -8px rgba(139, 30, 43, 0.45);
+  box-shadow: 0 10px 30px -8px rgba(128, 0, 32, 0.45);
 }
 
 .liquid-btn:hover::before {
