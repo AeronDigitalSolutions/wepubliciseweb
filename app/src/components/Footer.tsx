@@ -80,10 +80,10 @@ const Footer = () => {
               Expertise
             </h4>
             <ul className="space-y-2.5 text-sm text-zinc-400">
-              <li>Web Development</li>
+              <li>Website Development</li>
+              <li>Software Engineering</li>
+              <li>Digital Marketing</li>
               <li>Brand Identity</li>
-              <li>Packaging Design</li>
-              <li>Digital Campaigns</li>
               <li>App Engineering</li>
             </ul>
           </div>

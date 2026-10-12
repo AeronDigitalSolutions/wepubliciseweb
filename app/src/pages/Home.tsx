@@ -17,41 +17,41 @@ import LiquidButton from '../components/LiquidButton';
 
 // Rotating dynamic hero words
 const dynamicWords = [
-  'Naming',
-  'Branding',
-  'Packaging',
-  'Interactions',
-  'Experiences',
+  'Websites',
+  'Software',
+  'Digital Growth',
+  'Web Apps',
+  'Campaigns',
 ];
 
 // Interactive Accordion Services (Images 1 & 2)
 const servicesData = [
   {
     num: '01.',
-    title: 'Brand Identity & Communication',
-    desc: 'We craft comprehensive visual systems, distinct brand voice, and typography that make lasting impressions and connect deeply with audiences.',
+    title: 'Brand Identity & Strategy',
+    desc: 'We craft comprehensive visual systems, distinct brand positioning, and digital design languages that build credibility and accelerate customer acquisition.',
     tag: 'STRATEGY & IDENTITY',
     image: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=800&q=80',
   },
   {
     num: '02.',
-    title: 'Packaging Design',
-    desc: "We design beyond the shelf, crafting packaging that carries your brand's story in every fold, texture and line.",
-    tag: 'STRUCTURAL & TACTILE',
-    image: 'https://images.unsplash.com/photo-1547949003-9792a18a2601?auto=format&fit=crop&w=800&q=80',
+    title: 'Website & Web Application Development',
+    desc: 'Bespoke, high-converting websites and modern web applications engineered with clean code, lightning speeds, and seamless interactive experiences.',
+    tag: 'WEBSITE DEVELOPMENT',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80',
   },
   {
     num: '03.',
-    title: 'User Experience & Interaction',
-    desc: 'Immersive digital products, intuitive responsive interfaces, and delightful micro-interactions engineered with modern performance.',
-    tag: 'DIGITAL & WEB',
+    title: 'Software & SaaS Product Engineering',
+    desc: 'Robust software architectures, intuitive cloud dashboard interfaces, and scalable API platforms crafted for high-growth modern businesses.',
+    tag: 'SOFTWARE DEVELOPMENT',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
   },
   {
     num: '04.',
-    title: 'Performance & Growth Marketing',
-    desc: 'ROI-driven PPC campaigns, social media domination, and Search Engine Optimization tailored to scale ambitious consumer brands.',
-    tag: 'GROWTH & SCALING',
+    title: 'Performance & Digital Marketing',
+    desc: 'Data-backed PPC ad campaigns, Search Engine Optimization (SEO), and targeted social marketing designed to scale conversions and deliver proven ROI.',
+    tag: 'DIGITAL MARKETING',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
   },
 ];
@@ -59,40 +59,40 @@ const servicesData = [
 // Featured works - Train Carousel of high-impact visuals
 const featuredWorks = [
   {
-    title: 'Chins Coffee',
-    category: 'Packaging & Visual Identity',
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=80',
-    badge: 'Beverage & Cafe',
+    title: 'PulseGrowth Ads',
+    category: 'Performance Marketing & PPC Scale',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
+    badge: 'Digital Marketing',
   },
   {
-    title: 'Dailies Nutrition',
-    category: 'Brand Strategy & E-Commerce',
-    image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=1000&q=80',
-    badge: 'Health & Wellness',
+    title: 'Nexora Platform',
+    category: 'Custom Web Application & UI/UX Design',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80',
+    badge: 'Website Development',
   },
   {
-    title: 'Avexor Logistics',
-    category: 'Packaging & Corporate Identity',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80',
-    badge: 'Supply Chain',
+    title: 'CloudScale SaaS',
+    category: 'Enterprise Cloud Architecture & APIs',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80',
+    badge: 'Software Development',
   },
   {
-    title: 'Luminary Apparel',
-    category: 'Lifestyle & Digital Experience',
-    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80',
-    badge: 'Fashion & Retail',
+    title: 'OmniVibe Media',
+    category: 'Social Media Strategy & Paid Acquisition',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=80',
+    badge: 'Digital Marketing',
   },
   {
-    title: 'Vesper Audio',
-    category: 'Industrial Design & Acoustics',
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=80',
-    badge: 'Consumer Electronics',
+    title: 'Apex E-Commerce',
+    category: 'Headless Web Store & High-Speed Checkout',
+    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80',
+    badge: 'Website Development',
   },
   {
-    title: 'Oasis Botanicals',
-    category: 'Sustainable Skincare & Box Packaging',
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1000&q=80',
-    badge: 'Clean Beauty',
+    title: 'FinEdge Core',
+    category: 'Fintech Software Platform & Mobile Analytics',
+    image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=1000&q=80',
+    badge: 'Software Development',
   },
 ];
 
