@@ -490,15 +490,15 @@ const Home = () => {
       {/* 3. Top scroll progress indicator bar */}
       <motion.div
         style={{ scaleX }}
-        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#800020] via-[#94102D] to-[#B81D42] origin-left z-50 pointer-events-none shadow-[0_0_12px_#B81D42]"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#800020] via-[#C89B3C] to-[#E6C575] origin-left z-50 pointer-events-none shadow-[0_0_12px_#E6C575]"
       />
 
       {/* 4. Live Studio Telemetry Ribbon (Top Nav Accent) */}
       <header className="pt-24 pb-2 px-6 sm:px-8 border-b border-[#38040F]/50 text-[11px] font-mono tracking-widest uppercase text-zinc-400 bg-[#0C0708]/80 backdrop-blur-md relative z-20">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#800020]/40 text-[#D83A60] border border-[#B81D42]/30">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#B81D42] animate-ping" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#800020]/40 text-[#E6C575] border border-[#E6C575]/30">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#E6C575] animate-ping" />
               <span>Studio Active</span>
             </span>
             <span className="text-zinc-500">|</span>
@@ -510,7 +510,7 @@ const Home = () => {
               ✦ Sprints Booking Open for Q2 / Q3 2026
             </span>
             <div className="flex items-center gap-2 text-zinc-300">
-              <Globe size={13} className="text-[#B81D42]" />
+              <Globe size={13} className="text-[#E6C575]" />
               <span>NYC &bull; LDN &bull; BLR &bull; DXB</span>
             </div>
           </div>
@@ -523,7 +523,7 @@ const Home = () => {
       <section className="relative min-h-[92vh] pt-14 pb-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center overflow-hidden">
         {/* Ambient Gradient Flares */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[720px] h-[380px] bg-[#800020]/22 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute -top-24 -right-24 w-[480px] h-[480px] bg-[#B81D42]/15 rounded-full blur-[160px] pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-[480px] h-[480px] bg-[#E6C575]/15 rounded-full blur-[160px] pointer-events-none" />
         <div className="absolute bottom-10 -left-20 w-[420px] h-[420px] bg-[#38040F]/30 rounded-full blur-[150px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto w-full relative z-10">
@@ -534,8 +534,8 @@ const Home = () => {
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#13070A]/80 border border-[#B81D42]/40 backdrop-blur-xl shadow-lg shadow-[#800020]/20">
-              <Sparkles size={14} className="text-[#D83A60] animate-pulse" />
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#13070A]/80 border border-[#E6C575]/40 backdrop-blur-xl shadow-lg shadow-[#800020]/20">
+              <Sparkles size={14} className="text-[#E6C575] animate-pulse" />
               <span className="text-xs uppercase font-mono tracking-widest text-zinc-200">
                 World-Class Digital Perception & Software Craft
               </span>
@@ -561,7 +561,7 @@ const Home = () => {
                     animate={{ y: 0, opacity: 1, filter: 'blur(0px)', rotateX: 0 }}
                     exit={{ y: -35, opacity: 0, filter: 'blur(6px)', rotateX: 45 }}
                     transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
-                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] via-[#E03A64] to-[#D83A60] italic font-serif pr-3"
+                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] via-[#F3DF9B] to-[#E6C575] italic font-serif pr-3"
                   >
                     {dynamicWords[currentWordIndex]}
                   </motion.span>
@@ -595,15 +595,15 @@ const Home = () => {
             className="relative mx-auto rounded-3xl overflow-visible border border-[#4A0514]/80 bg-gradient-to-b from-[#18070B] to-[#0A0406] shadow-2xl shadow-[#800020]/40 group cursor-pointer"
           >
             {/* Outer Specular Rim Glow */}
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#800020] via-[#B81D42]/60 to-[#800020] rounded-3xl blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-700 -z-10" />
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#800020] via-[#E6C575]/60 to-[#800020] rounded-3xl blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-700 -z-10" />
 
             {/* Floating 2.5D Badge Stickers */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -left-8 -top-8 items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#13070A]/90 border border-[#B81D42]/50 shadow-2xl shadow-black/80 backdrop-blur-xl z-30 pointer-events-none"
+              className="hidden md:flex absolute -left-8 -top-8 items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#13070A]/90 border border-[#E6C575]/50 shadow-2xl shadow-black/80 backdrop-blur-xl z-30 pointer-events-none"
             >
-              <Zap size={14} className="text-[#D83A60]" />
+              <Zap size={14} className="text-[#E6C575]" />
               <span className="text-xs font-mono font-bold text-white tracking-wider">
                 60fps Interactive Motion
               </span>
@@ -612,9 +612,9 @@ const Home = () => {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#13070A]/90 border border-[#B81D42]/50 shadow-2xl shadow-black/80 backdrop-blur-xl z-30 pointer-events-none"
+              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#13070A]/90 border border-[#E6C575]/50 shadow-2xl shadow-black/80 backdrop-blur-xl z-30 pointer-events-none"
             >
-              <Code2 size={14} className="text-[#D83A60]" />
+              <Code2 size={14} className="text-[#E6C575]" />
               <span className="text-xs font-mono font-bold text-white tracking-wider">
                 Next.js &bull; Framer &bull; Vite
               </span>
@@ -636,15 +636,15 @@ const Home = () => {
                 <motion.div
                   animate={{ y: [0, -8, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                  className="mb-5 p-5 rounded-2xl bg-[#540A1D]/80 backdrop-blur-md border border-[#B81D42]/40 shadow-2xl max-w-md w-full"
+                  className="mb-5 p-5 rounded-2xl bg-[#540A1D]/80 backdrop-blur-md border border-[#E6C575]/40 shadow-2xl max-w-md w-full"
                 >
                   <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
                     <div className="flex gap-1.5">
-                      <span className="w-3 h-3 rounded-full bg-[#B81D42]" />
-                      <span className="w-3 h-3 rounded-full bg-[#94102D]" />
+                      <span className="w-3 h-3 rounded-full bg-[#E6C575]" />
+                      <span className="w-3 h-3 rounded-full bg-[#C89B3C]" />
                       <span className="w-3 h-3 rounded-full bg-[#38040F]" />
                     </div>
-                    <span className="text-xs uppercase tracking-widest text-[#D83A60] font-mono">
+                    <span className="text-xs uppercase tracking-widest text-[#E6C575] font-mono">
                       we Publicise :: 2D Core Showreel
                     </span>
                   </div>
@@ -658,25 +658,25 @@ const Home = () => {
                   <motion.div
                     animate={{ scale: [1, 1.35, 1], opacity: [0.5, 0, 0.5] }}
                     transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
-                    className="absolute -inset-4 rounded-full border border-[#B81D42] pointer-events-none"
+                    className="absolute -inset-4 rounded-full border border-[#E6C575] pointer-events-none"
                   />
                   <motion.button
                     whileHover={{ scale: 1.12 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsVideoModalOpen(true)}
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#800020] via-[#94102D] to-[#B81D42] p-[3px] shadow-2xl shadow-[#B81D42]/50 flex items-center justify-center cursor-pointer relative z-10"
+                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#800020] via-[#C89B3C] to-[#E6C575] p-[3px] shadow-2xl shadow-[#E6C575]/50 flex items-center justify-center cursor-pointer relative z-10"
                     aria-label="Play Reel"
                   >
                     <div className="w-full h-full rounded-full bg-[#13070A] flex items-center justify-center hover:bg-[#800020] transition-colors">
                       <Play
                         size={32}
-                        className="text-[#B81D42] ml-1 fill-[#B81D42] hover:text-white hover:fill-white transition-colors"
+                        className="text-[#E6C575] ml-1 fill-[#E6C575] hover:text-white hover:fill-white transition-colors"
                       />
                     </div>
                   </motion.button>
                 </div>
                 <span className="mt-4 text-xs tracking-widest uppercase text-zinc-300 font-mono flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#B81D42] animate-ping" />
+                  <span className="w-2 h-2 rounded-full bg-[#E6C575] animate-ping" />
                   Watch Agency Showreel
                 </span>
               </div>
@@ -700,7 +700,7 @@ const Home = () => {
               className="space-y-1.5 text-center sm:text-left border-l border-[#800020]/40 pl-6"
             >
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-[#D83A60]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-[#E6C575]">
                   {metric.value}
                 </span>
               </div>
@@ -724,13 +724,13 @@ const Home = () => {
               transition={{ duration: 0.7 }}
               className="max-w-2xl"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#B81D42] block mb-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] block mb-2">
                 Core Capabilities & Architecture
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 Back To The Simple,{' '}
                 <br />
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] to-[#D83A60]">
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] to-[#E6C575]">
                   Intuitive And Inspiring.
                 </span>
               </h2>
@@ -747,10 +747,10 @@ const Home = () => {
             >
               <LiquidButton
                 to="/contact"
-                className="gap-3 border-[#B81D42]/60 bg-[#38040F]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#800020]/20 group"
+                className="gap-3 border-[#E6C575]/60 bg-[#38040F]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#800020]/20 group"
               >
                 <span>Let's Collaborate</span>
-                <ArrowRight size={16} className="text-[#B81D42] group-hover:text-white transition-colors" />
+                <ArrowRight size={16} className="text-[#E6C575] group-hover:text-white transition-colors" />
               </LiquidButton>
             </motion.div>
           </div>
@@ -769,7 +769,7 @@ const Home = () => {
                   onMouseEnter={() => setActiveService(index)}
                   className={`rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border ${
                     isExpanded
-                      ? 'bg-[#4A0514] border-[#B81D42]/50 shadow-2xl shadow-[#4A0514]/40'
+                      ? 'bg-[#4A0514] border-[#E6C575]/50 shadow-2xl shadow-[#4A0514]/40'
                       : 'bg-[#18070B]/70 hover:bg-[#260710] border-[#4A0514]/40 hover:border-[#800020]'
                   }`}
                 >
@@ -781,7 +781,7 @@ const Home = () => {
                           <span className="text-xs sm:text-sm font-mono tracking-widest text-zinc-300">
                             {service.num}
                           </span>
-                          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-white/10 text-[#D83A60]">
+                          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-white/10 text-[#E6C575]">
                             {service.metrics}
                           </span>
                         </div>
@@ -822,7 +822,7 @@ const Home = () => {
                       <div className="overflow-hidden">
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-2">
                           <div className="md:col-span-7 space-y-5">
-                            <span className="text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-black/40 text-[#D83A60] border border-white/10">
+                            <span className="text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-black/40 text-[#E6C575] border border-white/10">
                               {service.tag}
                             </span>
                             <p className="text-zinc-200 text-base sm:text-lg leading-relaxed">
@@ -890,7 +890,7 @@ const Home = () => {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.7 }}
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#B81D42] block mb-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] block mb-2">
                 Selected Client Work
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-3">
@@ -906,7 +906,7 @@ const Home = () => {
               className="gap-2 border-zinc-700 bg-zinc-900/60 text-white text-xs uppercase tracking-widest font-semibold w-fit group"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#B81D42] group-hover:text-white transition-colors" />
+              <ArrowRight size={14} className="text-[#E6C575] group-hover:text-white transition-colors" />
             </LiquidButton>
           </div>
         </div>
@@ -931,7 +931,7 @@ const Home = () => {
               <div
                 key={`${work.id}-${idx}`}
                 onClick={() => setSelectedProject(work)}
-                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[460px] sm:h-[540px] rounded-3xl overflow-hidden bg-[#18070B] border border-[#38040F] hover:border-[#B81D42] transition-all duration-500 shadow-2xl shadow-black/80 cursor-pointer"
+                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[460px] sm:h-[540px] rounded-3xl overflow-hidden bg-[#18070B] border border-[#38040F] hover:border-[#E6C575] transition-all duration-500 shadow-2xl shadow-black/80 cursor-pointer"
               >
                 {/* Full-bleed high impact project imagery */}
                 <img
@@ -949,19 +949,19 @@ const Home = () => {
                     {work.badge}
                   </span>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#800020]/70 text-[#D83A60] border border-[#B81D42]/40 backdrop-blur-md">
+                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#800020]/70 text-[#E6C575] border border-[#E6C575]/40 backdrop-blur-md">
                       {work.result}
                     </span>
                     <div className="w-9 h-9 rounded-full bg-[#0C0708]/70 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ArrowUpRight size={18} className="text-[#B81D42]" />
+                      <ArrowUpRight size={18} className="text-[#E6C575]" />
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom Card Copy */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-10">
-                  <div className="text-xs font-mono text-[#D83A60] mb-1">{work.year} &bull; Case Study</div>
-                  <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#B81D42] transition-colors mb-2">
+                  <div className="text-xs font-mono text-[#E6C575] mb-1">{work.year} &bull; Case Study</div>
+                  <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#E6C575] transition-colors mb-2">
                     {work.title}
                   </h4>
                   <p className="text-sm text-zinc-300 font-medium mb-3">{work.category}</p>
@@ -990,13 +990,13 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="mb-14"
           >
-            <span className="text-xs uppercase font-mono tracking-widest text-[#B81D42] block mb-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] block mb-3">
               The Collective Mind
             </span>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3">
               We Are Your Design Partners In Turning{' '}
               <br />
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] to-[#D83A60]">
+              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] to-[#E6C575]">
                 Ideas Into Magic
               </span>
             </h2>
@@ -1025,7 +1025,7 @@ const Home = () => {
                 <p className="text-xs text-zinc-300">Bengaluru &bull; Worldwide Delivery</p>
               </div>
               <div className="flex items-center gap-2 bg-[#800020]/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-lg">
-                <Sparkles size={14} className="text-[#D83A60]" />
+                <Sparkles size={14} className="text-[#E6C575]" />
                 <span className="text-xs font-semibold text-white">100+ Projects Done</span>
               </div>
             </div>
@@ -1033,10 +1033,10 @@ const Home = () => {
 
           <LiquidButton
             to="/about"
-            className="gap-3 border-[#B81D42]/60 bg-[#38040F]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#800020]/20 group"
+            className="gap-3 border-[#E6C575]/60 bg-[#38040F]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#800020]/20 group"
           >
             <span>Get To Know Us</span>
-            <ArrowRight size={16} className="text-[#B81D42] group-hover:text-white transition-colors" />
+            <ArrowRight size={16} className="text-[#E6C575] group-hover:text-white transition-colors" />
           </LiquidButton>
         </div>
       </section>
@@ -1051,7 +1051,7 @@ const Home = () => {
             <motion.div
               animate={{ rotate: [-4, -8, -4], y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
-              className="hidden lg:block absolute -left-32 -top-10 w-28 h-28 rounded-2xl overflow-hidden border border-[#B81D42]/40 shadow-xl shadow-[#800020]/30"
+              className="hidden lg:block absolute -left-32 -top-10 w-28 h-28 rounded-2xl overflow-hidden border border-[#E6C575]/40 shadow-xl shadow-[#800020]/30"
             >
               <img
                 src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=400&q=80"
@@ -1063,7 +1063,7 @@ const Home = () => {
             <motion.div
               animate={{ rotate: [6, 10, 6], y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
-              className="hidden lg:block absolute -right-32 -bottom-6 w-32 h-24 rounded-2xl overflow-hidden border border-[#B81D42]/40 shadow-xl shadow-[#800020]/30"
+              className="hidden lg:block absolute -right-32 -bottom-6 w-32 h-24 rounded-2xl overflow-hidden border border-[#E6C575]/40 shadow-xl shadow-[#800020]/30"
             >
               <img
                 src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=400&q=80"
@@ -1080,10 +1080,10 @@ const Home = () => {
               className="text-2xl sm:text-4xl font-semibold text-zinc-100 leading-relaxed mb-8"
             >
               Our Work Isn't Just Aesthetically Pleasing, It's{' '}
-              <span className="text-[#B81D42] font-bold">Behavior-Driven</span>. We Believe What
+              <span className="text-[#E6C575] font-bold">Behavior-Driven</span>. We Believe What
               Separates A Good Design From A Great One Is Its Ability To Solve Problems. We Try To
               Design-Think Through Everything We Do At{' '}
-              <span className="text-white underline decoration-[#B81D42] decoration-2 underline-offset-4">
+              <span className="text-white underline decoration-[#E6C575] decoration-2 underline-offset-4">
                 we Publicise
               </span>
               .
@@ -1091,10 +1091,10 @@ const Home = () => {
 
             <LiquidButton
               to="/services"
-              className="gap-2 border-[#B81D42] bg-[#38040F]/40 text-xs uppercase tracking-widest font-bold text-white shadow-lg shadow-[#800020]/20 group"
+              className="gap-2 border-[#E6C575] bg-[#38040F]/40 text-xs uppercase tracking-widest font-bold text-white shadow-lg shadow-[#800020]/20 group"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#B81D42] group-hover:text-white transition-colors" />
+              <ArrowRight size={14} className="text-[#E6C575] group-hover:text-white transition-colors" />
             </LiquidButton>
           </div>
         </div>
@@ -1102,7 +1102,7 @@ const Home = () => {
         {/* OUR TRUSTED PARTNERS: Continuous right-to-left logo carousel in a 72% container */}
         <div className="w-full pt-16 border-t border-zinc-900/80">
           <div className="text-center mb-10">
-            <span className="text-xs uppercase font-mono tracking-widest text-[#B81D42] block mb-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] block mb-3">
               Our Trusted Partners
             </span>
             <h3 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -1129,7 +1129,7 @@ const Home = () => {
               {[...ourClients, ...ourClients].map((client, idx) => (
                 <div
                   key={`${client.name}-${idx}`}
-                  className="bg-white rounded-2xl px-7 py-4 flex items-center justify-center min-w-[190px] sm:min-w-[220px] h-[82px] shadow-lg border border-white/40 flex-shrink-0 group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-[#B81D42]"
+                  className="bg-white rounded-2xl px-7 py-4 flex items-center justify-center min-w-[190px] sm:min-w-[220px] h-[82px] shadow-lg border border-white/40 flex-shrink-0 group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-[#E6C575]"
                 >
                   <img
                     src={client.logo}
@@ -1162,7 +1162,7 @@ const Home = () => {
             transition={{ duration: 0.7 }}
             className="text-center mb-16"
           >
-            <span className="text-xs uppercase tracking-widest text-[#B81D42] font-mono block mb-2">
+            <span className="text-xs uppercase tracking-widest text-[#E6C575] font-mono block mb-2">
               Verified Client Outcomes
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -1188,7 +1188,7 @@ const Home = () => {
 
                 <div className="flex items-center gap-2 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[#D83A60] text-sm">★</span>
+                    <span key={i} className="text-[#E6C575] text-sm">★</span>
                   ))}
                   <span className="text-xs font-mono text-zinc-400 ml-2">
                     {testimonials[currentTestimonial].score} &bull; {testimonials[currentTestimonial].metric}
@@ -1201,7 +1201,7 @@ const Home = () => {
 
                 <div className="flex items-center justify-between pt-6 border-t border-white/10 relative z-10">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#800020] to-[#B81D42] flex items-center justify-center font-bold text-white shadow-md">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#800020] to-[#E6C575] flex items-center justify-center font-bold text-white shadow-md">
                       {testimonials[currentTestimonial].company.substring(0, 2)}
                     </div>
                     <div>
@@ -1219,14 +1219,14 @@ const Home = () => {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={prevTestimonial}
-                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#B81D42] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#E6C575] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
                       aria-label="Previous Testimonial"
                     >
                       <ChevronLeft size={20} />
                     </button>
                     <button
                       onClick={nextTestimonial}
-                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#B81D42] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#E6C575] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
                       aria-label="Next Testimonial"
                     >
                       <ChevronRight size={20} />
@@ -1252,13 +1252,13 @@ const Home = () => {
               transition={{ duration: 0.7 }}
               className="lg:col-span-5 space-y-5"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#B81D42] flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#B81D42] animate-pulse" />
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#E6C575] animate-pulse" />
                 Empowering Creativity
               </span>
               <h3 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
                 Empowering Creativity With The{' '}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] to-[#D83A60]">
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] to-[#E6C575]">
                   Right Tools
                 </span>
               </h3>
@@ -1277,7 +1277,7 @@ const Home = () => {
                     onClick={() => setActiveToolIndex(i)}
                     className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                       activeToolIndex === i
-                        ? 'w-10 bg-[#B81D42]'
+                        ? 'w-10 bg-[#E6C575]'
                         : 'w-2.5 bg-zinc-700 hover:bg-zinc-500'
                     }`}
                     aria-label={`View tool ${tool.name}`}
@@ -1378,7 +1378,7 @@ const Home = () => {
         </div>
 
         {/* Infinite Kinetic Marquee Bar: "Collaborate With we Publicise ✦" */}
-        <div className="relative py-6 bg-gradient-to-r from-[#38040F] via-[#800020] to-[#38040F] border-y border-[#B81D42]/40 overflow-hidden select-none -mx-8 shadow-2xl">
+        <div className="relative py-6 bg-gradient-to-r from-[#38040F] via-[#800020] to-[#38040F] border-y border-[#E6C575]/40 overflow-hidden select-none -mx-8 shadow-2xl">
           <motion.div
             animate={{ x: ['0%', '-50%'] }}
             transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
@@ -1387,11 +1387,11 @@ const Home = () => {
             {[...Array(6)].map((_, i) => (
               <div key={i} className="flex items-center gap-12">
                 <span>Collaborate With we Publicise</span>
-                <span className="text-[#D83A60]">✦</span>
+                <span className="text-[#E6C575]">✦</span>
                 <span>Turning Ideas Into Magic</span>
-                <span className="text-[#D83A60]">✦</span>
+                <span className="text-[#E6C575]">✦</span>
                 <span>Limitless Possibilities</span>
-                <span className="text-[#D83A60]">✦</span>
+                <span className="text-[#E6C575]">✦</span>
               </div>
             ))}
           </motion.div>
@@ -1404,10 +1404,10 @@ const Home = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.7 }}
-            className="rounded-3xl bg-[#4A0514] p-8 sm:p-14 border border-[#B81D42]/50 shadow-2xl shadow-[#4A0514]/40 flex flex-col md:flex-row items-center justify-between gap-8"
+            className="rounded-3xl bg-[#4A0514] p-8 sm:p-14 border border-[#E6C575]/50 shadow-2xl shadow-[#4A0514]/40 flex flex-col md:flex-row items-center justify-between gap-8"
           >
             <div className="space-y-3 max-w-xl">
-              <span className="text-xs uppercase font-mono tracking-widest text-[#D83A60]">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575]">
                 Work With The Best PR & Branding Agency
               </span>
               <h3 className="text-3xl sm:text-4xl font-bold text-white">
@@ -1443,12 +1443,12 @@ const Home = () => {
               transition={{ duration: 0.7 }}
               className="lg:col-span-5 space-y-4"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#B81D42]">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575]">
                 Frequently Asked Questions
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
                 Get Answers To Your Vision{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#B81D42] to-[#D83A60]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] to-[#E6C575]">
                   Or Our Services
                 </span>
               </h2>
@@ -1459,7 +1459,7 @@ const Home = () => {
               <div className="pt-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 text-sm text-[#D83A60] hover:text-white font-medium transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-[#E6C575] hover:text-white font-medium transition-colors"
                 >
                   <span>Have a custom question? Speak with our team &rarr;</span>
                 </Link>
@@ -1483,10 +1483,10 @@ const Home = () => {
                       onClick={() => setOpenFaq(isOpen ? null : index)}
                       className="w-full flex items-center justify-between text-left group cursor-pointer"
                     >
-                      <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#B81D42] transition-colors pr-6">
+                      <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#E6C575] transition-colors pr-6">
                         {faq.q}
                       </span>
-                      <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-[#B81D42] transition-colors flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-[#E6C575] transition-colors flex-shrink-0">
                         {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                       </div>
                     </button>
@@ -1524,9 +1524,9 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-16">
             <div>
               <Link to="/" className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800020] to-[#B81D42] flex items-center justify-center p-[2px]">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800020] to-[#E6C575] flex items-center justify-center p-[2px]">
                   <div className="w-full h-full bg-[#0C0708] rounded-full flex items-center justify-center">
-                    <span className="text-[#B81D42] font-black text-xl italic">w</span>
+                    <span className="text-[#E6C575] font-black text-xl italic">w</span>
                   </div>
                 </div>
                 <span className="text-2xl font-bold tracking-tight text-white">
@@ -1544,8 +1544,8 @@ const Home = () => {
 
             {/* "Ask AI About we Publicise" */}
             <div className="space-y-3 sm:text-right">
-              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#D83A60]">
-                <span className="w-2 h-2 rounded-full bg-[#B81D42] animate-pulse" />
+              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#E6C575]">
+                <span className="w-2 h-2 rounded-full bg-[#E6C575] animate-pulse" />
                 <span>Ask AI About we Publicise</span>
               </div>
               <div className="flex items-center gap-2">
@@ -1554,14 +1554,14 @@ const Home = () => {
                     key={ai}
                     onClick={() => handleCopyPrompt(ai)}
                     title={`Click to copy prompt for ${ai}`}
-                    className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-[#B81D42] flex items-center justify-center text-zinc-400 hover:text-white text-xs font-mono transition-colors cursor-pointer"
+                    className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-[#E6C575] flex items-center justify-center text-zinc-400 hover:text-white text-xs font-mono transition-colors cursor-pointer"
                   >
                     <Bot size={16} />
                   </button>
                 ))}
               </div>
               {copiedPrompt && (
-                <div className="text-xs text-[#D83A60] font-mono animate-fade-in">
+                <div className="text-xs text-[#E6C575] font-mono animate-fade-in">
                   ✓ {copiedPrompt}
                 </div>
               )}
@@ -1573,7 +1573,7 @@ const Home = () => {
             <a href="mailto:info@wepublicise.com" className="hover:text-white transition-colors">
               info@wepublicise.com
             </a>
-            <Link to="/contact" className="hover:text-[#B81D42] transition-colors flex items-center gap-1">
+            <Link to="/contact" className="hover:text-[#E6C575] transition-colors flex items-center gap-1">
               <span>Connect Today</span>
               <span>&rarr;</span>
             </Link>
@@ -1604,7 +1604,7 @@ const Home = () => {
             </div>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-[#B81D42] text-zinc-300 hover:text-white transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-[#E6C575] text-zinc-300 hover:text-white transition-colors cursor-pointer"
             >
               <ArrowUp size={12} />
               <span>Back To Top</span>
@@ -1650,7 +1650,7 @@ const Home = () => {
 
               <div className="p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#800020]/40 text-[#D83A60] border border-[#B81D42]/40">
+                  <span className="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#800020]/40 text-[#E6C575] border border-[#E6C575]/40">
                     {selectedProject.badge} &bull; {selectedProject.year}
                   </span>
                   <span className="text-xs font-mono text-zinc-400">
@@ -1673,7 +1673,7 @@ const Home = () => {
                     to="/contact"
                     onClick={() => setSelectedProject(null)}
                     size="sm"
-                    className="gap-2 bg-[#800020] border-[#B81D42] text-white"
+                    className="gap-2 bg-[#800020] border-[#E6C575] text-white"
                   >
                     <span>Request Similar Case Study</span>
                     <ArrowRight size={14} />

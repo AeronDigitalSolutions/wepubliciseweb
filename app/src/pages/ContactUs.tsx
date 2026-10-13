@@ -42,7 +42,7 @@ const ContactUs = () => {
             </div>
             <LiquidButton
               type="button"
-              className="w-full justify-center bg-brand-wine border-[#800020] text-white py-4 rounded-xl font-bold text-lg shadow-xl"
+              className="w-full justify-center bg-[#800020] border-[#E6C575]/50 text-white py-4 rounded-xl font-bold text-lg shadow-xl"
             >
               <span>Send Message</span>
             </LiquidButton>

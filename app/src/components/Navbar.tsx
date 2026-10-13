@@ -28,7 +28,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0C0708]/90 backdrop-blur-md border-b border-[#4A0514]/40 py-4 shadow-2xl'
+          ? 'bg-[#0C0708]/90 backdrop-blur-md border-b border-[#4A0514]/50 py-4 shadow-2xl'
           : 'bg-transparent py-6'
       }`}
     >
@@ -36,16 +36,16 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo with Brandemic vibe */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800020] via-[#94102D] to-[#B81D42] flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105 shadow-lg shadow-[#800020]/30">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800020] via-[#5B091E] to-[#E6C575] flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105 shadow-lg shadow-[#800020]/40">
               <div className="w-full h-full bg-[#0C0708] rounded-full flex items-center justify-center">
-                <span className="text-[#B81D42] font-black text-xl italic leading-none">w</span>
+                <span className="text-[#E6C575] font-black text-xl italic leading-none">w</span>
               </div>
             </div>
             <div className="flex items-baseline">
-              <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#B81D42] transition-colors">
+              <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#E6C575] transition-colors">
                 we Publicise
               </span>
-              <span className="w-2 h-2 rounded-full bg-[#B81D42] ml-1 animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#E6C575] ml-1 animate-pulse shadow-[0_0_8px_#E6C575]"></span>
             </div>
           </Link>
 
@@ -68,7 +68,7 @@ const Navbar = () => {
                     {isActive && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#800020] to-[#B81D42] rounded-full"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#800020] via-[#D4AF37] to-[#E6C575] rounded-full shadow-[0_0_8px_#E6C575]"
                       />
                     )}
                   </Link>
@@ -79,12 +79,12 @@ const Navbar = () => {
             <LiquidButton
               to="/contact"
               size="sm"
-              className="gap-2 border-zinc-700/80 bg-zinc-900/60 text-white group shadow-sm hover:shadow-[#800020]/30"
+              className="gap-2 border-[#E6C575]/40 bg-zinc-900/60 text-white group shadow-sm hover:shadow-[#E6C575]/20"
             >
               <span>Get In Touch</span>
               <ArrowUpRight
                 size={15}
-                className="text-zinc-400 group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="text-[#E6C575] group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </LiquidButton>
           </div>

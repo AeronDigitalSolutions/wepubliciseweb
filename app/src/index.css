@@ -4,9 +4,12 @@
   --color-wine-dark: #38040F;
   --color-wine-deep: #4A0514;
   --color-wine: #800020;
-  --color-wine-card: #540A1D;
+  --color-wine-card: #4A0514;
   --color-wine-bright: #94102D;
-  --color-wine-accent: #B81D42;
+  --color-wine-accent: #E6C575;
+  --color-gold: #E6C575;
+  --color-gold-light: #F3DF9B;
+  --color-gold-dark: #C89B3C;
   --color-dark-bg: #0C0708;
   --color-dark-surface: #13070A;
 }
@@ -24,7 +27,7 @@
 
   ::selection {
     background-color: #800020;
-    color: #FFFFFF;
+    color: #E6C575;
   }
 }
 
@@ -50,17 +53,17 @@
 
 /* Glassmorphism Panels */
 .glass-panel {
-  background: rgba(19, 7, 10, 0.65);
+  background: rgba(19, 7, 10, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(184, 29, 66, 0.22);
+  border: 1px solid rgba(230, 197, 117, 0.2);
 }
 
 .glass-pill {
-  background: rgba(12, 7, 8, 0.7);
+  background: rgba(12, 7, 8, 0.75);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(230, 197, 117, 0.25);
 }
 
 /* Glow & Shimmer */
@@ -68,8 +71,12 @@
   box-shadow: 0 0 50px -10px rgba(128, 0, 32, 0.5);
 }
 
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(230, 197, 117, 0.35);
+}
+
 .glow-ambient {
-  filter: drop-shadow(0 0 30px rgba(184, 29, 66, 0.35));
+  filter: drop-shadow(0 0 30px rgba(230, 197, 117, 0.25));
 }
 
 /* Liquid Wave Bubble Hover Animation */
@@ -84,8 +91,8 @@
   z-index: 1;
   isolation: isolate;
   --liquid-fill: #800020;
-  --liquid-fill-sub: #540A1D;
-  --liquid-border: #B81D42;
+  --liquid-fill-sub: #4A0514;
+  --liquid-border: #E6C575;
 }
 
 .liquid-btn::before {
@@ -96,7 +103,7 @@
   top: 100%;
   width: 140%;
   height: 180%;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(230, 197, 117, 0.12);
   border-radius: 50%;
   display: block;
   transition: all 0.5s 0.08s cubic-bezier(0.55, 0, 0.1, 1);
@@ -123,7 +130,7 @@
 .liquid-btn:hover {
   color: #ffffff !important;
   border-color: var(--liquid-border) !important;
-  box-shadow: 0 10px 30px -8px rgba(128, 0, 32, 0.45);
+  box-shadow: 0 10px 30px -8px rgba(230, 197, 117, 0.35);
 }
 
 .liquid-btn:hover::before {
