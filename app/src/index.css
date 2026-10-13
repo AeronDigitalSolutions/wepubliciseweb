@@ -46,37 +46,20 @@
   background: #800020;
 }
 
-/* Luxury Grain Noise Overlay */
-.film-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+/* Solid 2D Architecture Panels */
+.solid-panel {
+  background: #13070A;
+  border: 1px solid #4A0514;
 }
 
-/* Glassmorphism Panels */
-.glass-panel {
-  background: rgba(19, 7, 10, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(230, 197, 117, 0.2);
+.solid-pill {
+  background: #0C0708;
+  border: 1px solid rgba(230, 197, 117, 0.3);
 }
 
-.glass-pill {
-  background: rgba(12, 7, 8, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(230, 197, 117, 0.25);
-}
-
-/* Glow & Shimmer */
-.burgundy-glow {
-  box-shadow: 0 0 50px -10px rgba(128, 0, 32, 0.5);
-}
-
-.gold-glow {
-  box-shadow: 0 0 35px -5px rgba(230, 197, 117, 0.35);
-}
-
-.glow-ambient {
-  filter: drop-shadow(0 0 30px rgba(230, 197, 117, 0.25));
+.solid-card {
+  background: #18070B;
+  border: 1px solid #38040F;
 }
 
 /* Liquid Wave Bubble Hover Animation */

@@ -3,17 +3,13 @@ import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#080405] text-white pt-20 pb-12 border-t border-[#4A0514]/50 overflow-hidden">
-      {/* Background ambient wine glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#800020]/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-10 w-80 h-80 bg-[#E6C575]/5 rounded-full blur-3xl pointer-events-none" />
-
+    <footer className="relative bg-[#080405] text-white pt-20 pb-12 border-t border-[#4A0514]/60 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-6">
             <Link to="/" className="inline-flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800020] via-[#5B091E] to-[#E6C575] flex items-center justify-center p-[2px]">
+              <div className="w-10 h-10 rounded-full bg-[#800020] border border-[#E6C575]/60 flex items-center justify-center p-[2px]">
                 <div className="w-full h-full bg-[#0C0708] rounded-full flex items-center justify-center">
                   <span className="text-[#E6C575] font-black text-xl italic">w</span>
                 </div>

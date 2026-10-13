@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo with Brandemic vibe */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800020] via-[#5B091E] to-[#E6C575] flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105 shadow-lg shadow-[#800020]/40">
+            <div className="w-10 h-10 rounded-full bg-[#800020] border border-[#E6C575]/60 flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105">
               <div className="w-full h-full bg-[#0C0708] rounded-full flex items-center justify-center">
                 <span className="text-[#E6C575] font-black text-xl italic leading-none">w</span>
               </div>
@@ -45,7 +45,7 @@ const Navbar = () => {
               <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#E6C575] transition-colors">
                 we Publicise
               </span>
-              <span className="w-2 h-2 rounded-full bg-[#E6C575] ml-1 animate-pulse shadow-[0_0_8px_#E6C575]"></span>
+              <span className="w-2 h-2 rounded-full bg-[#E6C575] ml-1 animate-pulse"></span>
             </div>
           </Link>
 
@@ -68,7 +68,7 @@ const Navbar = () => {
                     {isActive && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#800020] via-[#D4AF37] to-[#E6C575] rounded-full shadow-[0_0_8px_#E6C575]"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#E6C575] rounded-full"
                       />
                     )}
                   </Link>

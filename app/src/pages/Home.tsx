@@ -19,7 +19,7 @@ import {
 import PageWrapper from '../components/PageWrapper';
 import LiquidButton from '../components/LiquidButton';
 
-// Rotating dynamic hero words
+// Rotating dynamic hero words (Solid 2D high-contrast)
 const dynamicWords = [
   'Websites',
   'Software',
@@ -343,12 +343,6 @@ const Home = () => {
   // Live clock state
   const [currentTime, setCurrentTime] = useState<string>('');
 
-  // Ambient mouse cursor tracking for organic burgundy spotlight
-  const mouseX = useMotionValue(-1000);
-  const mouseY = useMotionValue(-1000);
-  const smoothMouseX = useSpring(mouseX, { stiffness: 120, damping: 25 });
-  const smoothMouseY = useSpring(mouseY, { stiffness: 120, damping: 25 });
-
   // Hero 3D Card tilt motion values
   const heroCardRotateX = useMotionValue(0);
   const heroCardRotateY = useMotionValue(0);
@@ -371,9 +365,9 @@ const Home = () => {
   });
 
   // Image internal scroll parallax (moves up as you scroll past)
-  const teamImageY = useTransform(teamScrollProgress, [0, 1], ['-12%', '12%']);
-  const teamImageScale = useTransform(teamScrollProgress, [0, 0.5, 1], [1.18, 1.1, 1.18]);
-  const teamCardY = useTransform(teamScrollProgress, [0, 1], [50, -50]);
+  const teamImageY = useTransform(teamScrollProgress, [0, 1], ['-10%', '10%']);
+  const teamImageScale = useTransform(teamScrollProgress, [0, 0.5, 1], [1.14, 1.08, 1.14]);
+  const teamCardY = useTransform(teamScrollProgress, [0, 1], [30, -30]);
 
   // Bottom "THINK LIMITLESS" kinetic typography parallax
   const limitlessRef = useRef<HTMLDivElement>(null);
@@ -381,8 +375,7 @@ const Home = () => {
     target: limitlessRef,
     offset: ['start end', 'end start'],
   });
-  const limitlessLetterSpacing = useTransform(limitlessScrollProgress, [0, 1], ['-0.06em', '0.04em']);
-  const limitlessScale = useTransform(limitlessScrollProgress, [0, 0.5, 1], [0.92, 1.05, 0.98]);
+  const limitlessLetterSpacing = useTransform(limitlessScrollProgress, [0, 1], ['-0.04em', '0.02em']);
 
   // Live time ticker in Bangalore (IST)
   useEffect(() => {
@@ -404,16 +397,6 @@ const Home = () => {
     const interval = setInterval(updateTime, 1000);
     return () => clearInterval(interval);
   }, []);
-
-  // Global mouse position listener for ambient burgundy lighting
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, [mouseX, mouseY]);
 
   // Dynamic hero word rotation
   useEffect(() => {
@@ -453,9 +436,8 @@ const Home = () => {
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    // Map to angles
-    const rotateXValue = ((y - centerY) / centerY) * -9; // Max 9 deg
-    const rotateYValue = ((x - centerX) / centerX) * 9;
+    const rotateXValue = ((y - centerY) / centerY) * -8;
+    const rotateYValue = ((x - centerX) / centerX) * 8;
     heroCardRotateX.set(rotateXValue);
     heroCardRotateY.set(rotateYValue);
   };
@@ -474,42 +456,30 @@ const Home = () => {
   };
 
   return (
-    <PageWrapper className="pt-0 pb-0 bg-[#0C0708] text-white relative selection:bg-[#800020] selection:text-white">
-      {/* 1. Film Grain Analog Overlay for Cinematic Agency Depth */}
-      <div className="fixed inset-0 pointer-events-none z-30 opacity-40 film-grain" />
-
-      {/* 2. Ambient Interactive Burgundy Cursor Spotlight */}
-      <motion.div
-        style={{
-          x: smoothMouseX,
-          y: smoothMouseY,
-        }}
-        className="fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-radial from-[#800020]/25 via-[#4A0514]/10 to-transparent blur-[100px] pointer-events-none z-10 transition-opacity duration-300"
-      />
-
-      {/* 3. Top scroll progress indicator bar */}
+    <PageWrapper className="pt-0 pb-0 bg-[#0C0708] text-white relative selection:bg-[#800020] selection:text-[#E6C575]">
+      {/* 1. Top scroll progress indicator bar - Solid Champagne Gold */}
       <motion.div
         style={{ scaleX }}
-        className="fixed top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#800020] via-[#C89B3C] to-[#E6C575] origin-left z-50 pointer-events-none shadow-[0_0_12px_#E6C575]"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-[#E6C575] origin-left z-50 pointer-events-none"
       />
 
-      {/* 4. Live Studio Telemetry Ribbon (Top Nav Accent) */}
-      <header className="pt-24 pb-2 px-6 sm:px-8 border-b border-[#38040F]/50 text-[11px] font-mono tracking-widest uppercase text-zinc-400 bg-[#0C0708]/80 backdrop-blur-md relative z-20">
+      {/* 2. Live Studio Telemetry Ribbon (Solid 2D) */}
+      <header className="pt-24 pb-2.5 px-6 sm:px-8 border-b border-[#38040F] text-[11px] font-mono tracking-widest uppercase text-zinc-400 bg-[#0C0708] relative z-20">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#800020]/40 text-[#E6C575] border border-[#E6C575]/30">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#4A0514] text-[#E6C575] border border-[#800020]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#E6C575] animate-ping" />
               <span>Studio Active</span>
             </span>
-            <span className="text-zinc-500">|</span>
+            <span className="text-zinc-600">|</span>
             <span className="text-zinc-300">Bengaluru HQ &bull; {currentTime || '18:45:00 IST'}</span>
           </div>
 
           <div className="flex items-center gap-6">
-            <span className="hidden md:inline text-zinc-400">
+            <span className="hidden md:inline text-zinc-300 font-semibold">
               ✦ Sprints Booking Open for Q2 / Q3 2026
             </span>
-            <div className="flex items-center gap-2 text-zinc-300">
+            <div className="flex items-center gap-2 text-[#E6C575] font-semibold">
               <Globe size={13} className="text-[#E6C575]" />
               <span>NYC &bull; LDN &bull; BLR &bull; DXB</span>
             </div>
@@ -518,36 +488,31 @@ const Home = () => {
       </header>
 
       {/* ========================================================================= */}
-      {/* 1. HERO: INTERNATIONAL CREATIVE STUDIO ENTRANCE */}
+      {/* 1. HERO: SOLID 2D ARCHITECTURAL LUXURY */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[92vh] pt-14 pb-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center overflow-hidden">
-        {/* Ambient Gradient Flares */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[720px] h-[380px] bg-[#800020]/22 rounded-full blur-[140px] pointer-events-none" />
-        <div className="absolute -top-24 -right-24 w-[480px] h-[480px] bg-[#E6C575]/15 rounded-full blur-[160px] pointer-events-none" />
-        <div className="absolute bottom-10 -left-20 w-[420px] h-[420px] bg-[#38040F]/30 rounded-full blur-[150px] pointer-events-none" />
-
+      <section className="relative min-h-[90vh] pt-16 pb-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center overflow-hidden bg-[#0C0708]">
         <div className="max-w-6xl mx-auto w-full relative z-10">
           {/* Top Status Capsule */}
           <motion.div
-            initial={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#13070A]/80 border border-[#E6C575]/40 backdrop-blur-xl shadow-lg shadow-[#800020]/20">
-              <Sparkles size={14} className="text-[#E6C575] animate-pulse" />
-              <span className="text-xs uppercase font-mono tracking-widest text-zinc-200">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#18070B] border border-[#4A0514]">
+              <Sparkles size={14} className="text-[#E6C575]" />
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold">
                 World-Class Digital Perception & Software Craft
               </span>
             </div>
           </motion.div>
 
-          {/* Master Kinetic Typography */}
+          {/* Master Display Headline (Solid Colors) */}
           <div className="text-left mb-12 max-w-5xl">
             <motion.h1
-              initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 0.9, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              initial={{ opacity: 0, y: 35 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1, ease: 'easeOut' }}
               className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[1.08]"
             >
               A Creative Studio For{' '}
@@ -557,11 +522,11 @@ const Home = () => {
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={dynamicWords[currentWordIndex]}
-                    initial={{ y: 35, opacity: 0, filter: 'blur(6px)', rotateX: -45 }}
-                    animate={{ y: 0, opacity: 1, filter: 'blur(0px)', rotateX: 0 }}
-                    exit={{ y: -35, opacity: 0, filter: 'blur(6px)', rotateX: 45 }}
-                    transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
-                    className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] via-[#F3DF9B] to-[#E6C575] italic font-serif pr-3"
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -30, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: 'easeInOut' }}
+                    className="inline-block text-[#E6C575] italic font-serif pr-3"
                   >
                     {dynamicWords[currentWordIndex]}
                   </motion.span>
@@ -570,20 +535,20 @@ const Home = () => {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
+              transition={{ duration: 0.7, delay: 0.25, ease: 'easeOut' }}
               className="mt-6 text-zinc-300 text-lg sm:text-xl md:text-2xl max-w-3xl font-light leading-relaxed"
             >
               We craft high-impact brand identities, lightning-fast digital storefronts, and conversion-engineered software products for ambitious founders worldwide.
             </motion.p>
           </div>
 
-          {/* 3D Interactive Monitor with Mouse Tilt Physics */}
+          {/* 3D Interactive Monitor (Solid 2D Surfaces) */}
           <motion.div
-            initial={{ opacity: 0, y: 60, scale: 0.94 }}
+            initial={{ opacity: 0, y: 50, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
             onMouseMove={handleHeroCardMouseMove}
             onMouseLeave={handleHeroCardMouseLeave}
             style={{
@@ -592,16 +557,13 @@ const Home = () => {
               transformStyle: 'preserve-3d',
               perspective: 1200,
             }}
-            className="relative mx-auto rounded-3xl overflow-visible border border-[#4A0514]/80 bg-gradient-to-b from-[#18070B] to-[#0A0406] shadow-2xl shadow-[#800020]/40 group cursor-pointer"
+            className="relative mx-auto rounded-3xl overflow-visible border-2 border-[#4A0514] bg-[#18070B] group cursor-pointer"
           >
-            {/* Outer Specular Rim Glow */}
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-[#800020] via-[#E6C575]/60 to-[#800020] rounded-3xl blur-md opacity-40 group-hover:opacity-80 transition-opacity duration-700 -z-10" />
-
-            {/* Floating 2.5D Badge Stickers */}
+            {/* Floating 2.5D Solid Stickers */}
             <motion.div
-              animate={{ y: [0, -10, 0] }}
+              animate={{ y: [0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -left-8 -top-8 items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#13070A]/90 border border-[#E6C575]/50 shadow-2xl shadow-black/80 backdrop-blur-xl z-30 pointer-events-none"
+              className="hidden md:flex absolute -left-6 -top-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#0C0708] border border-[#800020] z-30 pointer-events-none"
             >
               <Zap size={14} className="text-[#E6C575]" />
               <span className="text-xs font-mono font-bold text-white tracking-wider">
@@ -610,9 +572,9 @@ const Home = () => {
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, 10, 0] }}
+              animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2.5 px-4 py-2 rounded-2xl bg-[#13070A]/90 border border-[#E6C575]/50 shadow-2xl shadow-black/80 backdrop-blur-xl z-30 pointer-events-none"
+              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#0C0708] border border-[#800020] z-30 pointer-events-none"
             >
               <Code2 size={14} className="text-[#E6C575]" />
               <span className="text-xs font-mono font-bold text-white tracking-wider">
@@ -620,32 +582,28 @@ const Home = () => {
               </span>
             </motion.div>
 
-            {/* Showcase Video Canvas / Frame */}
-            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-3xl overflow-hidden flex items-center justify-center bg-black/70">
+            {/* Showcase Video Canvas */}
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-3xl overflow-hidden flex items-center justify-center bg-[#0C0708]">
               <img
                 src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1800&q=80"
                 alt="Creative 2D Studio Showcase"
-                className="w-full h-full object-cover opacity-60 filter contrast-125 saturate-150 transform group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover opacity-65 filter contrast-125 saturate-150 transform group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0C0708] via-transparent to-black/30 opacity-90" />
-
-              {/* Specular Glare Bar */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-20">
                 <motion.div
-                  animate={{ y: [0, -8, 0] }}
+                  animate={{ y: [0, -6, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                  className="mb-5 p-5 rounded-2xl bg-[#540A1D]/80 backdrop-blur-md border border-[#E6C575]/40 shadow-2xl max-w-md w-full"
+                  className="mb-5 p-5 rounded-2xl bg-[#4A0514] border-2 border-[#800020] max-w-md w-full"
                 >
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-3">
-                    <div className="flex gap-1.5">
+                  <div className="flex items-center justify-between border-b border-[#800020] pb-3 mb-3">
+                    <div className="flex gap-2">
                       <span className="w-3 h-3 rounded-full bg-[#E6C575]" />
-                      <span className="w-3 h-3 rounded-full bg-[#C89B3C]" />
-                      <span className="w-3 h-3 rounded-full bg-[#38040F]" />
+                      <span className="w-3 h-3 rounded-full bg-[#800020]" />
+                      <span className="w-3 h-3 rounded-full bg-[#0C0708]" />
                     </div>
-                    <span className="text-xs uppercase tracking-widest text-[#E6C575] font-mono">
-                      we Publicise :: 2D Core Showreel
+                    <span className="text-xs uppercase tracking-widest text-[#E6C575] font-mono font-bold">
+                      we Publicise :: Showreel
                     </span>
                   </div>
                   <p className="text-lg sm:text-xl font-black uppercase tracking-wider text-white">
@@ -653,29 +611,22 @@ const Home = () => {
                   </p>
                 </motion.div>
 
-                {/* Acoustic Pulsing Play Reel Trigger */}
+                {/* Solid Play Reel Trigger */}
                 <div className="relative">
-                  <motion.div
-                    animate={{ scale: [1, 1.35, 1], opacity: [0.5, 0, 0.5] }}
-                    transition={{ repeat: Infinity, duration: 2.2, ease: 'easeInOut' }}
-                    className="absolute -inset-4 rounded-full border border-[#E6C575] pointer-events-none"
-                  />
                   <motion.button
                     whileHover={{ scale: 1.12 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsVideoModalOpen(true)}
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-[#800020] via-[#C89B3C] to-[#E6C575] p-[3px] shadow-2xl shadow-[#E6C575]/50 flex items-center justify-center cursor-pointer relative z-10"
+                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#800020] border-2 border-[#E6C575] flex items-center justify-center cursor-pointer relative z-10"
                     aria-label="Play Reel"
                   >
-                    <div className="w-full h-full rounded-full bg-[#13070A] flex items-center justify-center hover:bg-[#800020] transition-colors">
-                      <Play
-                        size={32}
-                        className="text-[#E6C575] ml-1 fill-[#E6C575] hover:text-white hover:fill-white transition-colors"
-                      />
-                    </div>
+                    <Play
+                      size={32}
+                      className="text-[#E6C575] ml-1 fill-[#E6C575]"
+                    />
                   </motion.button>
                 </div>
-                <span className="mt-4 text-xs tracking-widest uppercase text-zinc-300 font-mono flex items-center gap-2">
+                <span className="mt-4 text-xs tracking-widest uppercase text-white font-mono font-bold flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-[#E6C575] animate-ping" />
                   Watch Agency Showreel
                 </span>
@@ -686,9 +637,9 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. PROVEN METRICS TICKER STRIP */}
+      {/* 2. PROVEN METRICS TICKER STRIP (Solid 2D) */}
       {/* ========================================================================= */}
-      <section className="py-12 px-6 sm:px-8 border-y border-[#38040F]/60 bg-[#13070A]/50 relative z-10">
+      <section className="py-12 px-6 sm:px-8 border-y border-[#38040F] bg-[#13070A] relative z-10">
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
           {studioMetrics.map((metric, idx) => (
             <motion.div
@@ -696,45 +647,43 @@ const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="space-y-1.5 text-center sm:text-left border-l border-[#800020]/40 pl-6"
+              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              className="space-y-1.5 text-center sm:text-left border-l-2 border-[#800020] pl-6"
             >
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-zinc-100 to-[#E6C575]">
-                  {metric.value}
-                </span>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#E6C575]">
+                {metric.value}
               </div>
-              <p className="text-xs sm:text-sm font-bold text-zinc-200">{metric.label}</p>
-              <p className="text-[11px] text-zinc-500 font-mono">{metric.sub}</p>
+              <p className="text-xs sm:text-sm font-bold text-white">{metric.label}</p>
+              <p className="text-[11px] text-zinc-400 font-mono">{metric.sub}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. ACCORDION SERVICES: LUXURY BURGUNDY CARDS & EXPANDING HAIRLINE */}
+      {/* 3. ACCORDION SERVICES: UNIFORM SOLID BURGUNDY CARDS & WHITE EXPANDING HAIRLINE */}
       {/* ========================================================================= */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-[#0E0507]">
+      <section className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-[#0C0708]">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-[#38040F]/60">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-[#38040F]">
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6 }}
               className="max-w-2xl"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] block mb-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold block mb-2">
                 Core Capabilities & Architecture
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 Back To The Simple,{' '}
                 <br />
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] to-[#E6C575]">
+                <span className="italic text-[#E6C575]">
                   Intuitive And Inspiring.
                 </span>
               </h2>
-              <p className="text-zinc-400 text-base sm:text-lg leading-relaxed">
+              <p className="text-zinc-300 text-base sm:text-lg leading-relaxed">
                 We transform ambitious ideas into extraordinary brand experiences. From strategic architecture to bespoke code, here's how we build authority.
               </p>
             </motion.div>
@@ -747,7 +696,7 @@ const Home = () => {
             >
               <LiquidButton
                 to="/contact"
-                className="gap-3 border-[#E6C575]/60 bg-[#38040F]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#800020]/20 group"
+                className="gap-3 border-[#E6C575] bg-[#800020] text-sm uppercase tracking-wider font-semibold text-white group"
               >
                 <span>Let's Collaborate</span>
                 <ArrowRight size={16} className="text-[#E6C575] group-hover:text-white transition-colors" />
@@ -762,15 +711,15 @@ const Home = () => {
               return (
                 <motion.div
                   key={service.num}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 25 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.15 }}
-                  transition={{ duration: 0.6, delay: index * 0.08 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
                   onMouseEnter={() => setActiveService(index)}
-                  className={`rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border ${
+                  className={`rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border-2 ${
                     isExpanded
-                      ? 'bg-[#4A0514] border-[#E6C575]/50 shadow-2xl shadow-[#4A0514]/40'
-                      : 'bg-[#18070B]/70 hover:bg-[#260710] border-[#4A0514]/40 hover:border-[#800020]'
+                      ? 'bg-[#4A0514] border-[#E6C575]'
+                      : 'bg-[#18070B] border-[#38040F] hover:border-[#800020]'
                   }`}
                 >
                   <div className="p-6 sm:p-8">
@@ -778,10 +727,10 @@ const Home = () => {
                     <div className="flex items-center justify-between">
                       <div className="space-y-1">
                         <div className="flex items-center gap-3">
-                          <span className="text-xs sm:text-sm font-mono tracking-widest text-zinc-300">
+                          <span className="text-xs sm:text-sm font-mono tracking-widest text-[#E6C575] font-bold">
                             {service.num}
                           </span>
-                          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-white/10 text-[#E6C575]">
+                          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-[#0C0708] text-[#E6C575] border border-[#800020]">
                             {service.metrics}
                           </span>
                         </div>
@@ -789,7 +738,7 @@ const Home = () => {
                           {service.title}
                         </h3>
                       </div>
-                      <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white text-lg transition-transform duration-300">
+                      <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white text-lg transition-transform duration-300">
                         {isExpanded ? <Minus size={18} /> : <Plus size={18} />}
                       </div>
                     </div>
@@ -800,7 +749,7 @@ const Home = () => {
                         initial={false}
                         animate={{
                           scaleX: isExpanded ? 1 : 0,
-                          opacity: isExpanded ? 0.6 : 0,
+                          opacity: isExpanded ? 1 : 0,
                         }}
                         transition={{
                           duration: 1.1,
@@ -811,7 +760,7 @@ const Home = () => {
                       />
                     </div>
 
-                    {/* Smooth Zero-Jank Expandable Container */}
+                    {/* Smooth Expandable Container */}
                     <div
                       className={`grid transition-[grid-template-rows,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         isExpanded
@@ -822,10 +771,10 @@ const Home = () => {
                       <div className="overflow-hidden">
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-2">
                           <div className="md:col-span-7 space-y-5">
-                            <span className="text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-black/40 text-[#E6C575] border border-white/10">
+                            <span className="text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#0C0708] text-[#E6C575] border border-[#800020]">
                               {service.tag}
                             </span>
-                            <p className="text-zinc-200 text-base sm:text-lg leading-relaxed">
+                            <p className="text-zinc-200 text-base sm:text-lg leading-relaxed font-normal">
                               {service.desc}
                             </p>
 
@@ -834,7 +783,7 @@ const Home = () => {
                               {service.deliverables.map((item, dIdx) => (
                                 <span
                                   key={dIdx}
-                                  className="text-xs px-3 py-1 rounded-lg bg-black/30 border border-white/10 text-zinc-300"
+                                  className="text-xs px-3 py-1 rounded-lg bg-[#0C0708] border border-[#38040F] text-zinc-300 font-mono"
                                 >
                                   ✦ {item}
                                 </span>
@@ -846,7 +795,7 @@ const Home = () => {
                                 to="/services"
                                 onClick={(e) => e.stopPropagation()}
                                 size="sm"
-                                className="gap-2 bg-[#0C0708] border-white/15 text-white text-xs uppercase tracking-widest font-bold shadow-md"
+                                className="gap-2 bg-[#0C0708] border-[#E6C575] text-[#E6C575] text-xs uppercase tracking-widest font-bold"
                               >
                                 <span>Learn More</span>
                                 <ArrowUpRight size={14} />
@@ -855,14 +804,13 @@ const Home = () => {
                           </div>
 
                           <div className="md:col-span-5 flex justify-center md:justify-end">
-                            <div className="relative w-full max-w-[320px] aspect-[4/3] rounded-2xl overflow-hidden border border-white/15 shadow-2xl group/img">
+                            <div className="relative w-full max-w-[320px] aspect-[4/3] rounded-2xl overflow-hidden border-2 border-[#800020]">
                               <img
                                 src={service.image}
                                 alt={service.title}
-                                className="w-full h-full object-cover group-hover/img:scale-108 transition-transform duration-700"
+                                className="w-full h-full object-cover"
                               />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-md bg-[#13070A]/80 backdrop-blur-md text-[11px] font-mono text-white">
+                              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-md bg-[#0C0708] border border-[#800020] text-[11px] font-mono text-[#E6C575]">
                                 Verified Architecture
                               </div>
                             </div>
@@ -879,31 +827,31 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. FEATURED WORK: CONTINUOUS INFINITE TRAIN TRACK WITH PAUSE ON HOVER */}
+      {/* 4. FEATURED WORK: SOLID 2D TRAIN TRACK */}
       {/* ========================================================================= */}
-      <section className="py-28 bg-[#0C0708] relative overflow-hidden">
+      <section className="py-28 bg-[#0C0708] relative overflow-hidden border-t border-[#38040F]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-14">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6 }}
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] block mb-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold block mb-2">
                 Selected Client Work
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-3">
                 Featured Work
               </h2>
-              <p className="text-zinc-400 text-lg">
+              <p className="text-zinc-300 text-lg">
                 Reimagining Creativity for a World That Demands Excellence
               </p>
             </motion.div>
             <LiquidButton
               to="/services"
               size="sm"
-              className="gap-2 border-zinc-700 bg-zinc-900/60 text-white text-xs uppercase tracking-widest font-semibold w-fit group"
+              className="gap-2 border-[#E6C575] bg-[#800020] text-white text-xs uppercase tracking-widest font-semibold w-fit group"
             >
               <span>Discover Our Work</span>
               <ArrowRight size={14} className="text-[#E6C575] group-hover:text-white transition-colors" />
@@ -913,10 +861,6 @@ const Home = () => {
 
         {/* Train Track: Infinite Smooth Loop moving continuously from Right to Left */}
         <div className="relative w-full overflow-hidden select-none py-4 group/train">
-          {/* Subtle edge vignettes for seamless train effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-44 bg-gradient-to-r from-[#0C0708] to-transparent z-20 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-44 bg-gradient-to-l from-[#0C0708] to-transparent z-20 pointer-events-none" />
-
           <motion.div
             animate={{ x: ['0%', '-50%'] }}
             transition={{
@@ -926,48 +870,42 @@ const Home = () => {
             }}
             className="flex items-center gap-6 sm:gap-8 w-max group-hover/train:[animation-play-state:paused]"
           >
-            {/* Render items twice to ensure a seamless infinite loop */}
             {[...featuredWorks, ...featuredWorks].map((work, idx) => (
               <div
                 key={`${work.id}-${idx}`}
                 onClick={() => setSelectedProject(work)}
-                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[460px] sm:h-[540px] rounded-3xl overflow-hidden bg-[#18070B] border border-[#38040F] hover:border-[#E6C575] transition-all duration-500 shadow-2xl shadow-black/80 cursor-pointer"
+                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[480px] sm:h-[560px] rounded-3xl overflow-hidden bg-[#18070B] border-2 border-[#38040F] hover:border-[#E6C575] transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
-                {/* Full-bleed high impact project imagery */}
-                <img
-                  src={work.image}
-                  alt={work.title}
-                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 filter brightness-95 group-hover:brightness-105"
-                />
-
-                {/* Aesthetic dark-wine gradient vignette */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0C0708] via-black/30 to-black/20 group-hover:via-black/15 transition-all duration-500" />
-
-                {/* Top Category Badge & Metrics */}
-                <div className="absolute top-5 left-5 right-5 flex items-center justify-between z-10">
-                  <span className="text-[11px] uppercase font-mono tracking-wider px-3.5 py-1.5 rounded-full bg-[#0C0708]/80 backdrop-blur-md text-white border border-white/10 shadow-lg">
-                    {work.badge}
-                  </span>
-                  <div className="flex items-center gap-2">
-                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#800020]/70 text-[#E6C575] border border-[#E6C575]/40 backdrop-blur-md">
+                {/* Image Section */}
+                <div className="relative h-[68%] w-full overflow-hidden bg-[#0C0708]">
+                  <img
+                    src={work.image}
+                    alt={work.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                    <span className="text-[11px] uppercase font-mono tracking-wider px-3 py-1 rounded-full bg-[#0C0708] text-white border border-[#38040F]">
+                      {work.badge}
+                    </span>
+                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#4A0514] text-[#E6C575] border border-[#800020]">
                       {work.result}
                     </span>
-                    <div className="w-9 h-9 rounded-full bg-[#0C0708]/70 backdrop-blur-md border border-white/10 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                      <ArrowUpRight size={18} className="text-[#E6C575]" />
-                    </div>
                   </div>
                 </div>
 
-                {/* Bottom Card Copy */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 z-10">
-                  <div className="text-xs font-mono text-[#E6C575] mb-1">{work.year} &bull; Case Study</div>
-                  <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#E6C575] transition-colors mb-2">
-                    {work.title}
-                  </h4>
-                  <p className="text-sm text-zinc-300 font-medium mb-3">{work.category}</p>
-                  <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {work.summary}
-                  </p>
+                {/* Solid 2D Bottom Panel */}
+                <div className="p-6 sm:p-7 bg-[#18070B] border-t border-[#38040F] flex-1 flex flex-col justify-between">
+                  <div>
+                    <div className="text-xs font-mono text-[#E6C575] font-bold mb-1">{work.year} &bull; Case Study</div>
+                    <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#E6C575] transition-colors mb-1">
+                      {work.title}
+                    </h4>
+                    <p className="text-sm text-zinc-300 font-medium">{work.category}</p>
+                  </div>
+                  <div className="flex items-center justify-between pt-2">
+                    <span className="text-xs font-mono text-zinc-400">Click to inspect</span>
+                    <ArrowUpRight size={18} className="text-[#E6C575]" />
+                  </div>
                 </div>
               </div>
             ))}
@@ -976,38 +914,37 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. TEAM CULTURE & PARALLAX SCROLL: "IDEAS INTO MAGIC" */}
+      {/* 5. TEAM CULTURE: SOLID 2D PARALLAX SCROLL */}
       {/* ========================================================================= */}
       <section
         ref={teamSectionRef}
-        className="py-32 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[#0E0507] to-[#080405] relative overflow-hidden"
+        className="py-32 px-6 sm:px-8 lg:px-12 bg-[#0E0507] relative overflow-hidden border-t border-[#38040F]"
       >
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="mb-14"
           >
-            <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] block mb-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold block mb-3">
               The Collective Mind
             </span>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3">
               We Are Your Design Partners In Turning{' '}
               <br />
-              <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] to-[#E6C575]">
+              <span className="italic text-[#E6C575]">
                 Ideas Into Magic
               </span>
             </h2>
           </motion.div>
 
-          {/* Parallax Card Container with smooth upward glide */}
+          {/* Parallax Card Container with Solid 2D Architecture */}
           <motion.div
             style={{ y: teamCardY }}
-            className="relative rounded-3xl overflow-hidden border border-[#800020]/50 shadow-2xl shadow-[#800020]/30 max-w-4xl mx-auto mb-12 group aspect-[16/10]"
+            className="relative rounded-3xl overflow-hidden border-2 border-[#800020] bg-[#18070B] max-w-4xl mx-auto mb-12 aspect-[16/10]"
           >
-            {/* Parallax Image inside that scrolls smoothly inside its frame */}
             <motion.img
               style={{ y: teamImageY, scale: teamImageScale }}
               src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=80"
@@ -1015,25 +952,22 @@ const Home = () => {
               className="absolute inset-0 w-full h-full object-cover filter contrast-105"
             />
 
-            {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
-
-            {/* Card Info Overlay */}
-            <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between text-left z-10">
+            {/* Solid Card Info Overlay */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-[#0C0708] border-t border-[#800020] flex items-center justify-between text-left z-10">
               <div>
                 <p className="text-lg font-bold text-white">The Creators at we Publicise</p>
                 <p className="text-xs text-zinc-300">Bengaluru &bull; Worldwide Delivery</p>
               </div>
-              <div className="flex items-center gap-2 bg-[#800020]/80 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 shadow-lg">
+              <div className="flex items-center gap-2 bg-[#800020] px-4 py-2 rounded-full border border-[#E6C575]">
                 <Sparkles size={14} className="text-[#E6C575]" />
-                <span className="text-xs font-semibold text-white">100+ Projects Done</span>
+                <span className="text-xs font-bold text-white">100+ Projects Done</span>
               </div>
             </div>
           </motion.div>
 
           <LiquidButton
             to="/about"
-            className="gap-3 border-[#E6C575]/60 bg-[#38040F]/40 text-sm uppercase tracking-wider font-semibold text-white shadow-lg shadow-[#800020]/20 group"
+            className="gap-3 border-[#E6C575] bg-[#800020] text-sm uppercase tracking-wider font-semibold text-white group"
           >
             <span>Get To Know Us</span>
             <ArrowRight size={16} className="text-[#E6C575] group-hover:text-white transition-colors" />
@@ -1044,46 +978,21 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 6. BEHAVIOR-DRIVEN DESIGN PHILOSOPHY & TRUSTED CLIENT LOGOS (72% Container) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#38040F]/40">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#38040F]">
         <div className="max-w-5xl mx-auto text-center relative z-10 mb-20">
-          {/* Floating 2D mockup stickers on sides */}
           <div className="relative inline-block max-w-3xl">
-            <motion.div
-              animate={{ rotate: [-4, -8, -4], y: [0, -6, 0] }}
-              transition={{ repeat: Infinity, duration: 5, ease: 'easeInOut' }}
-              className="hidden lg:block absolute -left-32 -top-10 w-28 h-28 rounded-2xl overflow-hidden border border-[#E6C575]/40 shadow-xl shadow-[#800020]/30"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=400&q=80"
-                alt="2D Mockup Packaging"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-
-            <motion.div
-              animate={{ rotate: [6, 10, 6], y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 6, ease: 'easeInOut' }}
-              className="hidden lg:block absolute -right-32 -bottom-6 w-32 h-24 rounded-2xl overflow-hidden border border-[#E6C575]/40 shadow-xl shadow-[#800020]/30"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=400&q=80"
-                alt="2D Mockup Screen"
-                className="w-full h-full object-cover"
-              />
-            </motion.div>
-
             <motion.h3
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.8 }}
-              className="text-2xl sm:text-4xl font-semibold text-zinc-100 leading-relaxed mb-8"
+              transition={{ duration: 0.6 }}
+              className="text-2xl sm:text-4xl font-semibold text-white leading-relaxed mb-8"
             >
               Our Work Isn't Just Aesthetically Pleasing, It's{' '}
               <span className="text-[#E6C575] font-bold">Behavior-Driven</span>. We Believe What
               Separates A Good Design From A Great One Is Its Ability To Solve Problems. We Try To
               Design-Think Through Everything We Do At{' '}
-              <span className="text-white underline decoration-[#E6C575] decoration-2 underline-offset-4">
+              <span className="text-white underline decoration-[#E6C575] decoration-2 underline-offset-4 font-bold">
                 we Publicise
               </span>
               .
@@ -1091,7 +1000,7 @@ const Home = () => {
 
             <LiquidButton
               to="/services"
-              className="gap-2 border-[#E6C575] bg-[#38040F]/40 text-xs uppercase tracking-widest font-bold text-white shadow-lg shadow-[#800020]/20 group"
+              className="gap-2 border-[#E6C575] bg-[#800020] text-xs uppercase tracking-widest font-bold text-white group"
             >
               <span>Discover Our Work</span>
               <ArrowRight size={14} className="text-[#E6C575] group-hover:text-white transition-colors" />
@@ -1100,9 +1009,9 @@ const Home = () => {
         </div>
 
         {/* OUR TRUSTED PARTNERS: Continuous right-to-left logo carousel in a 72% container */}
-        <div className="w-full pt-16 border-t border-zinc-900/80">
+        <div className="w-full pt-16 border-t border-[#38040F]">
           <div className="text-center mb-10">
-            <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] block mb-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold block mb-3">
               Our Trusted Partners
             </span>
             <h3 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -1111,12 +1020,7 @@ const Home = () => {
           </div>
 
           {/* 72% Optimal Width Container as Requested */}
-          <div className="w-[92%] sm:w-[85%] lg:w-[72%] max-w-5xl mx-auto relative overflow-hidden py-4 group/marquee">
-            {/* Fade vignettes on edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-[#0C0708] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-[#0C0708] to-transparent z-10 pointer-events-none" />
-
-            {/* Continuous Marquee from Right to Left with Pause on Hover */}
+          <div className="w-[92%] sm:w-[85%] lg:w-[72%] max-w-5xl mx-auto relative overflow-hidden py-4 group/marquee border-y border-[#38040F]">
             <motion.div
               animate={{ x: ['0%', '-50%'] }}
               transition={{
@@ -1129,7 +1033,7 @@ const Home = () => {
               {[...ourClients, ...ourClients].map((client, idx) => (
                 <div
                   key={`${client.name}-${idx}`}
-                  className="bg-white rounded-2xl px-7 py-4 flex items-center justify-center min-w-[190px] sm:min-w-[220px] h-[82px] shadow-lg border border-white/40 flex-shrink-0 group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 hover:border-[#E6C575]"
+                  className="bg-white rounded-2xl px-7 py-4 flex items-center justify-center min-w-[190px] sm:min-w-[220px] h-[82px] border-2 border-white flex-shrink-0 group hover:border-[#E6C575] transition-all duration-300 hover:-translate-y-1"
                 >
                   <img
                     src={client.logo}
@@ -1151,18 +1055,18 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 7. TESTIMONIALS: LUXURY EDITORIAL CAROUSEL */}
+      {/* 7. TESTIMONIALS: SOLID 2D LUXURY CAROUSEL */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-gradient-to-b from-[#0C0708] to-[#13070A] relative overflow-hidden">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#13070A] relative overflow-hidden border-t border-[#38040F]">
         <div className="max-w-4xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-xs uppercase tracking-widest text-[#E6C575] font-mono block mb-2">
+            <span className="text-xs uppercase tracking-widest text-[#E6C575] font-mono font-bold block mb-2">
               Verified Client Outcomes
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -1170,52 +1074,45 @@ const Home = () => {
             </h2>
           </motion.div>
 
-          {/* Testimonial Card */}
           <div className="relative">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentTestimonial}
-                initial={{ opacity: 0, x: 25, filter: 'blur(4px)' }}
-                animate={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, x: -25, filter: 'blur(4px)' }}
-                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-[#18070B] border border-[#4A0514]/80 rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.35 }}
+                className="bg-[#18070B] border-2 border-[#4A0514] rounded-3xl p-8 sm:p-14 relative overflow-hidden"
               >
-                {/* Huge stylized quote mark in the background */}
-                <div className="absolute right-8 bottom-6 text-[#800020]/20 text-9xl font-serif select-none pointer-events-none leading-none">
-                  “
-                </div>
-
                 <div className="flex items-center gap-2 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[#E6C575] text-sm">★</span>
+                    <span key={i} className="text-[#E6C575] text-base">★</span>
                   ))}
-                  <span className="text-xs font-mono text-zinc-400 ml-2">
+                  <span className="text-xs font-mono text-[#E6C575] font-bold ml-2">
                     {testimonials[currentTestimonial].score} &bull; {testimonials[currentTestimonial].metric}
                   </span>
                 </div>
 
-                <p className="text-lg sm:text-2xl text-zinc-200 leading-relaxed font-light mb-10 relative z-10">
+                <p className="text-lg sm:text-2xl text-white leading-relaxed font-light mb-10 relative z-10">
                   "{testimonials[currentTestimonial].quote}"
                 </p>
 
-                <div className="flex items-center justify-between pt-6 border-t border-white/10 relative z-10">
+                <div className="flex items-center justify-between pt-6 border-t border-[#38040F] relative z-10">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#800020] to-[#E6C575] flex items-center justify-center font-bold text-white shadow-md">
+                    <div className="w-12 h-12 rounded-xl bg-[#800020] border border-[#E6C575] flex items-center justify-center font-bold text-[#E6C575]">
                       {testimonials[currentTestimonial].company.substring(0, 2)}
                     </div>
                     <div>
                       <h4 className="text-lg font-bold text-white">
                         {testimonials[currentTestimonial].name}
                       </h4>
-                      <p className="text-xs text-zinc-400">
+                      <p className="text-xs text-zinc-300">
                         {testimonials[currentTestimonial].company} &bull;{' '}
                         {testimonials[currentTestimonial].tag}
                       </p>
                     </div>
                   </div>
 
-                  {/* Navigation Arrows */}
                   <div className="flex items-center gap-3">
                     <button
                       onClick={prevTestimonial}
@@ -1240,36 +1137,35 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 8. TOOLS & 3D FAN PERSPECTIVE CAROUSEL */}
+      {/* 8. TOOLS & 3D FAN PERSPECTIVE CAROUSEL (Solid 2D) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 bg-[#0C0708] relative overflow-hidden border-t border-[#38040F]/40">
+      <section className="py-28 px-6 sm:px-8 bg-[#0C0708] relative overflow-hidden border-t border-[#38040F]">
         <div className="max-w-6xl mx-auto mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
+              initial={{ opacity: 0, x: -25 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6 }}
               className="lg:col-span-5 space-y-5"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] flex items-center gap-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#E6C575] animate-pulse" />
                 Empowering Creativity
               </span>
               <h3 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
                 Empowering Creativity With The{' '}
-                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] to-[#E6C575]">
+                <span className="italic text-[#E6C575]">
                   Right Tools
                 </span>
               </h3>
-              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed">
                 At we Publicise, we use tools that work as hard as we do. Each one is carefully
                 chosen to bring your brand to life and make the process smoother, smarter and
                 more effective. In the hands of our team, these tools aren't just functional —
                 they're transformative, shaping every detail from start to finish.
               </p>
 
-              {/* Indicator dots for tool cards */}
               <div className="flex items-center gap-2 pt-2">
                 {brandemicTools.map((tool, i) => (
                   <button
@@ -1325,27 +1221,22 @@ const Home = () => {
                         backgroundColor: tool.bgColor,
                         color: tool.textColor,
                         border: `2px solid ${tool.accentBorder}`,
-                        boxShadow: isActive
-                          ? `0 25px 60px -15px ${tool.bgColor}99, 0 0 35px ${tool.accentBorder}40`
-                          : '0 15px 35px -10px rgba(0,0,0,0.8)',
                       }}
-                      className="absolute w-[220px] sm:w-[260px] h-[290px] sm:h-[330px] rounded-3xl p-6 sm:p-8 flex flex-col justify-between cursor-pointer select-none shadow-2xl transition-shadow duration-300 group"
+                      className="absolute w-[220px] sm:w-[260px] h-[290px] sm:h-[330px] rounded-3xl p-6 sm:p-8 flex flex-col justify-between cursor-pointer select-none transition-transform duration-300 group"
                     >
-                      {/* Top Brand Logo */}
                       <div className="flex items-center justify-between">
-                        <div className="w-12 h-12 rounded-2xl bg-white/10 backdrop-blur-md p-2.5 flex items-center justify-center border border-white/20">
+                        <div className="w-12 h-12 rounded-2xl bg-white/20 p-2.5 flex items-center justify-center border border-white/30">
                           <img
                             src={tool.logo}
                             alt={tool.name}
                             className="w-full h-full object-contain filter drop-shadow-md"
                           />
                         </div>
-                        <span className="text-[10px] uppercase font-mono tracking-wider px-2.5 py-1 rounded-full bg-black/20 backdrop-blur-md border border-white/10 opacity-80">
+                        <span className="text-[10px] uppercase font-mono tracking-wider px-2.5 py-1 rounded-full bg-black/40 border border-white/20 font-bold">
                           {tool.tag}
                         </span>
                       </div>
 
-                      {/* Main Typography & Logo Title */}
                       <div className="my-auto text-center py-2">
                         <h4
                           className="text-2xl sm:text-3xl font-extrabold tracking-tight mb-2"
@@ -1353,14 +1244,13 @@ const Home = () => {
                         >
                           {tool.name}
                         </h4>
-                        <p className="text-[11px] leading-tight opacity-80 line-clamp-2">
+                        <p className="text-[11px] leading-tight opacity-90 line-clamp-2">
                           {tool.desc}
                         </p>
                       </div>
 
-                      {/* Bottom Active Pill Indicator */}
                       <div className="flex items-center justify-between pt-2 border-t border-black/10">
-                        <span className="text-xs font-mono opacity-80">
+                        <span className="text-xs font-mono font-bold">
                           {isActive ? '✦ In Production' : 'Click to view'}
                         </span>
                         <div
@@ -1377,8 +1267,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Infinite Kinetic Marquee Bar: "Collaborate With we Publicise ✦" */}
-        <div className="relative py-6 bg-gradient-to-r from-[#38040F] via-[#800020] to-[#38040F] border-y border-[#E6C575]/40 overflow-hidden select-none -mx-8 shadow-2xl">
+        {/* Infinite Kinetic Marquee Bar (Solid Burgundy Banner) */}
+        <div className="relative py-6 bg-[#800020] border-y-2 border-[#E6C575] overflow-hidden select-none -mx-8">
           <motion.div
             animate={{ x: ['0%', '-50%'] }}
             transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
@@ -1397,17 +1287,17 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* Culture CTA Card: "Be A Part Of The Movement" */}
+        {/* Culture CTA Card: Solid Burgundy Container */}
         <div className="max-w-6xl mx-auto mt-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.7 }}
-            className="rounded-3xl bg-[#4A0514] p-8 sm:p-14 border border-[#E6C575]/50 shadow-2xl shadow-[#4A0514]/40 flex flex-col md:flex-row items-center justify-between gap-8"
+            transition={{ duration: 0.6 }}
+            className="rounded-3xl bg-[#4A0514] p-8 sm:p-14 border-2 border-[#E6C575] flex flex-col md:flex-row items-center justify-between gap-8"
           >
             <div className="space-y-3 max-w-xl">
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575]">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold">
                 Work With The Best PR & Branding Agency
               </span>
               <h3 className="text-3xl sm:text-4xl font-bold text-white">
@@ -1421,7 +1311,7 @@ const Home = () => {
 
             <LiquidButton
               to="/contact"
-              className="bg-[#0C0708] border-white/20 text-white font-bold text-xs uppercase tracking-widest whitespace-nowrap shadow-xl"
+              className="bg-[#0C0708] border-[#E6C575] text-[#E6C575] font-bold text-xs uppercase tracking-widest whitespace-nowrap"
             >
               <span>Show Us What You Got</span>
             </LiquidButton>
@@ -1430,53 +1320,51 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 9. FREQUENTLY ASKED QUESTIONS */}
+      {/* 9. FREQUENTLY ASKED QUESTIONS (Solid 2D) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#38040F]/40">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#38040F]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-            {/* Left Title Column */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6 }}
               className="lg:col-span-5 space-y-4"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575]">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold">
                 Frequently Asked Questions
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
                 Get Answers To Your Vision{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#E6C575] to-[#E6C575]">
+                <span className="text-[#E6C575]">
                   Or Our Services
                 </span>
               </h2>
-              <p className="text-zinc-400 text-sm sm:text-base leading-relaxed pt-2">
+              <p className="text-zinc-300 text-sm sm:text-base leading-relaxed pt-2">
                 Everything you need to know about partnering with we Publicise to craft exceptional
                 brand identities and digital interactions.
               </p>
               <div className="pt-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 text-sm text-[#E6C575] hover:text-white font-medium transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-[#E6C575] hover:text-white font-bold transition-colors"
                 >
                   <span>Have a custom question? Speak with our team &rarr;</span>
                 </Link>
               </div>
             </motion.div>
 
-            {/* Right Accordion FAQ Column */}
-            <div className="lg:col-span-7 divide-y divide-zinc-800/80">
+            <div className="lg:col-span-7 divide-y divide-[#38040F]">
               {faqs.map((faq, index) => {
                 const isOpen = openFaq === index;
                 return (
                   <motion.div
                     key={faq.q}
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.2 }}
-                    transition={{ duration: 0.5, delay: index * 0.08 }}
+                    transition={{ duration: 0.4, delay: index * 0.06 }}
                     className="py-6"
                   >
                     <button
@@ -1498,7 +1386,7 @@ const Home = () => {
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.3 }}
-                          className="pt-4 text-zinc-400 text-sm sm:text-base leading-relaxed"
+                          className="pt-4 text-zinc-300 text-sm sm:text-base leading-relaxed"
                         >
                           {faq.a}
                         </motion.div>
@@ -1513,18 +1401,18 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 10. GRAND FINALE: "ASK AI" & GIANT KINETIC "THINK LIMITLESS" TYPOGRAPHY */}
+      {/* 10. GRAND FINALE: "ASK AI" & SOLID GIANT "THINK LIMITLESS" */}
       {/* ========================================================================= */}
       <section
         ref={limitlessRef}
-        className="pt-24 pb-12 px-6 sm:px-8 lg:px-12 bg-[#080405] border-t border-[#38040F]/60 relative overflow-hidden"
+        className="pt-24 pb-12 px-6 sm:px-8 lg:px-12 bg-[#080405] border-t border-[#38040F] relative overflow-hidden"
       >
         <div className="max-w-6xl mx-auto">
           {/* Top Row: Brand & Ask AI */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-16">
             <div>
               <Link to="/" className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#800020] to-[#E6C575] flex items-center justify-center p-[2px]">
+                <div className="w-10 h-10 rounded-full bg-[#800020] border border-[#E6C575] flex items-center justify-center p-[2px]">
                   <div className="w-full h-full bg-[#0C0708] rounded-full flex items-center justify-center">
                     <span className="text-[#E6C575] font-black text-xl italic">w</span>
                   </div>
@@ -1533,7 +1421,7 @@ const Home = () => {
                   we Publicise
                 </span>
               </Link>
-              <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-400 mt-4">
+              <div className="flex flex-wrap items-center gap-6 text-sm text-zinc-300 mt-4">
                 <Link to="/about" className="hover:text-white transition-colors">About Us</Link>
                 <Link to="/services" className="hover:text-white transition-colors">Portfolio</Link>
                 <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
@@ -1544,7 +1432,7 @@ const Home = () => {
 
             {/* "Ask AI About we Publicise" */}
             <div className="space-y-3 sm:text-right">
-              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#E6C575]">
+              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#E6C575] font-bold">
                 <span className="w-2 h-2 rounded-full bg-[#E6C575] animate-pulse" />
                 <span>Ask AI About we Publicise</span>
               </div>
@@ -1554,14 +1442,14 @@ const Home = () => {
                     key={ai}
                     onClick={() => handleCopyPrompt(ai)}
                     title={`Click to copy prompt for ${ai}`}
-                    className="w-9 h-9 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-[#E6C575] flex items-center justify-center text-zinc-400 hover:text-white text-xs font-mono transition-colors cursor-pointer"
+                    className="w-9 h-9 rounded-xl bg-[#18070B] border border-[#38040F] hover:border-[#E6C575] flex items-center justify-center text-zinc-300 hover:text-white text-xs font-mono transition-colors cursor-pointer"
                   >
                     <Bot size={16} />
                   </button>
                 ))}
               </div>
               {copiedPrompt && (
-                <div className="text-xs text-[#E6C575] font-mono animate-fade-in">
+                <div className="text-xs text-[#E6C575] font-mono">
                   ✓ {copiedPrompt}
                 </div>
               )}
@@ -1569,42 +1457,41 @@ const Home = () => {
           </div>
 
           {/* Email & Connect Today */}
-          <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-zinc-400 mb-8">
-            <a href="mailto:info@wepublicise.com" className="hover:text-white transition-colors">
+          <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-zinc-400 mb-8 border-b border-[#38040F] pb-4">
+            <a href="mailto:info@wepublicise.com" className="hover:text-white transition-colors font-bold">
               info@wepublicise.com
             </a>
-            <Link to="/contact" className="hover:text-[#E6C575] transition-colors flex items-center gap-1">
+            <Link to="/contact" className="text-[#E6C575] hover:text-white transition-colors flex items-center gap-1 font-bold">
               <span>Connect Today</span>
               <span>&rarr;</span>
             </Link>
           </div>
 
-          {/* Giant "THINK LIMITLESS" Typography with Scroll-Linked Tracking */}
+          {/* Giant "THINK LIMITLESS" Typography (Solid 2D Burgundy & Outline) */}
           <div className="w-full overflow-hidden select-none my-6">
             <motion.h1
               style={{
                 letterSpacing: limitlessLetterSpacing,
-                scale: limitlessScale,
               }}
-              className="text-5xl sm:text-7xl md:text-9xl lg:text-[145px] font-black tracking-tighter uppercase text-center text-transparent bg-clip-text bg-gradient-to-b from-[#800020] via-[#5B091E] to-[#18070B] leading-none"
+              className="text-5xl sm:text-7xl md:text-9xl lg:text-[145px] font-black tracking-tighter uppercase text-center text-[#800020] leading-none"
             >
               Think Limitless
             </motion.h1>
           </div>
 
           {/* Bottom Bar: Social Icons & Credits */}
-          <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-500">
+          <div className="pt-8 border-t border-[#38040F] flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
             <p>&copy; {new Date().getFullYear()} we Publicise. All rights reserved.</p>
-            <div className="flex flex-wrap items-center gap-5 text-zinc-400 font-mono text-xs">
-              <a href="#" className="hover:text-white transition-colors">Instagram</a>
-              <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-white transition-colors">YouTube</a>
-              <a href="#" className="hover:text-white transition-colors">X (Twitter)</a>
-              <a href="#" className="hover:text-white transition-colors">Behance</a>
+            <div className="flex flex-wrap items-center gap-5 text-zinc-300 font-mono text-xs">
+              <a href="#" className="hover:text-[#E6C575] transition-colors">Instagram</a>
+              <a href="#" className="hover:text-[#E6C575] transition-colors">LinkedIn</a>
+              <a href="#" className="hover:text-[#E6C575] transition-colors">YouTube</a>
+              <a href="#" className="hover:text-[#E6C575] transition-colors">X (Twitter)</a>
+              <a href="#" className="hover:text-[#E6C575] transition-colors">Behance</a>
             </div>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 hover:border-[#E6C575] text-zinc-300 hover:text-white transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#18070B] border border-[#38040F] hover:border-[#E6C575] text-zinc-300 hover:text-white transition-colors cursor-pointer"
             >
               <ArrowUp size={12} />
               <span>Back To Top</span>
@@ -1614,7 +1501,7 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 11. QUICK CASE STUDY PREVIEW MODAL */}
+      {/* 11. QUICK CASE STUDY PREVIEW MODAL (Solid 2D) */}
       {/* ========================================================================= */}
       <AnimatePresence>
         {selectedProject && (
@@ -1622,27 +1509,26 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 bg-[#0C0708]/90 flex items-center justify-center p-6"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              initial={{ scale: 0.92, opacity: 0, y: 20 }}
+              initial={{ scale: 0.94, opacity: 0, y: 15 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.92, opacity: 0, y: 20 }}
-              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              exit={{ scale: 0.94, opacity: 0, y: 15 }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#18070B] border border-[#800020] rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative"
+              className="bg-[#18070B] border-2 border-[#800020] rounded-3xl max-w-2xl w-full overflow-hidden relative"
             >
-              <div className="relative aspect-video w-full overflow-hidden">
+              <div className="relative aspect-video w-full overflow-hidden bg-[#0C0708]">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#18070B] via-transparent to-transparent" />
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/70 border border-white/20 text-white flex items-center justify-center hover:bg-[#800020] transition-colors cursor-pointer"
+                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#0C0708] border border-white/20 text-white flex items-center justify-center hover:bg-[#800020] transition-colors cursor-pointer"
                 >
                   ✕
                 </button>
@@ -1650,10 +1536,10 @@ const Home = () => {
 
               <div className="p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#800020]/40 text-[#E6C575] border border-[#E6C575]/40">
+                  <span className="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#4A0514] text-[#E6C575] border border-[#800020]">
                     {selectedProject.badge} &bull; {selectedProject.year}
                   </span>
-                  <span className="text-xs font-mono text-zinc-400">
+                  <span className="text-xs font-mono text-[#E6C575] font-bold">
                     {selectedProject.result}
                   </span>
                 </div>
@@ -1664,11 +1550,11 @@ const Home = () => {
                 <p className="text-sm font-medium text-zinc-300">
                   {selectedProject.category}
                 </p>
-                <p className="text-sm text-zinc-400 leading-relaxed">
+                <p className="text-sm text-zinc-300 leading-relaxed font-normal">
                   {selectedProject.summary}
                 </p>
 
-                <div className="pt-4 flex items-center justify-between border-t border-white/10">
+                <div className="pt-4 flex items-center justify-between border-t border-[#38040F]">
                   <LiquidButton
                     to="/contact"
                     onClick={() => setSelectedProject(null)}
@@ -1692,7 +1578,7 @@ const Home = () => {
       </AnimatePresence>
 
       {/* ========================================================================= */}
-      {/* 12. AGENCY SHOWREEL VIDEO MODAL */}
+      {/* 12. AGENCY SHOWREEL VIDEO MODAL (Solid 2D) */}
       {/* ========================================================================= */}
       <AnimatePresence>
         {isVideoModalOpen && (
@@ -1700,15 +1586,15 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 bg-[#0C0708]/90 flex items-center justify-center p-6"
             onClick={() => setIsVideoModalOpen(false)}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.92, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
+              exit={{ scale: 0.92, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#13070A] border border-[#800020] p-6 rounded-3xl max-w-3xl w-full text-center relative shadow-2xl"
+              className="bg-[#13070A] border-2 border-[#800020] p-6 rounded-3xl max-w-3xl w-full text-center relative"
             >
               <button
                 onClick={() => setIsVideoModalOpen(false)}
@@ -1720,7 +1606,7 @@ const Home = () => {
               <p className="text-sm text-zinc-400 mb-6">
                 Dynamic 2D Motion & Scroll Interaction Showcase
               </p>
-              <div className="aspect-video bg-black rounded-2xl overflow-hidden flex items-center justify-center border border-white/10">
+              <div className="aspect-video bg-black rounded-2xl overflow-hidden flex items-center justify-center border border-[#38040F]">
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"
