@@ -1,22 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-wine-dark: #38040F;
-  --color-wine-deep: #4A0514;
-  --color-wine: #800020;
-  --color-wine-card: #4A0514;
-  --color-wine-bright: #94102D;
-  --color-wine-accent: #E6C575;
-  --color-gold: #E6C575;
-  --color-gold-light: #F3DF9B;
-  --color-gold-dark: #C89B3C;
-  --color-dark-bg: #0C0708;
-  --color-dark-surface: #13070A;
+  --color-brand-mint: #00F5A0;
+  --color-brand-teal: #39bda7;
+  --color-brand-dark: #0D2A26;
+  --color-brand-surface: #0E141B;
+  --color-dark-bg: #080B0E;
+  --color-dark-surface: #0E141B;
+  --color-dark-card: #141C24;
+  --color-dark-border: #1E2B37;
 }
 
 @layer base {
   body {
-    background-color: #0C0708;
+    background-color: #080B0E;
     color: #FFFFFF;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow-x: hidden;
@@ -26,8 +23,8 @@
   }
 
   ::selection {
-    background-color: #800020;
-    color: #E6C575;
+    background-color: #00F5A0;
+    color: #080B0E;
   }
 }
 
@@ -36,30 +33,30 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0C0708;
+  background: #080B0E;
 }
 ::-webkit-scrollbar-thumb {
-  background: #4A0514;
+  background: #1E2B37;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #800020;
+  background: #39bda7;
 }
 
 /* Solid 2D Architecture Panels */
 .solid-panel {
-  background: #13070A;
-  border: 1px solid #4A0514;
+  background: #0E141B;
+  border: 1px solid #1E2B37;
 }
 
 .solid-pill {
-  background: #0C0708;
-  border: 1px solid rgba(230, 197, 117, 0.3);
+  background: #080B0E;
+  border: 1px solid rgba(0, 245, 160, 0.25);
 }
 
 .solid-card {
-  background: #18070B;
-  border: 1px solid #38040F;
+  background: #141C24;
+  border: 1px solid #1E2B37;
 }
 
 /* Liquid Wave Bubble Hover Animation */
@@ -73,9 +70,9 @@
   cursor: pointer;
   z-index: 1;
   isolation: isolate;
-  --liquid-fill: #800020;
-  --liquid-fill-sub: #4A0514;
-  --liquid-border: #E6C575;
+  --liquid-fill: #39bda7;
+  --liquid-fill-sub: #0D4A42;
+  --liquid-border: #39bda7;
 }
 
 .liquid-btn::before {
@@ -86,7 +83,7 @@
   top: 100%;
   width: 140%;
   height: 180%;
-  background-color: rgba(230, 197, 117, 0.12);
+  background-color: rgba(0, 245, 160, 0.15);
   border-radius: 50%;
   display: block;
   transition: all 0.5s 0.08s cubic-bezier(0.55, 0, 0.1, 1);
@@ -111,9 +108,9 @@
 }
 
 .liquid-btn:hover {
-  color: #ffffff !important;
+  color: #080B0E !important;
   border-color: var(--liquid-border) !important;
-  box-shadow: 0 10px 30px -8px rgba(230, 197, 117, 0.35);
+  box-shadow: 0 10px 30px -8px rgba(0, 245, 160, 0.35);
 }
 
 .liquid-btn:hover::before {
@@ -128,18 +125,25 @@
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
+.liquid-btn-primary {
+  --liquid-fill: #00F5A0;
+  --liquid-fill-sub: #0D4A42;
+  --liquid-border: #00F5A0;
+}
+
 .liquid-btn-teal {
   --liquid-fill: #39bda7;
-  --liquid-fill-sub: rgba(57, 189, 167, 0.7);
+  --liquid-fill-sub: #0D4A42;
   --liquid-border: #39bda7;
 }
 
-.liquid-btn-teal:hover {
-  box-shadow: 0 10px 30px -8px rgba(57, 189, 167, 0.45);
+.liquid-btn-wine {
+  --liquid-fill: #39bda7;
+  --liquid-fill-sub: #0D4A42;
+  --liquid-border: #39bda7;
 }
 
 .liquid-btn > * {
   position: relative;
   z-index: 2;
 }
-

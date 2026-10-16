@@ -28,7 +28,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#0C0708]/90 backdrop-blur-md border-b border-[#4A0514]/50 py-4 shadow-2xl'
+          ? 'bg-[#080B0E]/90 backdrop-blur-md border-b border-[#1E2B37] py-4 shadow-2xl'
           : 'bg-transparent py-6'
       }`}
     >
@@ -36,16 +36,16 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo with Brandemic vibe */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#800020] border border-[#E6C575]/60 flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105">
-              <div className="w-full h-full bg-[#0C0708] rounded-full flex items-center justify-center">
-                <span className="text-[#E6C575] font-black text-xl italic leading-none">w</span>
+            <div className="w-10 h-10 rounded-full bg-[#0D2A26] border border-[#00F5A0] flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105">
+              <div className="w-full h-full bg-[#080B0E] rounded-full flex items-center justify-center">
+                <span className="text-[#00F5A0] font-black text-xl italic leading-none">w</span>
               </div>
             </div>
             <div className="flex items-baseline">
-              <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#E6C575] transition-colors">
+              <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#00F5A0] transition-colors">
                 we Publicise
               </span>
-              <span className="w-2 h-2 rounded-full bg-[#E6C575] ml-1 animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#00F5A0] ml-1 animate-pulse"></span>
             </div>
           </Link>
 
@@ -68,7 +68,7 @@ const Navbar = () => {
                     {isActive && (
                       <motion.div
                         layoutId="activeNav"
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#E6C575] rounded-full"
+                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#00F5A0] rounded-full"
                       />
                     )}
                   </Link>
@@ -79,12 +79,12 @@ const Navbar = () => {
             <LiquidButton
               to="/contact"
               size="sm"
-              className="gap-2 border-[#E6C575]/40 bg-zinc-900/60 text-white group shadow-sm hover:shadow-[#E6C575]/20"
+              className="gap-2 border-[#00F5A0]/40 bg-[#0E141B] text-white group shadow-sm hover:border-[#00F5A0]"
             >
               <span>Get In Touch</span>
               <ArrowUpRight
                 size={15}
-                className="text-[#E6C575] group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                className="text-[#00F5A0] group-hover:text-black transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </LiquidButton>
           </div>
@@ -110,7 +110,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden bg-[#13070A] border-b border-[#4A0514]/50 px-6 py-6 shadow-2xl"
+            className="md:hidden bg-[#0E141B] border-b border-[#1E2B37] px-6 py-6 shadow-2xl"
           >
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
@@ -123,11 +123,11 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-zinc-800">
+              <div className="pt-4 border-t border-[#1E2B37]">
                 <LiquidButton
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full justify-center border-zinc-700/80 bg-zinc-900/60 text-white"
+                  className="w-full justify-center border-[#1E2B37] bg-[#141C24] text-white"
                 >
                   <span>Get In Touch</span>
                 </LiquidButton>

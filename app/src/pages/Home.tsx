@@ -28,7 +28,7 @@ const dynamicWords = [
   'Campaigns',
 ];
 
-// Interactive Accordion Services (Images 1 & 2)
+// Interactive Accordion Services (Digital Marketing, Web Dev, Software Product Engineering)
 const servicesData = [
   {
     num: '01.',
@@ -263,7 +263,7 @@ const brandemicTools = [
     bgColor: '#0C0C1E',
     textColor: '#FFFFFF',
     tag: 'UI/UX & Prototyping',
-    accentBorder: '#800020',
+    accentBorder: '#00F5A0',
     desc: 'Design systems, tokens, and micro-interaction wireframing.',
   },
   {
@@ -298,7 +298,7 @@ const brandemicTools = [
 // FAQ list
 const faqs = [
   {
-    q: 'Why should I get #BrandedByWePublicise?',
+    q: 'Why should I partner with we Publicise?',
     a: "Because we don't build generic cookie-cutter templates. We fuse behavioral design science, high-performance web engineering, and tactile brand storytelling to give you an unfair competitive advantage in your market.",
   },
   {
@@ -326,7 +326,7 @@ const studioMetrics = [
 const Home = () => {
   // Hero dynamic word rotation
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  // Expandable services state (Image 2 style)
+  // Expandable services state
   const [activeService, setActiveService] = useState<number | null>(1);
   // Video modal toggle
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -357,94 +357,75 @@ const Home = () => {
     restDelta: 0.001,
   });
 
-  // Parallax hook for Section 4 (Team / Ideas into Magic)
+  // Parallax hook for Team Section
   const teamSectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: teamScrollProgress } = useScroll({
+  const { scrollYProgress: teamProgress } = useScroll({
     target: teamSectionRef,
     offset: ['start end', 'end start'],
   });
+  const teamCardY = useTransform(teamProgress, [0, 1], [40, -40]);
+  const teamImageY = useTransform(teamProgress, [0, 1], [-25, 25]);
+  const teamImageScale = useTransform(teamProgress, [0, 1], [1.08, 1]);
 
-  // Image internal scroll parallax (moves up as you scroll past)
-  const teamImageY = useTransform(teamScrollProgress, [0, 1], ['-10%', '10%']);
-  const teamImageScale = useTransform(teamScrollProgress, [0, 0.5, 1], [1.14, 1.08, 1.14]);
-  const teamCardY = useTransform(teamScrollProgress, [0, 1], [30, -30]);
-
-  // Bottom "THINK LIMITLESS" kinetic typography parallax
+  // Grand Finale "Think Limitless" scroll expansion
   const limitlessRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress: limitlessScrollProgress } = useScroll({
+  const { scrollYProgress: limitlessProgress } = useScroll({
     target: limitlessRef,
-    offset: ['start end', 'end start'],
+    offset: ['start end', 'end end'],
   });
-  const limitlessLetterSpacing = useTransform(limitlessScrollProgress, [0, 1], ['-0.04em', '0.02em']);
+  const limitlessLetterSpacing = useTransform(limitlessProgress, [0, 1], ['-0.05em', '0.08em']);
 
-  // Live time ticker in Bangalore (IST)
-  useEffect(() => {
-    const updateTime = () => {
-      try {
-        const timeStr = new Intl.DateTimeFormat('en-US', {
-          timeZone: 'Asia/Kolkata',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        }).format(new Date());
-        setCurrentTime(`${timeStr} IST`);
-      } catch {
-        setCurrentTime('18:45:00 IST');
-      }
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Dynamic hero word rotation
+  // Rotate hero keywords
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentWordIndex((prev) => (prev + 1) % dynamicWords.length);
-    }, 2400);
+    }, 2800);
     return () => clearInterval(interval);
   }, []);
 
-  // Auto-cycle the 3D tool carousel every 3.2s
+  // Update live clock
   useEffect(() => {
-    const toolTimer = setInterval(() => {
-      setActiveToolIndex((prev) => (prev + 1) % brandemicTools.length);
-    }, 3200);
-    return () => clearInterval(toolTimer);
-  }, []);
-
-  // Auto-cycle testimonials every 7 seconds
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 7000);
+    const updateTime = () => {
+      const now = new Date();
+      setCurrentTime(
+        now.toLocaleTimeString('en-US', {
+          timeZone: 'Asia/Kolkata',
+          hour12: false,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        }) + ' IST'
+      );
+    };
+    updateTime();
+    const timer = setInterval(updateTime, 1000);
     return () => clearInterval(timer);
   }, []);
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  // Hero Card Mouse Tilt Calculator
+  // Card 3D tilt handlers
   const handleHeroCardMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    const rotateXValue = ((y - centerY) / centerY) * -8;
-    const rotateYValue = ((x - centerX) / centerX) * 8;
-    heroCardRotateX.set(rotateXValue);
-    heroCardRotateY.set(rotateYValue);
+    const rotX = ((y - centerY) / centerY) * -9;
+    const rotY = ((x - centerX) / centerX) * 9;
+    heroCardRotateX.set(rotX);
+    heroCardRotateY.set(rotY);
   };
 
   const handleHeroCardMouseLeave = () => {
     heroCardRotateX.set(0);
     heroCardRotateY.set(0);
+  };
+
+  // Testimonials navigation
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
   // Copy AI prompt to clipboard
@@ -456,19 +437,19 @@ const Home = () => {
   };
 
   return (
-    <PageWrapper className="pt-0 pb-0 bg-[#0C0708] text-white relative selection:bg-[#800020] selection:text-[#E6C575]">
-      {/* 1. Top scroll progress indicator bar - Solid Champagne Gold */}
+    <PageWrapper className="pt-0 pb-0 bg-[#080B0E] text-white relative selection:bg-[#00F5A0] selection:text-[#080B0E]">
+      {/* 1. Top scroll progress indicator bar - Solid Electric Mint */}
       <motion.div
         style={{ scaleX }}
-        className="fixed top-0 left-0 right-0 h-[3px] bg-[#E6C575] origin-left z-50 pointer-events-none"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-[#00F5A0] origin-left z-50 pointer-events-none"
       />
 
       {/* 2. Live Studio Telemetry Ribbon (Solid 2D) */}
-      <header className="pt-24 pb-2.5 px-6 sm:px-8 border-b border-[#38040F] text-[11px] font-mono tracking-widest uppercase text-zinc-400 bg-[#0C0708] relative z-20">
+      <header className="pt-24 pb-2.5 px-6 sm:px-8 border-b border-[#1E2B37] text-[11px] font-mono tracking-widest uppercase text-zinc-400 bg-[#080B0E] relative z-20">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#4A0514] text-[#E6C575] border border-[#800020]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E6C575] animate-ping" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0D2A26] text-[#00F5A0] border border-[#00F5A0]/50">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00F5A0] animate-ping" />
               <span>Studio Active</span>
             </span>
             <span className="text-zinc-600">|</span>
@@ -479,8 +460,8 @@ const Home = () => {
             <span className="hidden md:inline text-zinc-300 font-semibold">
               ✦ Sprints Booking Open for Q2 / Q3 2026
             </span>
-            <div className="flex items-center gap-2 text-[#E6C575] font-semibold">
-              <Globe size={13} className="text-[#E6C575]" />
+            <div className="flex items-center gap-2 text-[#00F5A0] font-semibold">
+              <Globe size={13} className="text-[#00F5A0]" />
               <span>NYC &bull; LDN &bull; BLR &bull; DXB</span>
             </div>
           </div>
@@ -488,9 +469,9 @@ const Home = () => {
       </header>
 
       {/* ========================================================================= */}
-      {/* 1. HERO: SOLID 2D ARCHITECTURAL LUXURY */}
+      {/* 1. HERO: MODERN TECH SLATE & ELECTRIC MINT */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[90vh] pt-16 pb-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center overflow-hidden bg-[#0C0708]">
+      <section className="relative min-h-[90vh] pt-16 pb-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center overflow-hidden bg-[#080B0E]">
         <div className="max-w-6xl mx-auto w-full relative z-10">
           {/* Top Status Capsule */}
           <motion.div
@@ -499,15 +480,15 @@ const Home = () => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#18070B] border border-[#4A0514]">
-              <Sparkles size={14} className="text-[#E6C575]" />
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0E141B] border border-[#1E2B37]">
+              <Sparkles size={14} className="text-[#00F5A0]" />
+              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold">
                 World-Class Digital Perception & Software Craft
               </span>
             </div>
           </motion.div>
 
-          {/* Master Display Headline (Solid Colors) */}
+          {/* Master Display Headline (Solid High-Contrast) */}
           <div className="text-left mb-12 max-w-5xl">
             <motion.h1
               initial={{ opacity: 0, y: 35 }}
@@ -526,7 +507,7 @@ const Home = () => {
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -30, opacity: 0 }}
                     transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    className="inline-block text-[#E6C575] italic font-serif pr-3"
+                    className="inline-block text-[#00F5A0] italic font-serif pr-3"
                   >
                     {dynamicWords[currentWordIndex]}
                   </motion.span>
@@ -557,15 +538,15 @@ const Home = () => {
               transformStyle: 'preserve-3d',
               perspective: 1200,
             }}
-            className="relative mx-auto rounded-3xl overflow-visible border-2 border-[#4A0514] bg-[#18070B] group cursor-pointer"
+            className="relative mx-auto rounded-3xl overflow-visible border-2 border-[#1E2B37] bg-[#0E141B] group cursor-pointer"
           >
             {/* Floating 2.5D Solid Stickers */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -left-6 -top-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#0C0708] border border-[#800020] z-30 pointer-events-none"
+              className="hidden md:flex absolute -left-6 -top-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#080B0E] border border-[#1E2B37] z-30 pointer-events-none"
             >
-              <Zap size={14} className="text-[#E6C575]" />
+              <Zap size={14} className="text-[#00F5A0]" />
               <span className="text-xs font-mono font-bold text-white tracking-wider">
                 60fps Interactive Motion
               </span>
@@ -574,16 +555,16 @@ const Home = () => {
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#0C0708] border border-[#800020] z-30 pointer-events-none"
+              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#080B0E] border border-[#1E2B37] z-30 pointer-events-none"
             >
-              <Code2 size={14} className="text-[#E6C575]" />
+              <Code2 size={14} className="text-[#00F5A0]" />
               <span className="text-xs font-mono font-bold text-white tracking-wider">
                 Next.js &bull; Framer &bull; Vite
               </span>
             </motion.div>
 
             {/* Showcase Video Canvas */}
-            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-3xl overflow-hidden flex items-center justify-center bg-[#0C0708]">
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-3xl overflow-hidden flex items-center justify-center bg-[#080B0E]">
               <img
                 src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1800&q=80"
                 alt="Creative 2D Studio Showcase"
@@ -594,15 +575,15 @@ const Home = () => {
                 <motion.div
                   animate={{ y: [0, -6, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                  className="mb-5 p-5 rounded-2xl bg-[#4A0514] border-2 border-[#800020] max-w-md w-full"
+                  className="mb-5 p-5 rounded-2xl bg-[#0E141B] border-2 border-[#1E2B37] max-w-md w-full"
                 >
-                  <div className="flex items-center justify-between border-b border-[#800020] pb-3 mb-3">
+                  <div className="flex items-center justify-between border-b border-[#1E2B37] pb-3 mb-3">
                     <div className="flex gap-2">
-                      <span className="w-3 h-3 rounded-full bg-[#E6C575]" />
-                      <span className="w-3 h-3 rounded-full bg-[#800020]" />
-                      <span className="w-3 h-3 rounded-full bg-[#0C0708]" />
+                      <span className="w-3 h-3 rounded-full bg-[#00F5A0]" />
+                      <span className="w-3 h-3 rounded-full bg-[#39bda7]" />
+                      <span className="w-3 h-3 rounded-full bg-[#1E2B37]" />
                     </div>
-                    <span className="text-xs uppercase tracking-widest text-[#E6C575] font-mono font-bold">
+                    <span className="text-xs uppercase tracking-widest text-[#00F5A0] font-mono font-bold">
                       we Publicise :: Showreel
                     </span>
                   </div>
@@ -617,17 +598,17 @@ const Home = () => {
                     whileHover={{ scale: 1.12 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsVideoModalOpen(true)}
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#800020] border-2 border-[#E6C575] flex items-center justify-center cursor-pointer relative z-10"
+                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#00F5A0] border-2 border-[#00F5A0] flex items-center justify-center cursor-pointer relative z-10 shadow-xl"
                     aria-label="Play Reel"
                   >
                     <Play
                       size={32}
-                      className="text-[#E6C575] ml-1 fill-[#E6C575]"
+                      className="text-[#080B0E] ml-1 fill-[#080B0E]"
                     />
                   </motion.button>
                 </div>
                 <span className="mt-4 text-xs tracking-widest uppercase text-white font-mono font-bold flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#E6C575] animate-ping" />
+                  <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-ping" />
                   Watch Agency Showreel
                 </span>
               </div>
@@ -639,7 +620,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 2. PROVEN METRICS TICKER STRIP (Solid 2D) */}
       {/* ========================================================================= */}
-      <section className="py-12 px-6 sm:px-8 border-y border-[#38040F] bg-[#13070A] relative z-10">
+      <section className="py-12 px-6 sm:px-8 border-y border-[#1E2B37] bg-[#0E141B] relative z-10">
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
           {studioMetrics.map((metric, idx) => (
             <motion.div
@@ -648,9 +629,9 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="space-y-1.5 text-center sm:text-left border-l-2 border-[#800020] pl-6"
+              className="space-y-1.5 text-center sm:text-left border-l-2 border-[#00F5A0] pl-6"
             >
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#E6C575]">
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#00F5A0]">
                 {metric.value}
               </div>
               <p className="text-xs sm:text-sm font-bold text-white">{metric.label}</p>
@@ -661,11 +642,11 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. ACCORDION SERVICES: UNIFORM SOLID BURGUNDY CARDS & WHITE EXPANDING HAIRLINE */}
+      {/* 3. ACCORDION SERVICES: UNIFORM SOLID DEEP TEAL CARDS & WHITE EXPANDING HAIRLINE */}
       {/* ========================================================================= */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-[#0C0708]">
+      <section className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-[#080B0E]">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-[#38040F]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-[#1E2B37]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -673,13 +654,13 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="max-w-2xl"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold block mb-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-2">
                 Core Capabilities & Architecture
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 Back To The Simple,{' '}
                 <br />
-                <span className="italic text-[#E6C575]">
+                <span className="italic text-[#00F5A0]">
                   Intuitive And Inspiring.
                 </span>
               </h2>
@@ -696,10 +677,10 @@ const Home = () => {
             >
               <LiquidButton
                 to="/contact"
-                className="gap-3 border-[#E6C575] bg-[#800020] text-sm uppercase tracking-wider font-semibold text-white group"
+                className="gap-3 border-[#00F5A0] bg-[#00F5A0] text-sm uppercase tracking-wider font-bold text-[#080B0E] group hover:text-[#080B0E]"
               >
                 <span>Let's Collaborate</span>
-                <ArrowRight size={16} className="text-[#E6C575] group-hover:text-white transition-colors" />
+                <ArrowRight size={16} className="text-[#080B0E] group-hover:translate-x-1 transition-transform" />
               </LiquidButton>
             </motion.div>
           </div>
@@ -718,8 +699,8 @@ const Home = () => {
                   onMouseEnter={() => setActiveService(index)}
                   className={`rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border-2 ${
                     isExpanded
-                      ? 'bg-[#4A0514] border-[#E6C575]'
-                      : 'bg-[#18070B] border-[#38040F] hover:border-[#800020]'
+                      ? 'bg-[#0D2A26] border-[#00F5A0]'
+                      : 'bg-[#0E141B] border-[#1E2B37] hover:border-[#39bda7]'
                   }`}
                 >
                   <div className="p-6 sm:p-8">
@@ -727,10 +708,10 @@ const Home = () => {
                     <div className="flex items-center justify-between">
                       <div className="space-y-1">
                         <div className="flex items-center gap-3">
-                          <span className="text-xs sm:text-sm font-mono tracking-widest text-[#E6C575] font-bold">
+                          <span className="text-xs sm:text-sm font-mono tracking-widest text-[#00F5A0] font-bold">
                             {service.num}
                           </span>
-                          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-[#0C0708] text-[#E6C575] border border-[#800020]">
+                          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-[#080B0E] text-[#00F5A0] border border-[#00F5A0]/40">
                             {service.metrics}
                           </span>
                         </div>
@@ -771,7 +752,7 @@ const Home = () => {
                       <div className="overflow-hidden">
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-2">
                           <div className="md:col-span-7 space-y-5">
-                            <span className="text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#0C0708] text-[#E6C575] border border-[#800020]">
+                            <span className="text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#080B0E] text-[#00F5A0] border border-[#00F5A0]/40">
                               {service.tag}
                             </span>
                             <p className="text-zinc-200 text-base sm:text-lg leading-relaxed font-normal">
@@ -783,7 +764,7 @@ const Home = () => {
                               {service.deliverables.map((item, dIdx) => (
                                 <span
                                   key={dIdx}
-                                  className="text-xs px-3 py-1 rounded-lg bg-[#0C0708] border border-[#38040F] text-zinc-300 font-mono"
+                                  className="text-xs px-3 py-1 rounded-lg bg-[#080B0E] border border-[#1E2B37] text-zinc-300 font-mono"
                                 >
                                   ✦ {item}
                                 </span>
@@ -795,7 +776,7 @@ const Home = () => {
                                 to="/services"
                                 onClick={(e) => e.stopPropagation()}
                                 size="sm"
-                                className="gap-2 bg-[#0C0708] border-[#E6C575] text-[#E6C575] text-xs uppercase tracking-widest font-bold"
+                                className="gap-2 bg-[#080B0E] border-[#00F5A0] text-[#00F5A0] text-xs uppercase tracking-widest font-bold hover:text-[#080B0E]"
                               >
                                 <span>Learn More</span>
                                 <ArrowUpRight size={14} />
@@ -804,13 +785,13 @@ const Home = () => {
                           </div>
 
                           <div className="md:col-span-5 flex justify-center md:justify-end">
-                            <div className="relative w-full max-w-[320px] aspect-[4/3] rounded-2xl overflow-hidden border-2 border-[#800020]">
+                            <div className="relative w-full max-w-[320px] aspect-[4/3] rounded-2xl overflow-hidden border-2 border-[#1E2B37]">
                               <img
                                 src={service.image}
                                 alt={service.title}
                                 className="w-full h-full object-cover"
                               />
-                              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-md bg-[#0C0708] border border-[#800020] text-[11px] font-mono text-[#E6C575]">
+                              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-md bg-[#080B0E] border border-[#00F5A0]/50 text-[11px] font-mono text-[#00F5A0]">
                                 Verified Architecture
                               </div>
                             </div>
@@ -829,7 +810,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 4. FEATURED WORK: SOLID 2D TRAIN TRACK */}
       {/* ========================================================================= */}
-      <section className="py-28 bg-[#0C0708] relative overflow-hidden border-t border-[#38040F]">
+      <section className="py-28 bg-[#080B0E] relative overflow-hidden border-t border-[#1E2B37]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-14">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <motion.div
@@ -838,7 +819,7 @@ const Home = () => {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold block mb-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-2">
                 Selected Client Work
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-3">
@@ -851,10 +832,10 @@ const Home = () => {
             <LiquidButton
               to="/services"
               size="sm"
-              className="gap-2 border-[#E6C575] bg-[#800020] text-white text-xs uppercase tracking-widest font-semibold w-fit group"
+              className="gap-2 border-[#00F5A0] bg-[#0E141B] text-white hover:border-[#00F5A0] text-xs uppercase tracking-widest font-bold w-fit group"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#E6C575] group-hover:text-white transition-colors" />
+              <ArrowRight size={14} className="text-[#00F5A0] group-hover:text-black transition-colors" />
             </LiquidButton>
           </div>
         </div>
@@ -874,37 +855,37 @@ const Home = () => {
               <div
                 key={`${work.id}-${idx}`}
                 onClick={() => setSelectedProject(work)}
-                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[480px] sm:h-[560px] rounded-3xl overflow-hidden bg-[#18070B] border-2 border-[#38040F] hover:border-[#E6C575] transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[480px] sm:h-[560px] rounded-3xl overflow-hidden bg-[#0E141B] border-2 border-[#1E2B37] hover:border-[#00F5A0] transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
                 {/* Image Section */}
-                <div className="relative h-[68%] w-full overflow-hidden bg-[#0C0708]">
+                <div className="relative h-[68%] w-full overflow-hidden bg-[#080B0E]">
                   <img
                     src={work.image}
                     alt={work.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <span className="text-[11px] uppercase font-mono tracking-wider px-3 py-1 rounded-full bg-[#0C0708] text-white border border-[#38040F]">
+                    <span className="text-[11px] uppercase font-mono tracking-wider px-3 py-1 rounded-full bg-[#080B0E] text-white border border-[#1E2B37]">
                       {work.badge}
                     </span>
-                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#4A0514] text-[#E6C575] border border-[#800020]">
+                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#0D2A26] text-[#00F5A0] border border-[#00F5A0]/40">
                       {work.result}
                     </span>
                   </div>
                 </div>
 
                 {/* Solid 2D Bottom Panel */}
-                <div className="p-6 sm:p-7 bg-[#18070B] border-t border-[#38040F] flex-1 flex flex-col justify-between">
+                <div className="p-6 sm:p-7 bg-[#0E141B] border-t border-[#1E2B37] flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="text-xs font-mono text-[#E6C575] font-bold mb-1">{work.year} &bull; Case Study</div>
-                    <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#E6C575] transition-colors mb-1">
+                    <div className="text-xs font-mono text-[#00F5A0] font-bold mb-1">{work.year} &bull; Case Study</div>
+                    <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#00F5A0] transition-colors mb-1">
                       {work.title}
                     </h4>
                     <p className="text-sm text-zinc-300 font-medium">{work.category}</p>
                   </div>
                   <div className="flex items-center justify-between pt-2">
                     <span className="text-xs font-mono text-zinc-400">Click to inspect</span>
-                    <ArrowUpRight size={18} className="text-[#E6C575]" />
+                    <ArrowUpRight size={18} className="text-[#00F5A0]" />
                   </div>
                 </div>
               </div>
@@ -918,7 +899,7 @@ const Home = () => {
       {/* ========================================================================= */}
       <section
         ref={teamSectionRef}
-        className="py-32 px-6 sm:px-8 lg:px-12 bg-[#0E0507] relative overflow-hidden border-t border-[#38040F]"
+        className="py-32 px-6 sm:px-8 lg:px-12 bg-[#080B0E] relative overflow-hidden border-t border-[#1E2B37]"
       >
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
@@ -928,13 +909,13 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="mb-14"
           >
-            <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold block mb-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-3">
               The Collective Mind
             </span>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3">
               We Are Your Design Partners In Turning{' '}
               <br />
-              <span className="italic text-[#E6C575]">
+              <span className="italic text-[#00F5A0]">
                 Ideas Into Magic
               </span>
             </h2>
@@ -943,7 +924,7 @@ const Home = () => {
           {/* Parallax Card Container with Solid 2D Architecture */}
           <motion.div
             style={{ y: teamCardY }}
-            className="relative rounded-3xl overflow-hidden border-2 border-[#800020] bg-[#18070B] max-w-4xl mx-auto mb-12 aspect-[16/10]"
+            className="relative rounded-3xl overflow-hidden border-2 border-[#1E2B37] bg-[#0E141B] max-w-4xl mx-auto mb-12 aspect-[16/10]"
           >
             <motion.img
               style={{ y: teamImageY, scale: teamImageScale }}
@@ -953,13 +934,13 @@ const Home = () => {
             />
 
             {/* Solid Card Info Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-[#0C0708] border-t border-[#800020] flex items-center justify-between text-left z-10">
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-[#080B0E] border-t border-[#1E2B37] flex items-center justify-between text-left z-10">
               <div>
                 <p className="text-lg font-bold text-white">The Creators at we Publicise</p>
                 <p className="text-xs text-zinc-300">Bengaluru &bull; Worldwide Delivery</p>
               </div>
-              <div className="flex items-center gap-2 bg-[#800020] px-4 py-2 rounded-full border border-[#E6C575]">
-                <Sparkles size={14} className="text-[#E6C575]" />
+              <div className="flex items-center gap-2 bg-[#0D2A26] px-4 py-2 rounded-full border border-[#00F5A0]">
+                <Sparkles size={14} className="text-[#00F5A0]" />
                 <span className="text-xs font-bold text-white">100+ Projects Done</span>
               </div>
             </div>
@@ -967,10 +948,10 @@ const Home = () => {
 
           <LiquidButton
             to="/about"
-            className="gap-3 border-[#E6C575] bg-[#800020] text-sm uppercase tracking-wider font-semibold text-white group"
+            className="gap-3 border-[#00F5A0] bg-[#00F5A0] text-sm uppercase tracking-wider font-bold text-[#080B0E] group hover:text-[#080B0E]"
           >
             <span>Get To Know Us</span>
-            <ArrowRight size={16} className="text-[#E6C575] group-hover:text-white transition-colors" />
+            <ArrowRight size={16} className="text-[#080B0E] group-hover:translate-x-1 transition-transform" />
           </LiquidButton>
         </div>
       </section>
@@ -978,7 +959,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 6. BEHAVIOR-DRIVEN DESIGN PHILOSOPHY & TRUSTED CLIENT LOGOS (72% Container) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#38040F]">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#080B0E] relative border-t border-[#1E2B37]">
         <div className="max-w-5xl mx-auto text-center relative z-10 mb-20">
           <div className="relative inline-block max-w-3xl">
             <motion.h3
@@ -989,10 +970,10 @@ const Home = () => {
               className="text-2xl sm:text-4xl font-semibold text-white leading-relaxed mb-8"
             >
               Our Work Isn't Just Aesthetically Pleasing, It's{' '}
-              <span className="text-[#E6C575] font-bold">Behavior-Driven</span>. We Believe What
+              <span className="text-[#00F5A0] font-bold">Behavior-Driven</span>. We Believe What
               Separates A Good Design From A Great One Is Its Ability To Solve Problems. We Try To
               Design-Think Through Everything We Do At{' '}
-              <span className="text-white underline decoration-[#E6C575] decoration-2 underline-offset-4 font-bold">
+              <span className="text-white underline decoration-[#00F5A0] decoration-2 underline-offset-4 font-bold">
                 we Publicise
               </span>
               .
@@ -1000,18 +981,18 @@ const Home = () => {
 
             <LiquidButton
               to="/services"
-              className="gap-2 border-[#E6C575] bg-[#800020] text-xs uppercase tracking-widest font-bold text-white group"
+              className="gap-2 border-[#00F5A0] bg-[#0E141B] text-xs uppercase tracking-widest font-bold text-white group hover:border-[#00F5A0]"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#E6C575] group-hover:text-white transition-colors" />
+              <ArrowRight size={14} className="text-[#00F5A0] group-hover:text-black transition-colors" />
             </LiquidButton>
           </div>
         </div>
 
         {/* OUR TRUSTED PARTNERS: Continuous right-to-left logo carousel in a 72% container */}
-        <div className="w-full pt-16 border-t border-[#38040F]">
+        <div className="w-full pt-16 border-t border-[#1E2B37]">
           <div className="text-center mb-10">
-            <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold block mb-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-3">
               Our Trusted Partners
             </span>
             <h3 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -1020,7 +1001,7 @@ const Home = () => {
           </div>
 
           {/* 72% Optimal Width Container as Requested */}
-          <div className="w-[92%] sm:w-[85%] lg:w-[72%] max-w-5xl mx-auto relative overflow-hidden py-4 group/marquee border-y border-[#38040F]">
+          <div className="w-[92%] sm:w-[85%] lg:w-[72%] max-w-5xl mx-auto relative overflow-hidden py-4 group/marquee border-y border-[#1E2B37]">
             <motion.div
               animate={{ x: ['0%', '-50%'] }}
               transition={{
@@ -1033,7 +1014,7 @@ const Home = () => {
               {[...ourClients, ...ourClients].map((client, idx) => (
                 <div
                   key={`${client.name}-${idx}`}
-                  className="bg-white rounded-2xl px-7 py-4 flex items-center justify-center min-w-[190px] sm:min-w-[220px] h-[82px] border-2 border-white flex-shrink-0 group hover:border-[#E6C575] transition-all duration-300 hover:-translate-y-1"
+                  className="bg-white rounded-2xl px-7 py-4 flex items-center justify-center min-w-[190px] sm:min-w-[220px] h-[82px] border-2 border-white flex-shrink-0 group hover:border-[#00F5A0] transition-all duration-300 hover:-translate-y-1"
                 >
                   <img
                     src={client.logo}
@@ -1057,7 +1038,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 7. TESTIMONIALS: SOLID 2D LUXURY CAROUSEL */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#13070A] relative overflow-hidden border-t border-[#38040F]">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0E141B] relative overflow-hidden border-t border-[#1E2B37]">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1066,7 +1047,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-xs uppercase tracking-widest text-[#E6C575] font-mono font-bold block mb-2">
+            <span className="text-xs uppercase tracking-widest text-[#00F5A0] font-mono font-bold block mb-2">
               Verified Client Outcomes
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -1082,13 +1063,13 @@ const Home = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.35 }}
-                className="bg-[#18070B] border-2 border-[#4A0514] rounded-3xl p-8 sm:p-14 relative overflow-hidden"
+                className="bg-[#141C24] border-2 border-[#1E2B37] rounded-3xl p-8 sm:p-14 relative overflow-hidden"
               >
                 <div className="flex items-center gap-2 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[#E6C575] text-base">★</span>
+                    <span key={i} className="text-[#00F5A0] text-base">★</span>
                   ))}
-                  <span className="text-xs font-mono text-[#E6C575] font-bold ml-2">
+                  <span className="text-xs font-mono text-[#00F5A0] font-bold ml-2">
                     {testimonials[currentTestimonial].score} &bull; {testimonials[currentTestimonial].metric}
                   </span>
                 </div>
@@ -1097,9 +1078,9 @@ const Home = () => {
                   "{testimonials[currentTestimonial].quote}"
                 </p>
 
-                <div className="flex items-center justify-between pt-6 border-t border-[#38040F] relative z-10">
+                <div className="flex items-center justify-between pt-6 border-t border-[#1E2B37] relative z-10">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#800020] border border-[#E6C575] flex items-center justify-center font-bold text-[#E6C575]">
+                    <div className="w-12 h-12 rounded-xl bg-[#0D2A26] border border-[#00F5A0] flex items-center justify-center font-bold text-[#00F5A0]">
                       {testimonials[currentTestimonial].company.substring(0, 2)}
                     </div>
                     <div>
@@ -1116,14 +1097,14 @@ const Home = () => {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={prevTestimonial}
-                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#E6C575] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#00F5A0] bg-[#080B0E] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
                       aria-label="Previous Testimonial"
                     >
                       <ChevronLeft size={20} />
                     </button>
                     <button
                       onClick={nextTestimonial}
-                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#E6C575] bg-[#0C0708] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#00F5A0] bg-[#080B0E] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
                       aria-label="Next Testimonial"
                     >
                       <ChevronRight size={20} />
@@ -1139,7 +1120,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 8. TOOLS & 3D FAN PERSPECTIVE CAROUSEL (Solid 2D) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 bg-[#0C0708] relative overflow-hidden border-t border-[#38040F]">
+      <section className="py-28 px-6 sm:px-8 bg-[#080B0E] relative overflow-hidden border-t border-[#1E2B37]">
         <div className="max-w-6xl mx-auto mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <motion.div
@@ -1149,13 +1130,13 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5 space-y-5"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#E6C575] animate-pulse" />
+              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-pulse" />
                 Empowering Creativity
               </span>
               <h3 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
                 Empowering Creativity With The{' '}
-                <span className="italic text-[#E6C575]">
+                <span className="italic text-[#00F5A0]">
                   Right Tools
                 </span>
               </h3>
@@ -1173,7 +1154,7 @@ const Home = () => {
                     onClick={() => setActiveToolIndex(i)}
                     className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                       activeToolIndex === i
-                        ? 'w-10 bg-[#E6C575]'
+                        ? 'w-10 bg-[#00F5A0]'
                         : 'w-2.5 bg-zinc-700 hover:bg-zinc-500'
                     }`}
                     aria-label={`View tool ${tool.name}`}
@@ -1267,8 +1248,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Infinite Kinetic Marquee Bar (Solid Burgundy Banner) */}
-        <div className="relative py-6 bg-[#800020] border-y-2 border-[#E6C575] overflow-hidden select-none -mx-8">
+        {/* Infinite Kinetic Marquee Bar (Solid Electric Mint Banner) */}
+        <div className="relative py-6 bg-[#0D2A26] border-y-2 border-[#00F5A0] overflow-hidden select-none -mx-8">
           <motion.div
             animate={{ x: ['0%', '-50%'] }}
             transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
@@ -1277,27 +1258,27 @@ const Home = () => {
             {[...Array(6)].map((_, i) => (
               <div key={i} className="flex items-center gap-12">
                 <span>Collaborate With we Publicise</span>
-                <span className="text-[#E6C575]">✦</span>
+                <span className="text-[#00F5A0]">✦</span>
                 <span>Turning Ideas Into Magic</span>
-                <span className="text-[#E6C575]">✦</span>
+                <span className="text-[#00F5A0]">✦</span>
                 <span>Limitless Possibilities</span>
-                <span className="text-[#E6C575]">✦</span>
+                <span className="text-[#00F5A0]">✦</span>
               </div>
             ))}
           </motion.div>
         </div>
 
-        {/* Culture CTA Card: Solid Burgundy Container */}
+        {/* Culture CTA Card: Solid Tech Slate Container */}
         <div className="max-w-6xl mx-auto mt-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-[#4A0514] p-8 sm:p-14 border-2 border-[#E6C575] flex flex-col md:flex-row items-center justify-between gap-8"
+            className="rounded-3xl bg-[#0D2A26] p-8 sm:p-14 border-2 border-[#00F5A0] flex flex-col md:flex-row items-center justify-between gap-8"
           >
             <div className="space-y-3 max-w-xl">
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold">
                 Work With The Best PR & Branding Agency
               </span>
               <h3 className="text-3xl sm:text-4xl font-bold text-white">
@@ -1311,7 +1292,7 @@ const Home = () => {
 
             <LiquidButton
               to="/contact"
-              className="bg-[#0C0708] border-[#E6C575] text-[#E6C575] font-bold text-xs uppercase tracking-widest whitespace-nowrap"
+              className="bg-[#00F5A0] border-[#00F5A0] text-[#080B0E] font-bold text-xs uppercase tracking-widest whitespace-nowrap hover:text-[#080B0E]"
             >
               <span>Show Us What You Got</span>
             </LiquidButton>
@@ -1322,7 +1303,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 9. FREQUENTLY ASKED QUESTIONS (Solid 2D) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0C0708] relative border-t border-[#38040F]">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#080B0E] relative border-t border-[#1E2B37]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <motion.div
@@ -1332,12 +1313,12 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5 space-y-4"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#E6C575] font-bold">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold">
                 Frequently Asked Questions
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
                 Get Answers To Your Vision{' '}
-                <span className="text-[#E6C575]">
+                <span className="text-[#00F5A0]">
                   Or Our Services
                 </span>
               </h2>
@@ -1348,14 +1329,14 @@ const Home = () => {
               <div className="pt-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 text-sm text-[#E6C575] hover:text-white font-bold transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-[#00F5A0] hover:text-white font-bold transition-colors"
                 >
                   <span>Have a custom question? Speak with our team &rarr;</span>
                 </Link>
               </div>
             </motion.div>
 
-            <div className="lg:col-span-7 divide-y divide-[#38040F]">
+            <div className="lg:col-span-7 divide-y divide-[#1E2B37]">
               {faqs.map((faq, index) => {
                 const isOpen = openFaq === index;
                 return (
@@ -1371,10 +1352,10 @@ const Home = () => {
                       onClick={() => setOpenFaq(isOpen ? null : index)}
                       className="w-full flex items-center justify-between text-left group cursor-pointer"
                     >
-                      <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#E6C575] transition-colors pr-6">
+                      <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#00F5A0] transition-colors pr-6">
                         {faq.q}
                       </span>
-                      <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-[#E6C575] transition-colors flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-[#00F5A0] transition-colors flex-shrink-0">
                         {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                       </div>
                     </button>
@@ -1405,16 +1386,16 @@ const Home = () => {
       {/* ========================================================================= */}
       <section
         ref={limitlessRef}
-        className="pt-24 pb-12 px-6 sm:px-8 lg:px-12 bg-[#080405] border-t border-[#38040F] relative overflow-hidden"
+        className="pt-24 pb-12 px-6 sm:px-8 lg:px-12 bg-[#06080B] border-t border-[#1E2B37] relative overflow-hidden"
       >
         <div className="max-w-6xl mx-auto">
           {/* Top Row: Brand & Ask AI */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-16">
             <div>
               <Link to="/" className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#800020] border border-[#E6C575] flex items-center justify-center p-[2px]">
-                  <div className="w-full h-full bg-[#0C0708] rounded-full flex items-center justify-center">
-                    <span className="text-[#E6C575] font-black text-xl italic">w</span>
+                <div className="w-10 h-10 rounded-full bg-[#0D2A26] border border-[#00F5A0] flex items-center justify-center p-[2px]">
+                  <div className="w-full h-full bg-[#080B0E] rounded-full flex items-center justify-center">
+                    <span className="text-[#00F5A0] font-black text-xl italic">w</span>
                   </div>
                 </div>
                 <span className="text-2xl font-bold tracking-tight text-white">
@@ -1432,8 +1413,8 @@ const Home = () => {
 
             {/* "Ask AI About we Publicise" */}
             <div className="space-y-3 sm:text-right">
-              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#E6C575] font-bold">
-                <span className="w-2 h-2 rounded-full bg-[#E6C575] animate-pulse" />
+              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#00F5A0] font-bold">
+                <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-pulse" />
                 <span>Ask AI About we Publicise</span>
               </div>
               <div className="flex items-center gap-2">
@@ -1442,14 +1423,14 @@ const Home = () => {
                     key={ai}
                     onClick={() => handleCopyPrompt(ai)}
                     title={`Click to copy prompt for ${ai}`}
-                    className="w-9 h-9 rounded-xl bg-[#18070B] border border-[#38040F] hover:border-[#E6C575] flex items-center justify-center text-zinc-300 hover:text-white text-xs font-mono transition-colors cursor-pointer"
+                    className="w-9 h-9 rounded-xl bg-[#0E141B] border border-[#1E2B37] hover:border-[#00F5A0] flex items-center justify-center text-zinc-300 hover:text-white text-xs font-mono transition-colors cursor-pointer"
                   >
                     <Bot size={16} />
                   </button>
                 ))}
               </div>
               {copiedPrompt && (
-                <div className="text-xs text-[#E6C575] font-mono">
+                <div className="text-xs text-[#00F5A0] font-mono">
                   ✓ {copiedPrompt}
                 </div>
               )}
@@ -1457,41 +1438,41 @@ const Home = () => {
           </div>
 
           {/* Email & Connect Today */}
-          <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-zinc-400 mb-8 border-b border-[#38040F] pb-4">
+          <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-zinc-400 mb-8 border-b border-[#1E2B37] pb-4">
             <a href="mailto:info@wepublicise.com" className="hover:text-white transition-colors font-bold">
               info@wepublicise.com
             </a>
-            <Link to="/contact" className="text-[#E6C575] hover:text-white transition-colors flex items-center gap-1 font-bold">
+            <Link to="/contact" className="text-[#00F5A0] hover:text-white transition-colors flex items-center gap-1 font-bold">
               <span>Connect Today</span>
               <span>&rarr;</span>
             </Link>
           </div>
 
-          {/* Giant "THINK LIMITLESS" Typography (Solid 2D Burgundy & Outline) */}
+          {/* Giant "THINK LIMITLESS" Typography (Solid High-Tech Titanium Slate) */}
           <div className="w-full overflow-hidden select-none my-6">
             <motion.h1
               style={{
                 letterSpacing: limitlessLetterSpacing,
               }}
-              className="text-5xl sm:text-7xl md:text-9xl lg:text-[145px] font-black tracking-tighter uppercase text-center text-[#800020] leading-none"
+              className="text-5xl sm:text-7xl md:text-9xl lg:text-[145px] font-black tracking-tighter uppercase text-center text-[#182632] hover:text-[#00F5A0] transition-colors duration-700 leading-none cursor-default"
             >
               Think Limitless
             </motion.h1>
           </div>
 
           {/* Bottom Bar: Social Icons & Credits */}
-          <div className="pt-8 border-t border-[#38040F] flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
+          <div className="pt-8 border-t border-[#1E2B37] flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
             <p>&copy; {new Date().getFullYear()} we Publicise. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-5 text-zinc-300 font-mono text-xs">
-              <a href="#" className="hover:text-[#E6C575] transition-colors">Instagram</a>
-              <a href="#" className="hover:text-[#E6C575] transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-[#E6C575] transition-colors">YouTube</a>
-              <a href="#" className="hover:text-[#E6C575] transition-colors">X (Twitter)</a>
-              <a href="#" className="hover:text-[#E6C575] transition-colors">Behance</a>
+              <a href="#" className="hover:text-[#00F5A0] transition-colors">Instagram</a>
+              <a href="#" className="hover:text-[#00F5A0] transition-colors">LinkedIn</a>
+              <a href="#" className="hover:text-[#00F5A0] transition-colors">YouTube</a>
+              <a href="#" className="hover:text-[#00F5A0] transition-colors">X (Twitter)</a>
+              <a href="#" className="hover:text-[#00F5A0] transition-colors">Behance</a>
             </div>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#18070B] border border-[#38040F] hover:border-[#E6C575] text-zinc-300 hover:text-white transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0E141B] border border-[#1E2B37] hover:border-[#00F5A0] text-zinc-300 hover:text-white transition-colors cursor-pointer"
             >
               <ArrowUp size={12} />
               <span>Back To Top</span>
@@ -1509,7 +1490,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#0C0708]/90 flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 bg-[#080B0E]/90 flex items-center justify-center p-6"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -1518,9 +1499,9 @@ const Home = () => {
               exit={{ scale: 0.94, opacity: 0, y: 15 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#18070B] border-2 border-[#800020] rounded-3xl max-w-2xl w-full overflow-hidden relative"
+              className="bg-[#0E141B] border-2 border-[#00F5A0] rounded-3xl max-w-2xl w-full overflow-hidden relative"
             >
-              <div className="relative aspect-video w-full overflow-hidden bg-[#0C0708]">
+              <div className="relative aspect-video w-full overflow-hidden bg-[#080B0E]">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
@@ -1528,7 +1509,7 @@ const Home = () => {
                 />
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#0C0708] border border-white/20 text-white flex items-center justify-center hover:bg-[#800020] transition-colors cursor-pointer"
+                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#080B0E] border border-white/20 text-white flex items-center justify-center hover:bg-[#00F5A0] hover:text-black transition-colors cursor-pointer"
                 >
                   ✕
                 </button>
@@ -1536,10 +1517,10 @@ const Home = () => {
 
               <div className="p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#4A0514] text-[#E6C575] border border-[#800020]">
+                  <span className="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#0D2A26] text-[#00F5A0] border border-[#00F5A0]/50">
                     {selectedProject.badge} &bull; {selectedProject.year}
                   </span>
-                  <span className="text-xs font-mono text-[#E6C575] font-bold">
+                  <span className="text-xs font-mono text-[#00F5A0] font-bold">
                     {selectedProject.result}
                   </span>
                 </div>
@@ -1554,12 +1535,12 @@ const Home = () => {
                   {selectedProject.summary}
                 </p>
 
-                <div className="pt-4 flex items-center justify-between border-t border-[#38040F]">
+                <div className="pt-4 flex items-center justify-between border-t border-[#1E2B37]">
                   <LiquidButton
                     to="/contact"
                     onClick={() => setSelectedProject(null)}
                     size="sm"
-                    className="gap-2 bg-[#800020] border-[#E6C575] text-white"
+                    className="gap-2 bg-[#00F5A0] border-[#00F5A0] text-[#080B0E] font-bold hover:text-[#080B0E]"
                   >
                     <span>Request Similar Case Study</span>
                     <ArrowRight size={14} />
@@ -1586,7 +1567,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#0C0708]/90 flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 bg-[#080B0E]/90 flex items-center justify-center p-6"
             onClick={() => setIsVideoModalOpen(false)}
           >
             <motion.div
@@ -1594,7 +1575,7 @@ const Home = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#13070A] border-2 border-[#800020] p-6 rounded-3xl max-w-3xl w-full text-center relative"
+              className="bg-[#0E141B] border-2 border-[#00F5A0] p-6 rounded-3xl max-w-3xl w-full text-center relative"
             >
               <button
                 onClick={() => setIsVideoModalOpen(false)}
@@ -1606,7 +1587,7 @@ const Home = () => {
               <p className="text-sm text-zinc-400 mb-6">
                 Dynamic 2D Motion & Scroll Interaction Showcase
               </p>
-              <div className="aspect-video bg-black rounded-2xl overflow-hidden flex items-center justify-center border border-[#38040F]">
+              <div className="aspect-video bg-black rounded-2xl overflow-hidden flex items-center justify-center border border-[#1E2B37]">
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"

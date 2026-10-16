@@ -2,29 +2,27 @@ import PageWrapper from '../components/PageWrapper';
 
 const PrivacyPolicy = () => {
   return (
-    <PageWrapper>
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold text-brand-wine mb-8">Privacy Policy</h1>
-        <div className="prose prose-lg text-gray-700">
-          <p>Last updated: October 2026</p>
-          <h2 className="text-2xl font-semibold mt-8 mb-4">1. Introduction</h2>
-          <p>At we Publicise, we respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website.</p>
+    <PageWrapper className="bg-[#080B0E] text-white py-16">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+        <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-3">
+          Compliance & Transparency
+        </span>
+        <h1 className="text-4xl sm:text-5xl font-black text-white mb-8 tracking-tight">Privacy Policy</h1>
+        <div className="space-y-6 text-zinc-300 leading-relaxed">
+          <p className="text-xs font-mono text-zinc-500">Last updated: October 2026</p>
+          <h2 className="text-2xl font-bold text-white mt-8 mb-2">1. Introduction</h2>
+          <p>At we Publicise, we respect your privacy and are committed to protecting your personal data. This privacy policy informs you of how we manage, protect, and respect your information when you visit our website.</p>
           
-          <h2 className="text-2xl font-semibold mt-8 mb-4">2. The data we collect about you</h2>
-          <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
-          <ul className="list-disc pl-6 mb-4">
-            <li>Identity Data includes first name, last name, username or similar identifier.</li>
-            <li>Contact Data includes billing address, delivery address, email address and telephone numbers.</li>
-            <li>Technical Data includes internet protocol (IP) address, your login data, browser type and version.</li>
+          <h2 className="text-2xl font-bold text-white mt-8 mb-2">2. The Data We Collect About You</h2>
+          <p>We may collect, use, store and transfer different kinds of personal information grouped as follows:</p>
+          <ul className="list-disc pl-6 space-y-1.5 text-zinc-400">
+            <li><strong className="text-white">Identity Data:</strong> Name, company name, or professional title.</li>
+            <li><strong className="text-white">Contact Data:</strong> Business email address, project requirements, and phone details.</li>
+            <li><strong className="text-white">Technical Telemetry:</strong> Anonymized interaction latency, session metadata, and regional device analytics.</li>
           </ul>
 
-          <h2 className="text-2xl font-semibold mt-8 mb-4">3. How we use your personal data</h2>
-          <p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>
-          <ul className="list-disc pl-6 mb-4">
-            <li>Where we need to perform the contract we are about to enter into or have entered into with you.</li>
-            <li>Where it is necessary for our legitimate interests and your interests and fundamental rights do not override those interests.</li>
-            <li>Where we need to comply with a legal or regulatory obligation.</li>
-          </ul>
+          <h2 className="text-2xl font-bold text-white mt-8 mb-2">3. How We Use Your Data</h2>
+          <p>We will only process data when necessary for legitimate client engagements, responding to project briefs, maintaining website integrity, or complying with statutory requirements.</p>
         </div>
       </div>
     </PageWrapper>

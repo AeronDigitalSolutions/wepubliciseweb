@@ -8,7 +8,7 @@ interface LiquidButtonProps {
   onClick?: (e: React.MouseEvent) => void;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
-  variant?: 'wine' | 'teal' | 'outline';
+  variant?: 'mint' | 'teal' | 'outline' | 'wine';
   size?: 'sm' | 'md' | 'lg';
   target?: string;
   rel?: string;
@@ -22,7 +22,7 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
   onClick,
   type = 'button',
   className = '',
-  variant = 'wine',
+  variant = 'mint',
   size = 'md',
   target,
   rel,
@@ -34,7 +34,11 @@ export const LiquidButton: React.FC<LiquidButtonProps> = ({
     lg: 'px-9 py-4 text-base sm:text-lg',
   }[size];
 
-  const variantClass = variant === 'teal' ? 'liquid-btn-teal' : 'liquid-btn-wine';
+  const variantClass = variant === 'teal' 
+    ? 'liquid-btn-teal' 
+    : variant === 'mint' 
+    ? 'liquid-btn-primary' 
+    : 'liquid-btn-primary';
 
   const baseClasses = `liquid-btn ${variantClass} ${sizeClasses} rounded-full font-semibold border transition-all duration-300 ${className}`;
 

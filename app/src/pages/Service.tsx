@@ -1,49 +1,100 @@
 import { motion } from 'framer-motion';
 import PageWrapper from '../components/PageWrapper';
+import LiquidButton from '../components/LiquidButton';
+import { ArrowUpRight } from 'lucide-react';
 
 const Service = () => {
   const services = [
-    { title: 'Web Development', desc: 'Custom, responsive websites built with passion and expertise.' },
-    { title: 'App Development', desc: 'Engaging mobile applications for modern users.' },
-    { title: 'Social Media Marketing', desc: 'Connecting your brand with the right audience.' },
-    { title: 'PPC Ads', desc: 'Targeted ad campaigns for maximum ROI.' },
-    { title: 'Search Engine Optimisation', desc: 'Boosting your visibility on search engines.' },
-    { title: 'Graphic Designing', desc: 'Creative visuals that define your brand identity.' },
+    { 
+      title: 'Web & Web Application Engineering', 
+      desc: 'Custom, high-speed responsive web applications built with Next.js, Vite, and Framer Motion for sub-second load times and fluid 60fps interaction.',
+      tag: 'Development'
+    },
+    { 
+      title: 'Cloud & SaaS Product Architecture', 
+      desc: 'Scalable multi-tenant backends, real-time database telemetry pipelines, and enterprise-grade REST/GraphQL API systems.',
+      tag: 'Engineering'
+    },
+    { 
+      title: 'Performance Digital Marketing & PPC', 
+      desc: 'Precision paid search, meta funnels, and programmatic ad buying engineered to maximize ROAS and scale client acquisition.',
+      tag: 'Growth'
+    },
+    { 
+      title: 'Search Engine Optimization (SEO)', 
+      desc: 'Technical architecture, deep entity optimization, and content authority strategies to dominate high-intent organic search rankings.',
+      tag: 'Acquisition'
+    },
+    { 
+      title: 'Brand Identity & Visual Design Systems', 
+      desc: 'Cohesive brand narratives, comprehensive design systems, typography tokens, and tactile digital assets that command premium valuation.',
+      tag: 'Branding'
+    },
+    { 
+      title: 'Conversion Rate Optimization (CRO)', 
+      desc: 'Behavioral analytics, A/B testing frameworks, and multivariate funnels designed specifically to convert ad clicks into paying customers.',
+      tag: 'Conversion'
+    },
   ];
 
   return (
-    <PageWrapper>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
+    <PageWrapper className="bg-[#080B0E] text-white py-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="text-center mb-20 max-w-3xl mx-auto">
+          <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold inline-flex items-center gap-2 mb-3">
+            <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-pulse" />
+            Capabilities & Deliverables
+          </span>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-bold text-brand-wine mb-6"
+            className="text-4xl sm:text-6xl font-black text-white mb-6 tracking-tight"
           >
-            Our Services
+            Engineering Unfair Advantages
           </motion.h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive communication solutions tailored to elevate your brand.
+          <p className="text-lg text-zinc-400 font-light leading-relaxed">
+            Every service is calibrated to elevate brand perception and generate measurable, compounding enterprise value.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group"
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              className="bg-[#0E141B] p-8 rounded-3xl border border-[#1E2B37] hover:border-[#00F5A0] transition-all duration-300 group flex flex-col justify-between"
             >
-              <div className="h-12 w-12 bg-brand-wine/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-brand-wine group-hover:text-white transition-colors duration-300">
-                <span className="text-2xl font-bold text-brand-wine group-hover:text-white">{index + 1}</span>
+              <div>
+                <div className="flex items-center justify-between mb-6">
+                  <div className="w-10 h-10 bg-[#080B0E] border border-[#1E2B37] group-hover:border-[#00F5A0] rounded-xl flex items-center justify-center transition-colors duration-300">
+                    <span className="text-sm font-mono font-bold text-[#00F5A0]">0{index + 1}</span>
+                  </div>
+                  <span className="text-[11px] font-mono uppercase px-3 py-1 rounded-full bg-[#0D2A26] text-[#00F5A0] border border-[#00F5A0]/40">
+                    {service.tag}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#00F5A0] transition-colors">{service.title}</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">{service.desc}</p>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{service.title}</h3>
-              <p className="text-gray-600 text-lg">{service.desc}</p>
+
+              <div className="pt-8 flex items-center justify-between border-t border-[#1E2B37] mt-6">
+                <span className="text-xs font-mono text-zinc-500">Inquire for sprint</span>
+                <ArrowUpRight size={16} className="text-[#00F5A0] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-20 text-center">
+          <LiquidButton
+            to="/contact"
+            className="gap-3 border-[#00F5A0] bg-[#00F5A0] text-sm uppercase tracking-wider font-bold text-[#080B0E] group hover:text-[#080B0E]"
+          >
+            <span>Discuss Your Project Requirements</span>
+          </LiquidButton>
         </div>
       </div>
     </PageWrapper>

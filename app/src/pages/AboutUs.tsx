@@ -1,38 +1,61 @@
 import { motion } from 'framer-motion';
 import PageWrapper from '../components/PageWrapper';
+import LiquidButton from '../components/LiquidButton';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 const AboutUs = () => {
   return (
-    <PageWrapper>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <PageWrapper className="bg-[#080B0E] text-white py-16">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
+            className="space-y-6"
           >
-            <h1 className="text-5xl font-bold text-brand-wine mb-6">About Us</h1>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-              We are the architects of perception.
-            </h2>
-            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-              Founded on the belief that every brand has a unique story, we Publicise is a premier public relations and communications agency. We specialize in cutting through the noise and delivering your message directly to the audience that matters most.
+            <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold inline-flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-pulse" />
+              The Creative & Tech Collective
+            </span>
+            <h1 className="text-5xl sm:text-6xl font-black text-white tracking-tight leading-tight">
+              Architects Of Modern Brand Perception.
+            </h1>
+            <p className="text-lg text-zinc-300 leading-relaxed font-light">
+              Founded on the conviction that high-growth companies deserve world-class digital craftsmanship, we Publicise is a premier brand identity, custom web engineering, and digital growth agency.
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Our team of seasoned strategists, creative writers, and digital experts work cohesively to build campaigns that not only generate buzz but drive tangible business results.
+            <p className="text-base text-zinc-400 leading-relaxed">
+              We eliminate template mediocrity. Our multidisciplinary team fuses behavioral design psychology, 60fps micro-interaction code, and precision conversion optimization to turn ambitious ideas into market-dominating brands.
             </p>
+            <div className="pt-4">
+              <LiquidButton
+                to="/contact"
+                className="gap-3 border-[#00F5A0] bg-[#00F5A0] text-sm uppercase tracking-wider font-bold text-[#080B0E] group hover:text-[#080B0E]"
+              >
+                <span>Partner With Us</span>
+                <ArrowRight size={16} className="text-[#080B0E] group-hover:translate-x-1 transition-transform" />
+              </LiquidButton>
+            </div>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.94 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[600px] rounded-3xl overflow-hidden bg-brand-wine"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative h-[540px] rounded-3xl overflow-hidden border-2 border-[#1E2B37] bg-[#0E141B]"
           >
-            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80')] bg-cover bg-center mix-blend-overlay opacity-50"></div>
-            <div className="absolute inset-0 flex items-center justify-center p-12 text-center">
-              <h3 className="text-4xl font-bold text-white leading-tight">
-                "Communication is the solvent of all problems."
+            <img 
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80" 
+              alt="we Publicise Studio" 
+              className="absolute inset-0 w-full h-full object-cover filter contrast-110 opacity-70"
+            />
+            <div className="absolute inset-0 bg-[#080B0E]/60 flex flex-col justify-end p-8 sm:p-12">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0D2A26] border border-[#00F5A0] w-fit mb-4">
+                <Sparkles size={14} className="text-[#00F5A0]" />
+                <span className="text-xs font-mono font-bold text-[#00F5A0]">Worldwide Digital Delivery</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
+                "Design is intelligence made visible. Code is performance made tangible."
               </h3>
             </div>
           </motion.div>
