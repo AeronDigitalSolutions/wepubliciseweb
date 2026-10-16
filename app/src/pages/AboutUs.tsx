@@ -14,7 +14,7 @@ const AboutUs = () => {
             transition={{ duration: 0.7 }}
             className="space-y-6"
           >
-            <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold inline-flex items-center gap-2">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold inline-flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-pulse" />
               The Creative & Tech Collective
             </span>
@@ -50,9 +50,9 @@ const AboutUs = () => {
               className="absolute inset-0 w-full h-full object-cover filter contrast-110 opacity-70"
             />
             <div className="absolute inset-0 bg-[#080B0E]/60 flex flex-col justify-end p-8 sm:p-12">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0D2A26] border border-[#00F5A0] w-fit mb-4">
-                <Sparkles size={14} className="text-[#00F5A0]" />
-                <span className="text-xs font-mono font-bold text-[#00F5A0]">Worldwide Digital Delivery</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1E1035] border border-[#7C3AED] w-fit mb-4">
+                <Sparkles size={14} className="text-[#A78BFA]" />
+                <span className="text-xs font-mono font-bold text-[#A78BFA]">Worldwide Digital Delivery</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
                 "Design is intelligence made visible. Code is performance made tangible."

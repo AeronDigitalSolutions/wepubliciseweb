@@ -34,9 +34,9 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center">
-          {/* Logo with Brandemic vibe */}
+          {/* Logo with Two-Tone Mint + Violet Identity */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#0D2A26] border border-[#00F5A0] flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105">
+            <div className="w-10 h-10 rounded-full bg-[#1E1035] border border-[#7C3AED] flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105">
               <div className="w-full h-full bg-[#080B0E] rounded-full flex items-center justify-center">
                 <span className="text-[#00F5A0] font-black text-xl italic leading-none">w</span>
               </div>
@@ -45,7 +45,7 @@ const Navbar = () => {
               <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#00F5A0] transition-colors">
                 we Publicise
               </span>
-              <span className="w-2 h-2 rounded-full bg-[#00F5A0] ml-1 animate-pulse"></span>
+              <span className="w-2 h-2 rounded-full bg-[#7C3AED] ml-1.5 animate-pulse"></span>
             </div>
           </Link>
 
@@ -79,7 +79,7 @@ const Navbar = () => {
             <LiquidButton
               to="/contact"
               size="sm"
-              className="gap-2 border-[#00F5A0]/40 bg-[#0E141B] text-white group shadow-sm hover:border-[#00F5A0]"
+              className="gap-2 border-[#7C3AED]/60 bg-[#0E141B] text-white group shadow-sm hover:border-[#00F5A0]"
             >
               <span>Get In Touch</span>
               <ArrowUpRight
@@ -127,7 +127,7 @@ const Navbar = () => {
                 <LiquidButton
                   to="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full justify-center border-[#1E2B37] bg-[#141C24] text-white"
+                  className="w-full justify-center border-[#7C3AED]/60 bg-[#141C24] text-white"
                 >
                   <span>Get In Touch</span>
                 </LiquidButton>

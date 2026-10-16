@@ -19,52 +19,64 @@ import {
 import PageWrapper from '../components/PageWrapper';
 import LiquidButton from '../components/LiquidButton';
 
-// Rotating dynamic hero words (Solid 2D high-contrast)
+// Rotating dynamic hero words with two-tone Mint & Electric Violet alternating highlights
 const dynamicWords = [
-  'Websites',
-  'Software',
-  'Digital Growth',
-  'Web Apps',
-  'Campaigns',
+  { text: 'Websites', color: 'text-[#00F5A0]' },
+  { text: 'Software', color: 'text-[#A78BFA]' },
+  { text: 'Digital Growth', color: 'text-[#00F5A0]' },
+  { text: 'Web Apps', color: 'text-[#A78BFA]' },
+  { text: 'Campaigns', color: 'text-[#00F5A0]' },
 ];
 
-// Interactive Accordion Services (Digital Marketing, Web Dev, Software Product Engineering)
+// Interactive Accordion Services with two-tone Electric Mint & Electric Violet hierarchy
 const servicesData = [
   {
     num: '01.',
     title: 'Brand Identity & Strategy',
     desc: 'We craft comprehensive visual systems, distinct brand positioning, and digital design languages that build credibility, command premium authority, and accelerate customer acquisition.',
     tag: 'STRATEGY & IDENTITY',
+    tagStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
     metrics: '+280% Brand Recall',
+    metricStyle: 'text-[#A78BFA]',
     deliverables: ['Design Systems', 'Brand Guidelines', 'Typography & Voice', 'Packaging & 2D Assets'],
     image: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&w=1200&q=80',
+    badgeBorder: 'border-[#7C3AED]',
   },
   {
     num: '02.',
     title: 'Website & Web Application Development',
     desc: 'Bespoke, high-converting websites and modern web applications engineered with clean code, lightning speeds, 60fps micro-interactions, and seamless responsive design.',
     tag: 'WEBSITE DEVELOPMENT',
+    tagStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
     metrics: '<0.4s Median Latency',
+    metricStyle: 'text-[#00F5A0]',
     deliverables: ['Next.js & Vite SPAs', 'Framer Motion & WebGL', 'Headless CMS', 'Conversion Architecture'],
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
+    badgeBorder: 'border-[#00F5A0]',
   },
   {
     num: '03.',
     title: 'Software & SaaS Product Engineering',
     desc: 'Robust software architectures, intuitive cloud dashboard interfaces, high-scale database pipelines, and scalable API platforms crafted for venture-backed companies.',
     tag: 'SOFTWARE DEVELOPMENT',
+    tagStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
     metrics: '99.99% Uptime Reliability',
+    metricStyle: 'text-[#A78BFA]',
     deliverables: ['SaaS Platforms', 'Cloud Dashboards', 'REST & GraphQL APIs', 'Security & Scalability'],
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
+    badgeBorder: 'border-[#7C3AED]',
   },
   {
     num: '04.',
     title: 'Performance & Digital Marketing',
     desc: 'Data-backed PPC ad campaigns, Search Engine Optimization (SEO), and targeted social marketing designed to dominate search intent, lower CPA, and deliver verified ROI.',
     tag: 'DIGITAL MARKETING',
+    tagStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
     metrics: '4.8x Average ROAS',
+    metricStyle: 'text-[#00F5A0]',
     deliverables: ['Performance PPC Ads', 'Technical SEO Domination', 'Full-Funnel CRO', 'Omnichannel Retargeting'],
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
+    badgeBorder: 'border-[#00F5A0]',
   },
 ];
 
@@ -76,6 +88,8 @@ const featuredWorks = [
     category: 'Performance Marketing & PPC Scale',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
     badge: 'Digital Marketing',
+    badgeStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
+    accentColor: '#00F5A0',
     year: '2026',
     result: '+340% ROAS Scale',
     summary: 'A precision full-funnel digital marketing engine for modern brands generating multimillion customer acquisitions.',
@@ -86,6 +100,8 @@ const featuredWorks = [
     category: 'Custom Web Application & UI/UX Design',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80',
     badge: 'Website Development',
+    badgeStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
+    accentColor: '#A78BFA',
     year: '2025',
     result: '0.38s Load Speed',
     summary: 'A bespoke high-performance web experience engineered with Framer Motion, TypeScript, and micro-interactions.',
@@ -96,6 +112,8 @@ const featuredWorks = [
     category: 'Enterprise Cloud Architecture & APIs',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80',
     badge: 'Software Development',
+    badgeStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
+    accentColor: '#A78BFA',
     year: '2026',
     result: '10M+ Events/Day',
     summary: 'Cloud-native multi-tenant analytics platform with real-time telemetry and sub-millisecond response rates.',
@@ -106,6 +124,8 @@ const featuredWorks = [
     category: 'Social Media Strategy & Paid Acquisition',
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=80',
     badge: 'Digital Marketing',
+    badgeStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
+    accentColor: '#00F5A0',
     year: '2025',
     result: '14.2M Impressions',
     summary: 'Viral campaign architecture across multi-channel video funnels delivering measurable engagement lift.',
@@ -116,6 +136,8 @@ const featuredWorks = [
     category: 'Headless Web Store & High-Speed Checkout',
     image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80',
     badge: 'Website Development',
+    badgeStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
+    accentColor: '#00F5A0',
     year: '2026',
     result: '+68% Conversion Rate',
     summary: 'Next-generation headless commerce storefront featuring sub-second checkout and bespoke interactive 3D product previews.',
@@ -126,6 +148,8 @@ const featuredWorks = [
     category: 'Fintech Software Platform & Mobile Analytics',
     image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=1000&q=80',
     badge: 'Software Development',
+    badgeStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
+    accentColor: '#A78BFA',
     year: '2025',
     result: '$42M Managed AUM',
     summary: 'Banking-grade financial dashboards with institutional compliance, biometric security, and responsive data visualization.',
@@ -216,6 +240,7 @@ const testimonials = [
     tag: 'D2C Tech Learning',
     score: '5.0 / 5.0',
     metric: '+310% Enrollment Lift',
+    badgeStyle: 'text-[#00F5A0]',
   },
   {
     quote:
@@ -225,6 +250,7 @@ const testimonials = [
     tag: 'Modern Consumer Tech',
     score: '5.0 / 5.0',
     metric: '12.4x Launch ROAS',
+    badgeStyle: 'text-[#A78BFA]',
   },
   {
     quote:
@@ -234,6 +260,7 @@ const testimonials = [
     tag: 'Enterprise Logistics',
     score: '5.0 / 5.0',
     metric: '$18M Pipeline Influenced',
+    badgeStyle: 'text-[#00F5A0]',
   },
 ];
 
@@ -263,7 +290,7 @@ const brandemicTools = [
     bgColor: '#0C0C1E',
     textColor: '#FFFFFF',
     tag: 'UI/UX & Prototyping',
-    accentBorder: '#00F5A0',
+    accentBorder: '#7C3AED',
     desc: 'Design systems, tokens, and micro-interaction wireframing.',
   },
   {
@@ -315,12 +342,12 @@ const faqs = [
   },
 ];
 
-// Studio proof metrics
+// Studio proof metrics with alternating Electric Mint & Electric Violet accents
 const studioMetrics = [
-  { value: '99.4%', label: 'Client Retention Score', sub: 'Calculated over 4+ years of sprints' },
-  { value: '120+', label: 'Products & Systems Shipped', sub: 'Websites, software & brand systems' },
-  { value: '$180M+', label: 'Pipeline Value Influenced', sub: 'Client fundraising & commerce volume' },
-  { value: '<0.4s', label: 'Median Web Core Performance', sub: 'Observed across global CDN benchmarks' },
+  { value: '99.4%', label: 'Client Retention Score', sub: 'Calculated over 4+ years of sprints', accent: 'text-[#00F5A0]', border: 'border-[#00F5A0]' },
+  { value: '120+', label: 'Products & Systems Shipped', sub: 'Websites, software & brand systems', accent: 'text-[#A78BFA]', border: 'border-[#7C3AED]' },
+  { value: '$180M+', label: 'Pipeline Value Influenced', sub: 'Client fundraising & commerce volume', accent: 'text-[#00F5A0]', border: 'border-[#00F5A0]' },
+  { value: '<0.4s', label: 'Median Web Core Performance', sub: 'Observed across global CDN benchmarks', accent: 'text-[#A78BFA]', border: 'border-[#7C3AED]' },
 ];
 
 const Home = () => {
@@ -437,7 +464,7 @@ const Home = () => {
   };
 
   return (
-    <PageWrapper className="pt-0 pb-0 bg-[#080B0E] text-white relative selection:bg-[#00F5A0] selection:text-[#080B0E]">
+    <PageWrapper className="pt-0 pb-0 bg-[#080B0E] text-white relative selection:bg-[#7C3AED] selection:text-white">
       {/* 1. Top scroll progress indicator bar - Solid Electric Mint */}
       <motion.div
         style={{ scaleX }}
@@ -460,8 +487,8 @@ const Home = () => {
             <span className="hidden md:inline text-zinc-300 font-semibold">
               ✦ Sprints Booking Open for Q2 / Q3 2026
             </span>
-            <div className="flex items-center gap-2 text-[#00F5A0] font-semibold">
-              <Globe size={13} className="text-[#00F5A0]" />
+            <div className="flex items-center gap-2 text-[#A78BFA] font-semibold">
+              <Globe size={13} className="text-[#A78BFA]" />
               <span>NYC &bull; LDN &bull; BLR &bull; DXB</span>
             </div>
           </div>
@@ -469,26 +496,26 @@ const Home = () => {
       </header>
 
       {/* ========================================================================= */}
-      {/* 1. HERO: MODERN TECH SLATE & ELECTRIC MINT */}
+      {/* 1. HERO: MODERN TECH SLATE, ELECTRIC MINT & VIOLET */}
       {/* ========================================================================= */}
       <section className="relative min-h-[90vh] pt-16 pb-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center overflow-hidden bg-[#080B0E]">
         <div className="max-w-6xl mx-auto w-full relative z-10">
-          {/* Top Status Capsule */}
+          {/* Top Status Capsule with Electric Violet Accent */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0E141B] border border-[#1E2B37]">
-              <Sparkles size={14} className="text-[#00F5A0]" />
-              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold">
-                World-Class Digital Perception & Software Craft
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0E141B] border border-[#7C3AED]/40">
+              <Sparkles size={14} className="text-[#A78BFA]" />
+              <span className="text-xs uppercase font-mono tracking-widest text-zinc-300 font-bold">
+                World-Class Digital Perception & <span className="text-[#A78BFA]">Software Craft</span>
               </span>
             </div>
           </motion.div>
 
-          {/* Master Display Headline (Solid High-Contrast) */}
+          {/* Master Display Headline (Two-Tone Dynamic Alternation) */}
           <div className="text-left mb-12 max-w-5xl">
             <motion.h1
               initial={{ opacity: 0, y: 35 }}
@@ -502,14 +529,14 @@ const Home = () => {
               <span className="inline-block relative">
                 <AnimatePresence mode="wait">
                   <motion.span
-                    key={dynamicWords[currentWordIndex]}
+                    key={dynamicWords[currentWordIndex].text}
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -30, opacity: 0 }}
                     transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    className="inline-block text-[#00F5A0] italic font-serif pr-3"
+                    className={`inline-block ${dynamicWords[currentWordIndex].color} italic font-serif pr-3`}
                   >
-                    {dynamicWords[currentWordIndex]}
+                    {dynamicWords[currentWordIndex].text}
                   </motion.span>
                 </AnimatePresence>
               </span>
@@ -525,7 +552,7 @@ const Home = () => {
             </motion.p>
           </div>
 
-          {/* 3D Interactive Monitor (Solid 2D Surfaces) */}
+          {/* 3D Interactive Monitor (Solid 2D Surfaces with Dual Accents) */}
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -540,14 +567,14 @@ const Home = () => {
             }}
             className="relative mx-auto rounded-3xl overflow-visible border-2 border-[#1E2B37] bg-[#0E141B] group cursor-pointer"
           >
-            {/* Floating 2.5D Solid Stickers */}
+            {/* Floating 2.5D Solid Stickers (Mint on left, Violet on right) */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -left-6 -top-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#080B0E] border border-[#1E2B37] z-30 pointer-events-none"
+              className="hidden md:flex absolute -left-6 -top-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#080B0E] border border-[#00F5A0]/40 z-30 pointer-events-none"
             >
               <Zap size={14} className="text-[#00F5A0]" />
-              <span className="text-xs font-mono font-bold text-white tracking-wider">
+              <span className="text-xs font-mono font-bold text-[#00F5A0] tracking-wider">
                 60fps Interactive Motion
               </span>
             </motion.div>
@@ -555,10 +582,10 @@ const Home = () => {
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#080B0E] border border-[#1E2B37] z-30 pointer-events-none"
+              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#080B0E] border border-[#7C3AED]/40 z-30 pointer-events-none"
             >
-              <Code2 size={14} className="text-[#00F5A0]" />
-              <span className="text-xs font-mono font-bold text-white tracking-wider">
+              <Code2 size={14} className="text-[#A78BFA]" />
+              <span className="text-xs font-mono font-bold text-[#A78BFA] tracking-wider">
                 Next.js &bull; Framer &bull; Vite
               </span>
             </motion.div>
@@ -580,10 +607,10 @@ const Home = () => {
                   <div className="flex items-center justify-between border-b border-[#1E2B37] pb-3 mb-3">
                     <div className="flex gap-2">
                       <span className="w-3 h-3 rounded-full bg-[#00F5A0]" />
-                      <span className="w-3 h-3 rounded-full bg-[#39bda7]" />
+                      <span className="w-3 h-3 rounded-full bg-[#7C3AED]" />
                       <span className="w-3 h-3 rounded-full bg-[#1E2B37]" />
                     </div>
-                    <span className="text-xs uppercase tracking-widest text-[#00F5A0] font-mono font-bold">
+                    <span className="text-xs uppercase tracking-widest text-[#A78BFA] font-mono font-bold">
                       we Publicise :: Showreel
                     </span>
                   </div>
@@ -618,7 +645,7 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. PROVEN METRICS TICKER STRIP (Solid 2D) */}
+      {/* 2. PROVEN METRICS TICKER STRIP (Alternating Mint & Violet Accents) */}
       {/* ========================================================================= */}
       <section className="py-12 px-6 sm:px-8 border-y border-[#1E2B37] bg-[#0E141B] relative z-10">
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -629,9 +656,9 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="space-y-1.5 text-center sm:text-left border-l-2 border-[#00F5A0] pl-6"
+              className={`space-y-1.5 text-center sm:text-left border-l-2 ${metric.border} pl-6`}
             >
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#00F5A0]">
+              <div className={`text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight ${metric.accent}`}>
                 {metric.value}
               </div>
               <p className="text-xs sm:text-sm font-bold text-white">{metric.label}</p>
@@ -642,7 +669,7 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. ACCORDION SERVICES: UNIFORM SOLID DEEP TEAL CARDS & WHITE EXPANDING HAIRLINE */}
+      {/* 3. ACCORDION SERVICES: TWO-TONE HIERARCHY & WHITE EXPANDING HAIRLINE */}
       {/* ========================================================================= */}
       <section className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-[#080B0E]">
         <div className="max-w-6xl mx-auto">
@@ -654,7 +681,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="max-w-2xl"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold block mb-2">
                 Core Capabilities & Architecture
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
@@ -700,7 +727,7 @@ const Home = () => {
                   className={`rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border-2 ${
                     isExpanded
                       ? 'bg-[#0D2A26] border-[#00F5A0]'
-                      : 'bg-[#0E141B] border-[#1E2B37] hover:border-[#39bda7]'
+                      : 'bg-[#0E141B] border-[#1E2B37] hover:border-[#7C3AED]/70'
                   }`}
                 >
                   <div className="p-6 sm:p-8">
@@ -708,10 +735,10 @@ const Home = () => {
                     <div className="flex items-center justify-between">
                       <div className="space-y-1">
                         <div className="flex items-center gap-3">
-                          <span className="text-xs sm:text-sm font-mono tracking-widest text-[#00F5A0] font-bold">
+                          <span className={`text-xs sm:text-sm font-mono tracking-widest ${service.metricStyle} font-bold`}>
                             {service.num}
                           </span>
-                          <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-[#080B0E] text-[#00F5A0] border border-[#00F5A0]/40">
+                          <span className={`text-[10px] font-mono uppercase px-2 py-0.5 rounded-full ${service.tagStyle}`}>
                             {service.metrics}
                           </span>
                         </div>
@@ -752,7 +779,7 @@ const Home = () => {
                       <div className="overflow-hidden">
                         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-2">
                           <div className="md:col-span-7 space-y-5">
-                            <span className="text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full bg-[#080B0E] text-[#00F5A0] border border-[#00F5A0]/40">
+                            <span className={`text-xs uppercase tracking-widest font-bold px-3 py-1 rounded-full ${service.tagStyle}`}>
                               {service.tag}
                             </span>
                             <p className="text-zinc-200 text-base sm:text-lg leading-relaxed font-normal">
@@ -776,7 +803,8 @@ const Home = () => {
                                 to="/services"
                                 onClick={(e) => e.stopPropagation()}
                                 size="sm"
-                                className="gap-2 bg-[#080B0E] border-[#00F5A0] text-[#00F5A0] text-xs uppercase tracking-widest font-bold hover:text-[#080B0E]"
+                                variant={index % 2 === 0 ? 'violet' : 'mint'}
+                                className="gap-2 bg-[#080B0E] text-xs uppercase tracking-widest font-bold"
                               >
                                 <span>Learn More</span>
                                 <ArrowUpRight size={14} />
@@ -785,13 +813,13 @@ const Home = () => {
                           </div>
 
                           <div className="md:col-span-5 flex justify-center md:justify-end">
-                            <div className="relative w-full max-w-[320px] aspect-[4/3] rounded-2xl overflow-hidden border-2 border-[#1E2B37]">
+                            <div className={`relative w-full max-w-[320px] aspect-[4/3] rounded-2xl overflow-hidden border-2 ${service.badgeBorder}`}>
                               <img
                                 src={service.image}
                                 alt={service.title}
                                 className="w-full h-full object-cover"
                               />
-                              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-md bg-[#080B0E] border border-[#00F5A0]/50 text-[11px] font-mono text-[#00F5A0]">
+                              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-md bg-[#080B0E] border border-white/20 text-[11px] font-mono text-zinc-200">
                                 Verified Architecture
                               </div>
                             </div>
@@ -808,7 +836,7 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. FEATURED WORK: SOLID 2D TRAIN TRACK */}
+      {/* 4. FEATURED WORK: SOLID 2D TRAIN TRACK (Mint & Violet Badges) */}
       {/* ========================================================================= */}
       <section className="py-28 bg-[#080B0E] relative overflow-hidden border-t border-[#1E2B37]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-14">
@@ -819,7 +847,7 @@ const Home = () => {
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.6 }}
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-2">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold block mb-2">
                 Selected Client Work
               </span>
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-3">
@@ -832,10 +860,11 @@ const Home = () => {
             <LiquidButton
               to="/services"
               size="sm"
-              className="gap-2 border-[#00F5A0] bg-[#0E141B] text-white hover:border-[#00F5A0] text-xs uppercase tracking-widest font-bold w-fit group"
+              variant="violet"
+              className="gap-2 text-xs uppercase tracking-widest font-bold w-fit group"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#00F5A0] group-hover:text-black transition-colors" />
+              <ArrowRight size={14} className="text-[#A78BFA] group-hover:text-white transition-colors" />
             </LiquidButton>
           </div>
         </div>
@@ -855,7 +884,7 @@ const Home = () => {
               <div
                 key={`${work.id}-${idx}`}
                 onClick={() => setSelectedProject(work)}
-                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[480px] sm:h-[560px] rounded-3xl overflow-hidden bg-[#0E141B] border-2 border-[#1E2B37] hover:border-[#00F5A0] transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[480px] sm:h-[560px] rounded-3xl overflow-hidden bg-[#0E141B] border-2 border-[#1E2B37] hover:border-[#7C3AED] transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
                 {/* Image Section */}
                 <div className="relative h-[68%] w-full overflow-hidden bg-[#080B0E]">
@@ -868,7 +897,7 @@ const Home = () => {
                     <span className="text-[11px] uppercase font-mono tracking-wider px-3 py-1 rounded-full bg-[#080B0E] text-white border border-[#1E2B37]">
                       {work.badge}
                     </span>
-                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#0D2A26] text-[#00F5A0] border border-[#00F5A0]/40">
+                    <span className={`text-[10px] font-mono uppercase px-2.5 py-1 rounded-full ${work.badgeStyle}`}>
                       {work.result}
                     </span>
                   </div>
@@ -877,7 +906,7 @@ const Home = () => {
                 {/* Solid 2D Bottom Panel */}
                 <div className="p-6 sm:p-7 bg-[#0E141B] border-t border-[#1E2B37] flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="text-xs font-mono text-[#00F5A0] font-bold mb-1">{work.year} &bull; Case Study</div>
+                    <div className="text-xs font-mono text-[#A78BFA] font-bold mb-1">{work.year} &bull; Case Study</div>
                     <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#00F5A0] transition-colors mb-1">
                       {work.title}
                     </h4>
@@ -895,7 +924,7 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. TEAM CULTURE: SOLID 2D PARALLAX SCROLL */}
+      {/* 5. TEAM CULTURE: SOLID 2D PARALLAX SCROLL (Two-Tone Dynamic) */}
       {/* ========================================================================= */}
       <section
         ref={teamSectionRef}
@@ -909,15 +938,14 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="mb-14"
           >
-            <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold block mb-3">
               The Collective Mind
             </span>
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3">
               We Are Your Design Partners In Turning{' '}
               <br />
-              <span className="italic text-[#00F5A0]">
-                Ideas Into Magic
-              </span>
+              <span className="italic text-[#00F5A0]">Ideas</span> Into{' '}
+              <span className="italic text-[#A78BFA]">Magic</span>
             </h2>
           </motion.div>
 
@@ -939,8 +967,8 @@ const Home = () => {
                 <p className="text-lg font-bold text-white">The Creators at we Publicise</p>
                 <p className="text-xs text-zinc-300">Bengaluru &bull; Worldwide Delivery</p>
               </div>
-              <div className="flex items-center gap-2 bg-[#0D2A26] px-4 py-2 rounded-full border border-[#00F5A0]">
-                <Sparkles size={14} className="text-[#00F5A0]" />
+              <div className="flex items-center gap-2 bg-[#1E1035] px-4 py-2 rounded-full border border-[#7C3AED]">
+                <Sparkles size={14} className="text-[#A78BFA]" />
                 <span className="text-xs font-bold text-white">100+ Projects Done</span>
               </div>
             </div>
@@ -973,7 +1001,7 @@ const Home = () => {
               <span className="text-[#00F5A0] font-bold">Behavior-Driven</span>. We Believe What
               Separates A Good Design From A Great One Is Its Ability To Solve Problems. We Try To
               Design-Think Through Everything We Do At{' '}
-              <span className="text-white underline decoration-[#00F5A0] decoration-2 underline-offset-4 font-bold">
+              <span className="text-white underline decoration-[#7C3AED] decoration-2 underline-offset-4 font-bold">
                 we Publicise
               </span>
               .
@@ -981,10 +1009,11 @@ const Home = () => {
 
             <LiquidButton
               to="/services"
-              className="gap-2 border-[#00F5A0] bg-[#0E141B] text-xs uppercase tracking-widest font-bold text-white group hover:border-[#00F5A0]"
+              variant="violet"
+              className="gap-2 text-xs uppercase tracking-widest font-bold text-white group"
             >
               <span>Discover Our Work</span>
-              <ArrowRight size={14} className="text-[#00F5A0] group-hover:text-black transition-colors" />
+              <ArrowRight size={14} className="text-[#A78BFA] group-hover:text-white transition-colors" />
             </LiquidButton>
           </div>
         </div>
@@ -992,7 +1021,7 @@ const Home = () => {
         {/* OUR TRUSTED PARTNERS: Continuous right-to-left logo carousel in a 72% container */}
         <div className="w-full pt-16 border-t border-[#1E2B37]">
           <div className="text-center mb-10">
-            <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold block mb-3">
               Our Trusted Partners
             </span>
             <h3 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -1014,7 +1043,7 @@ const Home = () => {
               {[...ourClients, ...ourClients].map((client, idx) => (
                 <div
                   key={`${client.name}-${idx}`}
-                  className="bg-white rounded-2xl px-7 py-4 flex items-center justify-center min-w-[190px] sm:min-w-[220px] h-[82px] border-2 border-white flex-shrink-0 group hover:border-[#00F5A0] transition-all duration-300 hover:-translate-y-1"
+                  className="bg-white rounded-2xl px-7 py-4 flex items-center justify-center min-w-[190px] sm:min-w-[220px] h-[82px] border-2 border-white flex-shrink-0 group hover:border-[#7C3AED] transition-all duration-300 hover:-translate-y-1"
                 >
                   <img
                     src={client.logo}
@@ -1047,7 +1076,7 @@ const Home = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <span className="text-xs uppercase tracking-widest text-[#00F5A0] font-mono font-bold block mb-2">
+            <span className="text-xs uppercase tracking-widest text-[#A78BFA] font-mono font-bold block mb-2">
               Verified Client Outcomes
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -1069,7 +1098,7 @@ const Home = () => {
                   {[...Array(5)].map((_, i) => (
                     <span key={i} className="text-[#00F5A0] text-base">★</span>
                   ))}
-                  <span className="text-xs font-mono text-[#00F5A0] font-bold ml-2">
+                  <span className={`text-xs font-mono font-bold ml-2 ${testimonials[currentTestimonial].badgeStyle}`}>
                     {testimonials[currentTestimonial].score} &bull; {testimonials[currentTestimonial].metric}
                   </span>
                 </div>
@@ -1080,7 +1109,7 @@ const Home = () => {
 
                 <div className="flex items-center justify-between pt-6 border-t border-[#1E2B37] relative z-10">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-[#0D2A26] border border-[#00F5A0] flex items-center justify-center font-bold text-[#00F5A0]">
+                    <div className="w-12 h-12 rounded-xl bg-[#1E1035] border border-[#7C3AED] flex items-center justify-center font-bold text-[#A78BFA]">
                       {testimonials[currentTestimonial].company.substring(0, 2)}
                     </div>
                     <div>
@@ -1104,7 +1133,7 @@ const Home = () => {
                     </button>
                     <button
                       onClick={nextTestimonial}
-                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#00F5A0] bg-[#080B0E] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#7C3AED] bg-[#080B0E] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
                       aria-label="Next Testimonial"
                     >
                       <ChevronRight size={20} />
@@ -1136,7 +1165,7 @@ const Home = () => {
               </span>
               <h3 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
                 Empowering Creativity With The{' '}
-                <span className="italic text-[#00F5A0]">
+                <span className="italic text-[#A78BFA]">
                   Right Tools
                 </span>
               </h3>
@@ -1248,8 +1277,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Infinite Kinetic Marquee Bar (Solid Electric Mint Banner) */}
-        <div className="relative py-6 bg-[#0D2A26] border-y-2 border-[#00F5A0] overflow-hidden select-none -mx-8">
+        {/* Infinite Kinetic Marquee Bar (Two-Tone Mint Diamonds & Violet Stars) */}
+        <div className="relative py-6 bg-[#0E141B] border-y-2 border-[#7C3AED] overflow-hidden select-none -mx-8">
           <motion.div
             animate={{ x: ['0%', '-50%'] }}
             transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
@@ -1260,7 +1289,7 @@ const Home = () => {
                 <span>Collaborate With we Publicise</span>
                 <span className="text-[#00F5A0]">✦</span>
                 <span>Turning Ideas Into Magic</span>
-                <span className="text-[#00F5A0]">✦</span>
+                <span className="text-[#A78BFA]">★</span>
                 <span>Limitless Possibilities</span>
                 <span className="text-[#00F5A0]">✦</span>
               </div>
@@ -1268,17 +1297,17 @@ const Home = () => {
           </motion.div>
         </div>
 
-        {/* Culture CTA Card: Solid Tech Slate Container */}
+        {/* Culture CTA Card: Solid Slate & Electric Violet Container */}
         <div className="max-w-6xl mx-auto mt-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-[#0D2A26] p-8 sm:p-14 border-2 border-[#00F5A0] flex flex-col md:flex-row items-center justify-between gap-8"
+            className="rounded-3xl bg-[#0E141B] p-8 sm:p-14 border-2 border-[#7C3AED] flex flex-col md:flex-row items-center justify-between gap-8"
           >
             <div className="space-y-3 max-w-xl">
-              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold">
                 Work With The Best PR & Branding Agency
               </span>
               <h3 className="text-3xl sm:text-4xl font-bold text-white">
@@ -1313,7 +1342,7 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5 space-y-4"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold">
+              <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold">
                 Frequently Asked Questions
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
@@ -1329,7 +1358,7 @@ const Home = () => {
               <div className="pt-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 text-sm text-[#00F5A0] hover:text-white font-bold transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-[#00F5A0] hover:text-[#A78BFA] font-bold transition-colors"
                 >
                   <span>Have a custom question? Speak with our team &rarr;</span>
                 </Link>
@@ -1355,7 +1384,7 @@ const Home = () => {
                       <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#00F5A0] transition-colors pr-6">
                         {faq.q}
                       </span>
-                      <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-[#00F5A0] transition-colors flex-shrink-0">
+                      <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-[#7C3AED] transition-colors flex-shrink-0">
                         {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                       </div>
                     </button>
@@ -1393,7 +1422,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-8 mb-16">
             <div>
               <Link to="/" className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#0D2A26] border border-[#00F5A0] flex items-center justify-center p-[2px]">
+                <div className="w-10 h-10 rounded-full bg-[#1E1035] border border-[#7C3AED] flex items-center justify-center p-[2px]">
                   <div className="w-full h-full bg-[#080B0E] rounded-full flex items-center justify-center">
                     <span className="text-[#00F5A0] font-black text-xl italic">w</span>
                   </div>
@@ -1413,8 +1442,8 @@ const Home = () => {
 
             {/* "Ask AI About we Publicise" */}
             <div className="space-y-3 sm:text-right">
-              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#00F5A0] font-bold">
-                <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-pulse" />
+              <div className="flex items-center sm:justify-end gap-2 text-xs font-mono text-[#A78BFA] font-bold">
+                <span className="w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse" />
                 <span>Ask AI About we Publicise</span>
               </div>
               <div className="flex items-center gap-2">
@@ -1423,14 +1452,14 @@ const Home = () => {
                     key={ai}
                     onClick={() => handleCopyPrompt(ai)}
                     title={`Click to copy prompt for ${ai}`}
-                    className="w-9 h-9 rounded-xl bg-[#0E141B] border border-[#1E2B37] hover:border-[#00F5A0] flex items-center justify-center text-zinc-300 hover:text-white text-xs font-mono transition-colors cursor-pointer"
+                    className="w-9 h-9 rounded-xl bg-[#0E141B] border border-[#1E2B37] hover:border-[#7C3AED] flex items-center justify-center text-zinc-300 hover:text-white text-xs font-mono transition-colors cursor-pointer"
                   >
                     <Bot size={16} />
                   </button>
                 ))}
               </div>
               {copiedPrompt && (
-                <div className="text-xs text-[#00F5A0] font-mono">
+                <div className="text-xs text-[#A78BFA] font-mono">
                   ✓ {copiedPrompt}
                 </div>
               )}
@@ -1442,19 +1471,19 @@ const Home = () => {
             <a href="mailto:info@wepublicise.com" className="hover:text-white transition-colors font-bold">
               info@wepublicise.com
             </a>
-            <Link to="/contact" className="text-[#00F5A0] hover:text-white transition-colors flex items-center gap-1 font-bold">
+            <Link to="/contact" className="text-[#00F5A0] hover:text-[#A78BFA] transition-colors flex items-center gap-1 font-bold">
               <span>Connect Today</span>
               <span>&rarr;</span>
             </Link>
           </div>
 
-          {/* Giant "THINK LIMITLESS" Typography (Solid High-Tech Titanium Slate) */}
+          {/* Giant "THINK LIMITLESS" Typography (Solid High-Tech Titanium Slate with Mint & Violet transitions) */}
           <div className="w-full overflow-hidden select-none my-6">
             <motion.h1
               style={{
                 letterSpacing: limitlessLetterSpacing,
               }}
-              className="text-5xl sm:text-7xl md:text-9xl lg:text-[145px] font-black tracking-tighter uppercase text-center text-[#182632] hover:text-[#00F5A0] transition-colors duration-700 leading-none cursor-default"
+              className="text-5xl sm:text-7xl md:text-9xl lg:text-[145px] font-black tracking-tighter uppercase text-center text-[#182632] hover:text-[#A78BFA] transition-colors duration-700 leading-none cursor-default"
             >
               Think Limitless
             </motion.h1>
@@ -1464,11 +1493,11 @@ const Home = () => {
           <div className="pt-8 border-t border-[#1E2B37] flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
             <p>&copy; {new Date().getFullYear()} we Publicise. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-5 text-zinc-300 font-mono text-xs">
-              <a href="#" className="hover:text-[#00F5A0] transition-colors">Instagram</a>
+              <a href="#" className="hover:text-[#A78BFA] transition-colors">Instagram</a>
               <a href="#" className="hover:text-[#00F5A0] transition-colors">LinkedIn</a>
-              <a href="#" className="hover:text-[#00F5A0] transition-colors">YouTube</a>
+              <a href="#" className="hover:text-[#A78BFA] transition-colors">YouTube</a>
               <a href="#" className="hover:text-[#00F5A0] transition-colors">X (Twitter)</a>
-              <a href="#" className="hover:text-[#00F5A0] transition-colors">Behance</a>
+              <a href="#" className="hover:text-[#A78BFA] transition-colors">Behance</a>
             </div>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -1499,7 +1528,7 @@ const Home = () => {
               exit={{ scale: 0.94, opacity: 0, y: 15 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#0E141B] border-2 border-[#00F5A0] rounded-3xl max-w-2xl w-full overflow-hidden relative"
+              className="bg-[#0E141B] border-2 border-[#7C3AED] rounded-3xl max-w-2xl w-full overflow-hidden relative"
             >
               <div className="relative aspect-video w-full overflow-hidden bg-[#080B0E]">
                 <img
@@ -1509,7 +1538,7 @@ const Home = () => {
                 />
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#080B0E] border border-white/20 text-white flex items-center justify-center hover:bg-[#00F5A0] hover:text-black transition-colors cursor-pointer"
+                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#080B0E] border border-white/20 text-white flex items-center justify-center hover:bg-[#7C3AED] hover:text-white transition-colors cursor-pointer"
                 >
                   ✕
                 </button>
@@ -1517,7 +1546,7 @@ const Home = () => {
 
               <div className="p-8 space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono uppercase px-3 py-1 rounded-full bg-[#0D2A26] text-[#00F5A0] border border-[#00F5A0]/50">
+                  <span className={`text-xs font-mono uppercase px-3 py-1 rounded-full ${selectedProject.badgeStyle}`}>
                     {selectedProject.badge} &bull; {selectedProject.year}
                   </span>
                   <span className="text-xs font-mono text-[#00F5A0] font-bold">
@@ -1575,7 +1604,7 @@ const Home = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#0E141B] border-2 border-[#00F5A0] p-6 rounded-3xl max-w-3xl w-full text-center relative"
+              className="bg-[#0E141B] border-2 border-[#7C3AED] p-6 rounded-3xl max-w-3xl w-full text-center relative"
             >
               <button
                 onClick={() => setIsVideoModalOpen(false)}

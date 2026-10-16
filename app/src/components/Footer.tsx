@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-6">
             <Link to="/" className="inline-flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-full bg-[#0D2A26] border border-[#00F5A0] flex items-center justify-center p-[2px]">
+              <div className="w-10 h-10 rounded-full bg-[#1E1035] border border-[#7C3AED] flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105">
                 <div className="w-full h-full bg-[#080B0E] rounded-full flex items-center justify-center">
                   <span className="text-[#00F5A0] font-black text-xl italic">w</span>
                 </div>
@@ -29,7 +29,7 @@ const Footer = () => {
                 <span>HSR Layout Sector 6 - Bangalore, India</span>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={16} className="text-[#00F5A0]" />
+                <Mail size={16} className="text-[#A78BFA]" />
                 <a href="mailto:info@wepublicise.com" className="hover:text-white transition-colors">
                   info@wepublicise.com &bull; business@wepublicise.com
                 </a>
@@ -52,7 +52,7 @@ const Footer = () => {
               <li>
                 <Link to="/services" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
                   <span>Services</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#00F5A0]" />
+                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#A78BFA]" />
                 </Link>
               </li>
               <li>
@@ -64,7 +64,7 @@ const Footer = () => {
               <li>
                 <Link to="/contact" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
                   <span>Contact</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#00F5A0]" />
+                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#A78BFA]" />
                 </Link>
               </li>
             </ul>
@@ -72,15 +72,15 @@ const Footer = () => {
 
           {/* Services Quicklist */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-[#00F5A0] font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-[#A78BFA] font-bold">
               Expertise
             </h4>
             <ul className="space-y-2.5 text-sm text-zinc-400">
-              <li>Website Development</li>
-              <li>Software Engineering</li>
-              <li>Digital Marketing</li>
-              <li>Brand Identity</li>
-              <li>Cloud & Mobile APIs</li>
+              <li className="hover:text-[#A78BFA] transition-colors">Website Development</li>
+              <li className="hover:text-[#00F5A0] transition-colors">Software Engineering</li>
+              <li className="hover:text-[#A78BFA] transition-colors">Digital Marketing</li>
+              <li className="hover:text-[#00F5A0] transition-colors">Brand Identity</li>
+              <li className="hover:text-[#A78BFA] transition-colors">Cloud & Mobile APIs</li>
             </ul>
           </div>
 
