@@ -2,9 +2,9 @@ import PageWrapper from '../components/PageWrapper';
 
 const TermsAndConditions = () => {
   return (
-    <PageWrapper className="bg-[#060608] text-white py-16">
+    <PageWrapper className="bg-[#080B0E] text-white py-16">
       <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
-        <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold block mb-3">
+        <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold block mb-3">
           Legal Agreement & Rights
         </span>
         <h1 className="text-4xl sm:text-5xl font-black text-white mb-8 tracking-tight">Terms & Conditions</h1>

@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 @theme {
+  --color-brand-mint: #00F5A0;
+  --color-brand-teal: #39bda7;
+  --color-brand-dark: #0D2A26;
   --color-brand-violet: #7C3AED;
   --color-brand-violet-light: #A78BFA;
   --color-brand-violet-dark: #1E1035;
   --color-brand-indigo: #6366F1;
-  --color-titanium: #E2E8F0;
-  --color-platinum: #94A3B8;
-  --color-dark-bg: #060608;
-  --color-dark-surface: #0E0E15;
-  --color-dark-card: #141420;
-  --color-dark-border: #222234;
+  --color-dark-bg: #080B0E;
+  --color-dark-surface: #0E141B;
+  --color-dark-card: #141C24;
+  --color-dark-border: #1E2B37;
 }
 
 @layer base {
   body {
-    background-color: #060608;
+    background-color: #080B0E;
     color: #FFFFFF;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow-x: hidden;
@@ -35,10 +36,10 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #060608;
+  background: #080B0E;
 }
 ::-webkit-scrollbar-thumb {
-  background: #222234;
+  background: #1E2B37;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -47,21 +48,21 @@
 
 /* Solid 2D Architecture Panels */
 .solid-panel {
-  background: #0E0E15;
-  border: 1px solid #222234;
+  background: #0E141B;
+  border: 1px solid #1E2B37;
 }
 
 .solid-pill {
-  background: #060608;
-  border: 1px solid rgba(124, 58, 237, 0.3);
+  background: #080B0E;
+  border: 1px solid rgba(0, 245, 160, 0.25);
 }
 
 .solid-card {
-  background: #141420;
-  border: 1px solid #222234;
+  background: #141C24;
+  border: 1px solid #1E2B37;
 }
 
-/* Liquid Wave Bubble Hover Animation - Electric Violet on Obsidian */
+/* Liquid Wave Bubble Hover Animation - Two-Tone Mint & Violet */
 .liquid-btn {
   display: inline-flex;
   align-items: center;
@@ -72,9 +73,9 @@
   cursor: pointer;
   z-index: 1;
   isolation: isolate;
-  --liquid-fill: #7C3AED;
-  --liquid-fill-sub: #4C1D95;
-  --liquid-border: #8B5CF6;
+  --liquid-fill: #00F5A0;
+  --liquid-fill-sub: #7C3AED;
+  --liquid-border: #00F5A0;
 }
 
 .liquid-btn::before {
@@ -110,9 +111,9 @@
 }
 
 .liquid-btn:hover {
-  color: #FFFFFF !important;
+  color: #080B0E !important;
   border-color: var(--liquid-border) !important;
-  box-shadow: 0 10px 30px -8px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 10px 30px -8px rgba(0, 245, 160, 0.35);
 }
 
 .liquid-btn:hover::before {
@@ -126,28 +127,33 @@
 }
 
 .liquid-btn-primary {
-  --liquid-fill: #7C3AED;
-  --liquid-fill-sub: #4C1D95;
-  --liquid-border: #8B5CF6;
-}
-
-.liquid-btn-white {
-  background-color: #FFFFFF;
-  color: #060608;
-  border-color: #FFFFFF;
-  --liquid-fill: #7C3AED;
-  --liquid-fill-sub: #4C1D95;
-  --liquid-border: #8B5CF6;
-}
-
-.liquid-btn-white:hover {
-  color: #FFFFFF !important;
+  --liquid-fill: #00F5A0;
+  --liquid-fill-sub: #7C3AED;
+  --liquid-border: #00F5A0;
 }
 
 .liquid-btn-violet {
   --liquid-fill: #7C3AED;
-  --liquid-fill-sub: #4C1D95;
-  --liquid-border: #8B5CF6;
+  --liquid-fill-sub: #00F5A0;
+  --liquid-border: #7C3AED;
+}
+
+.liquid-btn-violet:hover {
+  color: #FFFFFF !important;
+  border-color: #7C3AED !important;
+  box-shadow: 0 10px 30px -8px rgba(124, 58, 237, 0.45);
+}
+
+.liquid-btn-teal {
+  --liquid-fill: #39bda7;
+  --liquid-fill-sub: #6366F1;
+  --liquid-border: #39bda7;
+}
+
+.liquid-btn-wine {
+  --liquid-fill: #00F5A0;
+  --liquid-fill-sub: #7C3AED;
+  --liquid-border: #00F5A0;
 }
 
 .liquid-btn > * {
