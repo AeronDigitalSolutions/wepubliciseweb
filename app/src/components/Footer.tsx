@@ -3,18 +3,18 @@ import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="relative bg-[#06080B] text-white pt-20 pb-12 border-t border-[#1E2B37] overflow-hidden">
+    <footer className="relative bg-[#040406] text-white pt-20 pb-12 border-t border-[#222234] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-6">
             <Link to="/" className="inline-flex items-center gap-3 group">
               <div className="w-10 h-10 rounded-full bg-[#1E1035] border border-[#7C3AED] flex items-center justify-center p-[2px] transition-transform duration-300 group-hover:scale-105">
-                <div className="w-full h-full bg-[#080B0E] rounded-full flex items-center justify-center">
-                  <span className="text-[#00F5A0] font-black text-xl italic">w</span>
+                <div className="w-full h-full bg-[#060608] rounded-full flex items-center justify-center">
+                  <span className="text-[#A78BFA] font-black text-xl italic">w</span>
                 </div>
               </div>
-              <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#00F5A0] transition-colors">
+              <span className="text-2xl font-bold tracking-tight text-white group-hover:text-[#A78BFA] transition-colors">
                 we Publicise
               </span>
             </Link>
@@ -25,7 +25,7 @@ const Footer = () => {
 
             <div className="space-y-3 pt-2 text-sm text-zinc-400">
               <div className="flex items-center gap-3">
-                <MapPin size={16} className="text-[#00F5A0]" />
+                <MapPin size={16} className="text-[#A78BFA]" />
                 <span>HSR Layout Sector 6 - Bangalore, India</span>
               </div>
               <div className="flex items-center gap-3">
@@ -39,14 +39,14 @@ const Footer = () => {
 
           {/* Quick links */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-[#00F5A0] font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-white font-bold">
               Navigation
             </h4>
             <ul className="space-y-2.5 text-sm text-zinc-400">
               <li>
                 <Link to="/" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
                   <span>Home</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#00F5A0]" />
+                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#A78BFA]" />
                 </Link>
               </li>
               <li>
@@ -58,7 +58,7 @@ const Footer = () => {
               <li>
                 <Link to="/about" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
                   <span>About Us</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#00F5A0]" />
+                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#A78BFA]" />
                 </Link>
               </li>
               <li>
@@ -76,17 +76,17 @@ const Footer = () => {
               Expertise
             </h4>
             <ul className="space-y-2.5 text-sm text-zinc-400">
-              <li className="hover:text-[#A78BFA] transition-colors">Website Development</li>
-              <li className="hover:text-[#00F5A0] transition-colors">Software Engineering</li>
-              <li className="hover:text-[#A78BFA] transition-colors">Digital Marketing</li>
-              <li className="hover:text-[#00F5A0] transition-colors">Brand Identity</li>
-              <li className="hover:text-[#A78BFA] transition-colors">Cloud & Mobile APIs</li>
+              <li className="hover:text-white transition-colors">Website Development</li>
+              <li className="hover:text-white transition-colors">Software Engineering</li>
+              <li className="hover:text-white transition-colors">Digital Marketing</li>
+              <li className="hover:text-white transition-colors">Brand Identity</li>
+              <li className="hover:text-white transition-colors">Cloud & Mobile APIs</li>
             </ul>
           </div>
 
           {/* Legal */}
           <div className="md:col-span-2 space-y-4">
-            <h4 className="text-xs uppercase tracking-widest text-[#00F5A0] font-bold">
+            <h4 className="text-xs uppercase tracking-widest text-zinc-400 font-bold">
               Legal
             </h4>
             <ul className="space-y-2.5 text-sm text-zinc-400">
@@ -105,7 +105,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-[#1E2B37] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+        <div className="pt-8 border-t border-[#222234] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <p>&copy; {new Date().getFullYear()} we Publicise. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link to="/privacy-policy" className="hover:text-zinc-300 transition-colors">

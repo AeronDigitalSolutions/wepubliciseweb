@@ -19,16 +19,16 @@ import {
 import PageWrapper from '../components/PageWrapper';
 import LiquidButton from '../components/LiquidButton';
 
-// Rotating dynamic hero words with two-tone Mint & Electric Violet alternating highlights
+// Rotating dynamic hero words in Electric Violet
 const dynamicWords = [
-  { text: 'Websites', color: 'text-[#00F5A0]' },
-  { text: 'Software', color: 'text-[#A78BFA]' },
-  { text: 'Digital Growth', color: 'text-[#00F5A0]' },
-  { text: 'Web Apps', color: 'text-[#A78BFA]' },
-  { text: 'Campaigns', color: 'text-[#00F5A0]' },
+  'Websites',
+  'Software',
+  'Digital Growth',
+  'Web Apps',
+  'Campaigns',
 ];
 
-// Interactive Accordion Services with two-tone Electric Mint & Electric Violet hierarchy
+// Interactive Accordion Services in Monochrome Titanium & Electric Violet
 const servicesData = [
   {
     num: '01.',
@@ -47,12 +47,12 @@ const servicesData = [
     title: 'Website & Web Application Development',
     desc: 'Bespoke, high-converting websites and modern web applications engineered with clean code, lightning speeds, 60fps micro-interactions, and seamless responsive design.',
     tag: 'WEBSITE DEVELOPMENT',
-    tagStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
+    tagStyle: 'bg-[#141420] text-white border-white/20',
     metrics: '<0.4s Median Latency',
-    metricStyle: 'text-[#00F5A0]',
+    metricStyle: 'text-white',
     deliverables: ['Next.js & Vite SPAs', 'Framer Motion & WebGL', 'Headless CMS', 'Conversion Architecture'],
     image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80',
-    badgeBorder: 'border-[#00F5A0]',
+    badgeBorder: 'border-[#7C3AED]',
   },
   {
     num: '03.',
@@ -71,12 +71,12 @@ const servicesData = [
     title: 'Performance & Digital Marketing',
     desc: 'Data-backed PPC ad campaigns, Search Engine Optimization (SEO), and targeted social marketing designed to dominate search intent, lower CPA, and deliver verified ROI.',
     tag: 'DIGITAL MARKETING',
-    tagStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
+    tagStyle: 'bg-[#141420] text-white border-white/20',
     metrics: '4.8x Average ROAS',
-    metricStyle: 'text-[#00F5A0]',
+    metricStyle: 'text-white',
     deliverables: ['Performance PPC Ads', 'Technical SEO Domination', 'Full-Funnel CRO', 'Omnichannel Retargeting'],
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
-    badgeBorder: 'border-[#00F5A0]',
+    badgeBorder: 'border-[#7C3AED]',
   },
 ];
 
@@ -88,8 +88,7 @@ const featuredWorks = [
     category: 'Performance Marketing & PPC Scale',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80',
     badge: 'Digital Marketing',
-    badgeStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
-    accentColor: '#00F5A0',
+    badgeStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
     year: '2026',
     result: '+340% ROAS Scale',
     summary: 'A precision full-funnel digital marketing engine for modern brands generating multimillion customer acquisitions.',
@@ -100,8 +99,7 @@ const featuredWorks = [
     category: 'Custom Web Application & UI/UX Design',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80',
     badge: 'Website Development',
-    badgeStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
-    accentColor: '#A78BFA',
+    badgeStyle: 'bg-[#141420] text-white border-white/20',
     year: '2025',
     result: '0.38s Load Speed',
     summary: 'A bespoke high-performance web experience engineered with Framer Motion, TypeScript, and micro-interactions.',
@@ -113,7 +111,6 @@ const featuredWorks = [
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80',
     badge: 'Software Development',
     badgeStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
-    accentColor: '#A78BFA',
     year: '2026',
     result: '10M+ Events/Day',
     summary: 'Cloud-native multi-tenant analytics platform with real-time telemetry and sub-millisecond response rates.',
@@ -124,8 +121,7 @@ const featuredWorks = [
     category: 'Social Media Strategy & Paid Acquisition',
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=80',
     badge: 'Digital Marketing',
-    badgeStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
-    accentColor: '#00F5A0',
+    badgeStyle: 'bg-[#141420] text-white border-white/20',
     year: '2025',
     result: '14.2M Impressions',
     summary: 'Viral campaign architecture across multi-channel video funnels delivering measurable engagement lift.',
@@ -136,8 +132,7 @@ const featuredWorks = [
     category: 'Headless Web Store & High-Speed Checkout',
     image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1000&q=80',
     badge: 'Website Development',
-    badgeStyle: 'bg-[#0D2A26] text-[#00F5A0] border-[#00F5A0]/50',
-    accentColor: '#00F5A0',
+    badgeStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
     year: '2026',
     result: '+68% Conversion Rate',
     summary: 'Next-generation headless commerce storefront featuring sub-second checkout and bespoke interactive 3D product previews.',
@@ -148,8 +143,7 @@ const featuredWorks = [
     category: 'Fintech Software Platform & Mobile Analytics',
     image: 'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=1000&q=80',
     badge: 'Software Development',
-    badgeStyle: 'bg-[#1E1035] text-[#A78BFA] border-[#7C3AED]/50',
-    accentColor: '#A78BFA',
+    badgeStyle: 'bg-[#141420] text-white border-white/20',
     year: '2025',
     result: '$42M Managed AUM',
     summary: 'Banking-grade financial dashboards with institutional compliance, biometric security, and responsive data visualization.',
@@ -240,7 +234,6 @@ const testimonials = [
     tag: 'D2C Tech Learning',
     score: '5.0 / 5.0',
     metric: '+310% Enrollment Lift',
-    badgeStyle: 'text-[#00F5A0]',
   },
   {
     quote:
@@ -250,7 +243,6 @@ const testimonials = [
     tag: 'Modern Consumer Tech',
     score: '5.0 / 5.0',
     metric: '12.4x Launch ROAS',
-    badgeStyle: 'text-[#A78BFA]',
   },
   {
     quote:
@@ -260,7 +252,6 @@ const testimonials = [
     tag: 'Enterprise Logistics',
     score: '5.0 / 5.0',
     metric: '$18M Pipeline Influenced',
-    badgeStyle: 'text-[#00F5A0]',
   },
 ];
 
@@ -342,12 +333,12 @@ const faqs = [
   },
 ];
 
-// Studio proof metrics with alternating Electric Mint & Electric Violet accents
+// Studio proof metrics in Crisp White & Electric Violet
 const studioMetrics = [
-  { value: '99.4%', label: 'Client Retention Score', sub: 'Calculated over 4+ years of sprints', accent: 'text-[#00F5A0]', border: 'border-[#00F5A0]' },
-  { value: '120+', label: 'Products & Systems Shipped', sub: 'Websites, software & brand systems', accent: 'text-[#A78BFA]', border: 'border-[#7C3AED]' },
-  { value: '$180M+', label: 'Pipeline Value Influenced', sub: 'Client fundraising & commerce volume', accent: 'text-[#00F5A0]', border: 'border-[#00F5A0]' },
-  { value: '<0.4s', label: 'Median Web Core Performance', sub: 'Observed across global CDN benchmarks', accent: 'text-[#A78BFA]', border: 'border-[#7C3AED]' },
+  { value: '99.4%', label: 'Client Retention Score', sub: 'Calculated over 4+ years of sprints', border: 'border-[#7C3AED]' },
+  { value: '120+', label: 'Products & Systems Shipped', sub: 'Websites, software & brand systems', border: 'border-white/40' },
+  { value: '$180M+', label: 'Pipeline Value Influenced', sub: 'Client fundraising & commerce volume', border: 'border-[#7C3AED]' },
+  { value: '<0.4s', label: 'Median Web Core Performance', sub: 'Observed across global CDN benchmarks', border: 'border-white/40' },
 ];
 
 const Home = () => {
@@ -464,19 +455,19 @@ const Home = () => {
   };
 
   return (
-    <PageWrapper className="pt-0 pb-0 bg-[#080B0E] text-white relative selection:bg-[#7C3AED] selection:text-white">
-      {/* 1. Top scroll progress indicator bar - Solid Electric Mint */}
+    <PageWrapper className="pt-0 pb-0 bg-[#060608] text-white relative selection:bg-[#7C3AED] selection:text-white">
+      {/* 1. Top scroll progress indicator bar - Solid Electric Violet */}
       <motion.div
         style={{ scaleX }}
-        className="fixed top-0 left-0 right-0 h-[3px] bg-[#00F5A0] origin-left z-50 pointer-events-none"
+        className="fixed top-0 left-0 right-0 h-[3px] bg-[#7C3AED] origin-left z-50 pointer-events-none"
       />
 
       {/* 2. Live Studio Telemetry Ribbon (Solid 2D) */}
-      <header className="pt-24 pb-2.5 px-6 sm:px-8 border-b border-[#1E2B37] text-[11px] font-mono tracking-widest uppercase text-zinc-400 bg-[#080B0E] relative z-20">
+      <header className="pt-24 pb-2.5 px-6 sm:px-8 border-b border-[#222234] text-[11px] font-mono tracking-widest uppercase text-zinc-400 bg-[#060608] relative z-20">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#0D2A26] text-[#00F5A0] border border-[#00F5A0]/50">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00F5A0] animate-ping" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#1E1035] text-[#A78BFA] border border-[#7C3AED]/50">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#7C3AED] animate-ping" />
               <span>Studio Active</span>
             </span>
             <span className="text-zinc-600">|</span>
@@ -496,18 +487,18 @@ const Home = () => {
       </header>
 
       {/* ========================================================================= */}
-      {/* 1. HERO: MODERN TECH SLATE, ELECTRIC MINT & VIOLET */}
+      {/* 1. HERO: MINIMALIST MONOCHROME TITANIUM & ELECTRIC VIOLET */}
       {/* ========================================================================= */}
-      <section className="relative min-h-[90vh] pt-16 pb-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center overflow-hidden bg-[#080B0E]">
+      <section className="relative min-h-[90vh] pt-16 pb-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center overflow-hidden bg-[#060608]">
         <div className="max-w-6xl mx-auto w-full relative z-10">
-          {/* Top Status Capsule with Electric Violet Accent */}
+          {/* Top Status Capsule */}
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="mb-8"
           >
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0E141B] border border-[#7C3AED]/40">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0E0E15] border border-[#222234]">
               <Sparkles size={14} className="text-[#A78BFA]" />
               <span className="text-xs uppercase font-mono tracking-widest text-zinc-300 font-bold">
                 World-Class Digital Perception & <span className="text-[#A78BFA]">Software Craft</span>
@@ -515,7 +506,7 @@ const Home = () => {
             </div>
           </motion.div>
 
-          {/* Master Display Headline (Two-Tone Dynamic Alternation) */}
+          {/* Master Display Headline (Crisp White with Electric Violet Highlight) */}
           <div className="text-left mb-12 max-w-5xl">
             <motion.h1
               initial={{ opacity: 0, y: 35 }}
@@ -529,14 +520,14 @@ const Home = () => {
               <span className="inline-block relative">
                 <AnimatePresence mode="wait">
                   <motion.span
-                    key={dynamicWords[currentWordIndex].text}
+                    key={dynamicWords[currentWordIndex]}
                     initial={{ y: 30, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -30, opacity: 0 }}
                     transition={{ duration: 0.35, ease: 'easeInOut' }}
-                    className={`inline-block ${dynamicWords[currentWordIndex].color} italic font-serif pr-3`}
+                    className="inline-block text-[#A78BFA] italic font-serif pr-3"
                   >
-                    {dynamicWords[currentWordIndex].text}
+                    {dynamicWords[currentWordIndex]}
                   </motion.span>
                 </AnimatePresence>
               </span>
@@ -552,7 +543,7 @@ const Home = () => {
             </motion.p>
           </div>
 
-          {/* 3D Interactive Monitor (Solid 2D Surfaces with Dual Accents) */}
+          {/* 3D Interactive Monitor (Solid 2D Surfaces) */}
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -565,16 +556,16 @@ const Home = () => {
               transformStyle: 'preserve-3d',
               perspective: 1200,
             }}
-            className="relative mx-auto rounded-3xl overflow-visible border-2 border-[#1E2B37] bg-[#0E141B] group cursor-pointer"
+            className="relative mx-auto rounded-3xl overflow-visible border-2 border-[#222234] bg-[#0E0E15] group cursor-pointer"
           >
-            {/* Floating 2.5D Solid Stickers (Mint on left, Violet on right) */}
+            {/* Floating 2.5D Solid Stickers */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -left-6 -top-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#080B0E] border border-[#00F5A0]/40 z-30 pointer-events-none"
+              className="hidden md:flex absolute -left-6 -top-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#060608] border border-[#7C3AED]/50 z-30 pointer-events-none"
             >
-              <Zap size={14} className="text-[#00F5A0]" />
-              <span className="text-xs font-mono font-bold text-[#00F5A0] tracking-wider">
+              <Zap size={14} className="text-[#A78BFA]" />
+              <span className="text-xs font-mono font-bold text-white tracking-wider">
                 60fps Interactive Motion
               </span>
             </motion.div>
@@ -582,33 +573,33 @@ const Home = () => {
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#080B0E] border border-[#7C3AED]/40 z-30 pointer-events-none"
+              className="hidden md:flex absolute -right-6 -bottom-6 items-center gap-2 px-4 py-2 rounded-xl bg-[#060608] border border-white/20 z-30 pointer-events-none"
             >
-              <Code2 size={14} className="text-[#A78BFA]" />
-              <span className="text-xs font-mono font-bold text-[#A78BFA] tracking-wider">
+              <Code2 size={14} className="text-white" />
+              <span className="text-xs font-mono font-bold text-white tracking-wider">
                 Next.js &bull; Framer &bull; Vite
               </span>
             </motion.div>
 
             {/* Showcase Video Canvas */}
-            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-3xl overflow-hidden flex items-center justify-center bg-[#080B0E]">
+            <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full rounded-3xl overflow-hidden flex items-center justify-center bg-[#060608]">
               <img
                 src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1800&q=80"
                 alt="Creative 2D Studio Showcase"
-                className="w-full h-full object-cover opacity-65 filter contrast-125 saturate-150 transform group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-cover opacity-60 filter contrast-125 saturate-125 transform group-hover:scale-105 transition-transform duration-700"
               />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-20">
                 <motion.div
                   animate={{ y: [0, -6, 0] }}
                   transition={{ repeat: Infinity, duration: 4, ease: 'easeInOut' }}
-                  className="mb-5 p-5 rounded-2xl bg-[#0E141B] border-2 border-[#1E2B37] max-w-md w-full"
+                  className="mb-5 p-5 rounded-2xl bg-[#0E0E15] border-2 border-[#222234] max-w-md w-full"
                 >
-                  <div className="flex items-center justify-between border-b border-[#1E2B37] pb-3 mb-3">
+                  <div className="flex items-center justify-between border-b border-[#222234] pb-3 mb-3">
                     <div className="flex gap-2">
-                      <span className="w-3 h-3 rounded-full bg-[#00F5A0]" />
                       <span className="w-3 h-3 rounded-full bg-[#7C3AED]" />
-                      <span className="w-3 h-3 rounded-full bg-[#1E2B37]" />
+                      <span className="w-3 h-3 rounded-full bg-white" />
+                      <span className="w-3 h-3 rounded-full bg-[#222234]" />
                     </div>
                     <span className="text-xs uppercase tracking-widest text-[#A78BFA] font-mono font-bold">
                       we Publicise :: Showreel
@@ -625,17 +616,17 @@ const Home = () => {
                     whileHover={{ scale: 1.12 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => setIsVideoModalOpen(true)}
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#00F5A0] border-2 border-[#00F5A0] flex items-center justify-center cursor-pointer relative z-10 shadow-xl"
+                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#7C3AED] border-2 border-[#8B5CF6] flex items-center justify-center cursor-pointer relative z-10 shadow-xl hover:bg-[#6D28D9] transition-colors"
                     aria-label="Play Reel"
                   >
                     <Play
                       size={32}
-                      className="text-[#080B0E] ml-1 fill-[#080B0E]"
+                      className="text-white ml-1 fill-white"
                     />
                   </motion.button>
                 </div>
                 <span className="mt-4 text-xs tracking-widest uppercase text-white font-mono font-bold flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-ping" />
+                  <span className="w-2 h-2 rounded-full bg-[#7C3AED] animate-ping" />
                   Watch Agency Showreel
                 </span>
               </div>
@@ -645,9 +636,9 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. PROVEN METRICS TICKER STRIP (Alternating Mint & Violet Accents) */}
+      {/* 2. PROVEN METRICS TICKER STRIP (Monochrome Titanium & Violet) */}
       {/* ========================================================================= */}
-      <section className="py-12 px-6 sm:px-8 border-y border-[#1E2B37] bg-[#0E141B] relative z-10">
+      <section className="py-12 px-6 sm:px-8 border-y border-[#222234] bg-[#0A0A10] relative z-10">
         <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8">
           {studioMetrics.map((metric, idx) => (
             <motion.div
@@ -658,22 +649,22 @@ const Home = () => {
               transition={{ duration: 0.5, delay: idx * 0.08 }}
               className={`space-y-1.5 text-center sm:text-left border-l-2 ${metric.border} pl-6`}
             >
-              <div className={`text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight ${metric.accent}`}>
+              <div className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white">
                 {metric.value}
               </div>
-              <p className="text-xs sm:text-sm font-bold text-white">{metric.label}</p>
-              <p className="text-[11px] text-zinc-400 font-mono">{metric.sub}</p>
+              <p className="text-xs sm:text-sm font-bold text-zinc-300">{metric.label}</p>
+              <p className="text-[11px] text-zinc-500 font-mono">{metric.sub}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 3. ACCORDION SERVICES: TWO-TONE HIERARCHY & WHITE EXPANDING HAIRLINE */}
+      {/* 3. ACCORDION SERVICES: ROYAL VIOLET ACTIVE STATE & WHITE EXPANDING HAIRLINE */}
       {/* ========================================================================= */}
-      <section className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-[#080B0E]">
+      <section className="py-32 px-6 sm:px-8 lg:px-12 relative overflow-hidden bg-[#060608]">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-[#1E2B37]">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16 pb-8 border-b border-[#222234]">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -687,7 +678,7 @@ const Home = () => {
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 Back To The Simple,{' '}
                 <br />
-                <span className="italic text-[#00F5A0]">
+                <span className="italic text-[#A78BFA]">
                   Intuitive And Inspiring.
                 </span>
               </h2>
@@ -704,10 +695,11 @@ const Home = () => {
             >
               <LiquidButton
                 to="/contact"
-                className="gap-3 border-[#00F5A0] bg-[#00F5A0] text-sm uppercase tracking-wider font-bold text-[#080B0E] group hover:text-[#080B0E]"
+                variant="white"
+                className="gap-3 text-sm uppercase tracking-wider font-bold group"
               >
                 <span>Let's Collaborate</span>
-                <ArrowRight size={16} className="text-[#080B0E] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={16} className="text-black group-hover:text-white group-hover:translate-x-1 transition-all" />
               </LiquidButton>
             </motion.div>
           </div>
@@ -726,8 +718,8 @@ const Home = () => {
                   onMouseEnter={() => setActiveService(index)}
                   className={`rounded-2xl transition-all duration-300 cursor-pointer overflow-hidden border-2 ${
                     isExpanded
-                      ? 'bg-[#0D2A26] border-[#00F5A0]'
-                      : 'bg-[#0E141B] border-[#1E2B37] hover:border-[#7C3AED]/70'
+                      ? 'bg-[#130E22] border-[#7C3AED]'
+                      : 'bg-[#0E0E15] border-[#222234] hover:border-[#7C3AED]/60'
                   }`}
                 >
                   <div className="p-6 sm:p-8">
@@ -746,7 +738,7 @@ const Home = () => {
                           {service.title}
                         </h3>
                       </div>
-                      <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center text-white text-lg transition-transform duration-300">
+                      <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white text-lg transition-transform duration-300">
                         {isExpanded ? <Minus size={18} /> : <Plus size={18} />}
                       </div>
                     </div>
@@ -791,7 +783,7 @@ const Home = () => {
                               {service.deliverables.map((item, dIdx) => (
                                 <span
                                   key={dIdx}
-                                  className="text-xs px-3 py-1 rounded-lg bg-[#080B0E] border border-[#1E2B37] text-zinc-300 font-mono"
+                                  className="text-xs px-3 py-1 rounded-lg bg-[#060608] border border-[#222234] text-zinc-300 font-mono"
                                 >
                                   ✦ {item}
                                 </span>
@@ -803,8 +795,8 @@ const Home = () => {
                                 to="/services"
                                 onClick={(e) => e.stopPropagation()}
                                 size="sm"
-                                variant={index % 2 === 0 ? 'violet' : 'mint'}
-                                className="gap-2 bg-[#080B0E] text-xs uppercase tracking-widest font-bold"
+                                variant="violet"
+                                className="gap-2 bg-[#060608] border-[#7C3AED]/60 text-xs uppercase tracking-widest font-bold"
                               >
                                 <span>Learn More</span>
                                 <ArrowUpRight size={14} />
@@ -819,7 +811,7 @@ const Home = () => {
                                 alt={service.title}
                                 className="w-full h-full object-cover"
                               />
-                              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-md bg-[#080B0E] border border-white/20 text-[11px] font-mono text-zinc-200">
+                              <div className="absolute bottom-3 left-3 px-3 py-1 rounded-md bg-[#060608] border border-white/20 text-[11px] font-mono text-zinc-200">
                                 Verified Architecture
                               </div>
                             </div>
@@ -836,9 +828,9 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 4. FEATURED WORK: SOLID 2D TRAIN TRACK (Mint & Violet Badges) */}
+      {/* 4. FEATURED WORK: SOLID 2D TRAIN TRACK */}
       {/* ========================================================================= */}
-      <section className="py-28 bg-[#080B0E] relative overflow-hidden border-t border-[#1E2B37]">
+      <section className="py-28 bg-[#060608] relative overflow-hidden border-t border-[#222234]">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-14">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <motion.div
@@ -884,17 +876,17 @@ const Home = () => {
               <div
                 key={`${work.id}-${idx}`}
                 onClick={() => setSelectedProject(work)}
-                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[480px] sm:h-[560px] rounded-3xl overflow-hidden bg-[#0E141B] border-2 border-[#1E2B37] hover:border-[#7C3AED] transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                className="group relative flex-shrink-0 w-[300px] sm:w-[380px] md:w-[440px] h-[480px] sm:h-[560px] rounded-3xl overflow-hidden bg-[#0E0E15] border-2 border-[#222234] hover:border-[#7C3AED] transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
                 {/* Image Section */}
-                <div className="relative h-[68%] w-full overflow-hidden bg-[#080B0E]">
+                <div className="relative h-[68%] w-full overflow-hidden bg-[#060608]">
                   <img
                     src={work.image}
                     alt={work.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <span className="text-[11px] uppercase font-mono tracking-wider px-3 py-1 rounded-full bg-[#080B0E] text-white border border-[#1E2B37]">
+                    <span className="text-[11px] uppercase font-mono tracking-wider px-3 py-1 rounded-full bg-[#060608] text-white border border-[#222234]">
                       {work.badge}
                     </span>
                     <span className={`text-[10px] font-mono uppercase px-2.5 py-1 rounded-full ${work.badgeStyle}`}>
@@ -904,17 +896,17 @@ const Home = () => {
                 </div>
 
                 {/* Solid 2D Bottom Panel */}
-                <div className="p-6 sm:p-7 bg-[#0E141B] border-t border-[#1E2B37] flex-1 flex flex-col justify-between">
+                <div className="p-6 sm:p-7 bg-[#0E0E15] border-t border-[#222234] flex-1 flex flex-col justify-between">
                   <div>
                     <div className="text-xs font-mono text-[#A78BFA] font-bold mb-1">{work.year} &bull; Case Study</div>
-                    <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#00F5A0] transition-colors mb-1">
+                    <h4 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-[#A78BFA] transition-colors mb-1">
                       {work.title}
                     </h4>
                     <p className="text-sm text-zinc-300 font-medium">{work.category}</p>
                   </div>
                   <div className="flex items-center justify-between pt-2">
                     <span className="text-xs font-mono text-zinc-400">Click to inspect</span>
-                    <ArrowUpRight size={18} className="text-[#00F5A0]" />
+                    <ArrowUpRight size={18} className="text-[#A78BFA]" />
                   </div>
                 </div>
               </div>
@@ -924,11 +916,11 @@ const Home = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. TEAM CULTURE: SOLID 2D PARALLAX SCROLL (Two-Tone Dynamic) */}
+      {/* 5. TEAM CULTURE: SOLID 2D PARALLAX SCROLL */}
       {/* ========================================================================= */}
       <section
         ref={teamSectionRef}
-        className="py-32 px-6 sm:px-8 lg:px-12 bg-[#080B0E] relative overflow-hidden border-t border-[#1E2B37]"
+        className="py-32 px-6 sm:px-8 lg:px-12 bg-[#060608] relative overflow-hidden border-t border-[#222234]"
       >
         <div className="max-w-5xl mx-auto text-center relative z-10">
           <motion.div
@@ -944,7 +936,7 @@ const Home = () => {
             <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-3">
               We Are Your Design Partners In Turning{' '}
               <br />
-              <span className="italic text-[#00F5A0]">Ideas</span> Into{' '}
+              <span className="italic text-white">Ideas</span> Into{' '}
               <span className="italic text-[#A78BFA]">Magic</span>
             </h2>
           </motion.div>
@@ -952,7 +944,7 @@ const Home = () => {
           {/* Parallax Card Container with Solid 2D Architecture */}
           <motion.div
             style={{ y: teamCardY }}
-            className="relative rounded-3xl overflow-hidden border-2 border-[#1E2B37] bg-[#0E141B] max-w-4xl mx-auto mb-12 aspect-[16/10]"
+            className="relative rounded-3xl overflow-hidden border-2 border-[#222234] bg-[#0E0E15] max-w-4xl mx-auto mb-12 aspect-[16/10]"
           >
             <motion.img
               style={{ y: teamImageY, scale: teamImageScale }}
@@ -962,7 +954,7 @@ const Home = () => {
             />
 
             {/* Solid Card Info Overlay */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 bg-[#080B0E] border-t border-[#1E2B37] flex items-center justify-between text-left z-10">
+            <div className="absolute bottom-0 left-0 right-0 p-6 bg-[#060608] border-t border-[#222234] flex items-center justify-between text-left z-10">
               <div>
                 <p className="text-lg font-bold text-white">The Creators at we Publicise</p>
                 <p className="text-xs text-zinc-300">Bengaluru &bull; Worldwide Delivery</p>
@@ -976,10 +968,11 @@ const Home = () => {
 
           <LiquidButton
             to="/about"
-            className="gap-3 border-[#00F5A0] bg-[#00F5A0] text-sm uppercase tracking-wider font-bold text-[#080B0E] group hover:text-[#080B0E]"
+            variant="white"
+            className="gap-3 text-sm uppercase tracking-wider font-bold group"
           >
             <span>Get To Know Us</span>
-            <ArrowRight size={16} className="text-[#080B0E] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={16} className="text-black group-hover:text-white group-hover:translate-x-1 transition-all" />
           </LiquidButton>
         </div>
       </section>
@@ -987,7 +980,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 6. BEHAVIOR-DRIVEN DESIGN PHILOSOPHY & TRUSTED CLIENT LOGOS (72% Container) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#080B0E] relative border-t border-[#1E2B37]">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#060608] relative border-t border-[#222234]">
         <div className="max-w-5xl mx-auto text-center relative z-10 mb-20">
           <div className="relative inline-block max-w-3xl">
             <motion.h3
@@ -998,7 +991,7 @@ const Home = () => {
               className="text-2xl sm:text-4xl font-semibold text-white leading-relaxed mb-8"
             >
               Our Work Isn't Just Aesthetically Pleasing, It's{' '}
-              <span className="text-[#00F5A0] font-bold">Behavior-Driven</span>. We Believe What
+              <span className="text-[#A78BFA] font-bold">Behavior-Driven</span>. We Believe What
               Separates A Good Design From A Great One Is Its Ability To Solve Problems. We Try To
               Design-Think Through Everything We Do At{' '}
               <span className="text-white underline decoration-[#7C3AED] decoration-2 underline-offset-4 font-bold">
@@ -1019,7 +1012,7 @@ const Home = () => {
         </div>
 
         {/* OUR TRUSTED PARTNERS: Continuous right-to-left logo carousel in a 72% container */}
-        <div className="w-full pt-16 border-t border-[#1E2B37]">
+        <div className="w-full pt-16 border-t border-[#222234]">
           <div className="text-center mb-10">
             <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold block mb-3">
               Our Trusted Partners
@@ -1030,7 +1023,7 @@ const Home = () => {
           </div>
 
           {/* 72% Optimal Width Container as Requested */}
-          <div className="w-[92%] sm:w-[85%] lg:w-[72%] max-w-5xl mx-auto relative overflow-hidden py-4 group/marquee border-y border-[#1E2B37]">
+          <div className="w-[92%] sm:w-[85%] lg:w-[72%] max-w-5xl mx-auto relative overflow-hidden py-4 group/marquee border-y border-[#222234]">
             <motion.div
               animate={{ x: ['0%', '-50%'] }}
               transition={{
@@ -1067,7 +1060,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 7. TESTIMONIALS: SOLID 2D LUXURY CAROUSEL */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0E141B] relative overflow-hidden border-t border-[#1E2B37]">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#0A0A10] relative overflow-hidden border-t border-[#222234]">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1092,13 +1085,13 @@ const Home = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.35 }}
-                className="bg-[#141C24] border-2 border-[#1E2B37] rounded-3xl p-8 sm:p-14 relative overflow-hidden"
+                className="bg-[#141420] border-2 border-[#222234] rounded-3xl p-8 sm:p-14 relative overflow-hidden"
               >
                 <div className="flex items-center gap-2 mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-[#00F5A0] text-base">★</span>
+                    <span key={i} className="text-[#A78BFA] text-base">★</span>
                   ))}
-                  <span className={`text-xs font-mono font-bold ml-2 ${testimonials[currentTestimonial].badgeStyle}`}>
+                  <span className="text-xs font-mono font-bold ml-2 text-white">
                     {testimonials[currentTestimonial].score} &bull; {testimonials[currentTestimonial].metric}
                   </span>
                 </div>
@@ -1107,7 +1100,7 @@ const Home = () => {
                   "{testimonials[currentTestimonial].quote}"
                 </p>
 
-                <div className="flex items-center justify-between pt-6 border-t border-[#1E2B37] relative z-10">
+                <div className="flex items-center justify-between pt-6 border-t border-[#222234] relative z-10">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-xl bg-[#1E1035] border border-[#7C3AED] flex items-center justify-center font-bold text-[#A78BFA]">
                       {testimonials[currentTestimonial].company.substring(0, 2)}
@@ -1126,14 +1119,14 @@ const Home = () => {
                   <div className="flex items-center gap-3">
                     <button
                       onClick={prevTestimonial}
-                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#00F5A0] bg-[#080B0E] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#7C3AED] bg-[#060608] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
                       aria-label="Previous Testimonial"
                     >
                       <ChevronLeft size={20} />
                     </button>
                     <button
                       onClick={nextTestimonial}
-                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#7C3AED] bg-[#080B0E] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
+                      className="w-11 h-11 rounded-full border border-zinc-700 hover:border-[#7C3AED] bg-[#060608] flex items-center justify-center text-zinc-300 hover:text-white transition-colors cursor-pointer"
                       aria-label="Next Testimonial"
                     >
                       <ChevronRight size={20} />
@@ -1149,7 +1142,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 8. TOOLS & 3D FAN PERSPECTIVE CAROUSEL (Solid 2D) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 bg-[#080B0E] relative overflow-hidden border-t border-[#1E2B37]">
+      <section className="py-28 px-6 sm:px-8 bg-[#060608] relative overflow-hidden border-t border-[#222234]">
         <div className="max-w-6xl mx-auto mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <motion.div
@@ -1159,8 +1152,8 @@ const Home = () => {
               transition={{ duration: 0.6 }}
               className="lg:col-span-5 space-y-5"
             >
-              <span className="text-xs uppercase font-mono tracking-widest text-[#00F5A0] font-bold flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-pulse" />
+              <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse" />
                 Empowering Creativity
               </span>
               <h3 className="text-3xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
@@ -1183,7 +1176,7 @@ const Home = () => {
                     onClick={() => setActiveToolIndex(i)}
                     className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                       activeToolIndex === i
-                        ? 'w-10 bg-[#00F5A0]'
+                        ? 'w-10 bg-[#7C3AED]'
                         : 'w-2.5 bg-zinc-700 hover:bg-zinc-500'
                     }`}
                     aria-label={`View tool ${tool.name}`}
@@ -1277,8 +1270,8 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Infinite Kinetic Marquee Bar (Two-Tone Mint Diamonds & Violet Stars) */}
-        <div className="relative py-6 bg-[#0E141B] border-y-2 border-[#7C3AED] overflow-hidden select-none -mx-8">
+        {/* Infinite Kinetic Marquee Bar */}
+        <div className="relative py-6 bg-[#0B0B12] border-y-2 border-[#7C3AED] overflow-hidden select-none -mx-8">
           <motion.div
             animate={{ x: ['0%', '-50%'] }}
             transition={{ repeat: Infinity, duration: 20, ease: 'linear' }}
@@ -1287,11 +1280,11 @@ const Home = () => {
             {[...Array(6)].map((_, i) => (
               <div key={i} className="flex items-center gap-12">
                 <span>Collaborate With we Publicise</span>
-                <span className="text-[#00F5A0]">✦</span>
-                <span>Turning Ideas Into Magic</span>
                 <span className="text-[#A78BFA]">★</span>
+                <span>Turning Ideas Into Magic</span>
+                <span className="text-[#A78BFA]">✦</span>
                 <span>Limitless Possibilities</span>
-                <span className="text-[#00F5A0]">✦</span>
+                <span className="text-[#A78BFA]">★</span>
               </div>
             ))}
           </motion.div>
@@ -1304,7 +1297,7 @@ const Home = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.6 }}
-            className="rounded-3xl bg-[#0E141B] p-8 sm:p-14 border-2 border-[#7C3AED] flex flex-col md:flex-row items-center justify-between gap-8"
+            className="rounded-3xl bg-[#0E0E15] p-8 sm:p-14 border-2 border-[#7C3AED] flex flex-col md:flex-row items-center justify-between gap-8"
           >
             <div className="space-y-3 max-w-xl">
               <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold">
@@ -1321,7 +1314,8 @@ const Home = () => {
 
             <LiquidButton
               to="/contact"
-              className="bg-[#00F5A0] border-[#00F5A0] text-[#080B0E] font-bold text-xs uppercase tracking-widest whitespace-nowrap hover:text-[#080B0E]"
+              variant="white"
+              className="text-xs uppercase tracking-widest font-bold whitespace-nowrap"
             >
               <span>Show Us What You Got</span>
             </LiquidButton>
@@ -1332,7 +1326,7 @@ const Home = () => {
       {/* ========================================================================= */}
       {/* 9. FREQUENTLY ASKED QUESTIONS (Solid 2D) */}
       {/* ========================================================================= */}
-      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#080B0E] relative border-t border-[#1E2B37]">
+      <section className="py-28 px-6 sm:px-8 lg:px-12 bg-[#060608] relative border-t border-[#222234]">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <motion.div
@@ -1347,7 +1341,7 @@ const Home = () => {
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
                 Get Answers To Your Vision{' '}
-                <span className="text-[#00F5A0]">
+                <span className="text-[#A78BFA]">
                   Or Our Services
                 </span>
               </h2>
@@ -1358,14 +1352,14 @@ const Home = () => {
               <div className="pt-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-2 text-sm text-[#00F5A0] hover:text-[#A78BFA] font-bold transition-colors"
+                  className="inline-flex items-center gap-2 text-sm text-[#A78BFA] hover:text-white font-bold transition-colors"
                 >
                   <span>Have a custom question? Speak with our team &rarr;</span>
                 </Link>
               </div>
             </motion.div>
 
-            <div className="lg:col-span-7 divide-y divide-[#1E2B37]">
+            <div className="lg:col-span-7 divide-y divide-[#222234]">
               {faqs.map((faq, index) => {
                 const isOpen = openFaq === index;
                 return (
@@ -1381,7 +1375,7 @@ const Home = () => {
                       onClick={() => setOpenFaq(isOpen ? null : index)}
                       className="w-full flex items-center justify-between text-left group cursor-pointer"
                     >
-                      <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#00F5A0] transition-colors pr-6">
+                      <span className="text-lg sm:text-xl font-medium text-white group-hover:text-[#A78BFA] transition-colors pr-6">
                         {faq.q}
                       </span>
                       <div className="w-8 h-8 rounded-full border border-zinc-700 flex items-center justify-center text-zinc-400 group-hover:text-white group-hover:border-[#7C3AED] transition-colors flex-shrink-0">
@@ -1415,7 +1409,7 @@ const Home = () => {
       {/* ========================================================================= */}
       <section
         ref={limitlessRef}
-        className="pt-24 pb-12 px-6 sm:px-8 lg:px-12 bg-[#06080B] border-t border-[#1E2B37] relative overflow-hidden"
+        className="pt-24 pb-12 px-6 sm:px-8 lg:px-12 bg-[#040406] border-t border-[#222234] relative overflow-hidden"
       >
         <div className="max-w-6xl mx-auto">
           {/* Top Row: Brand & Ask AI */}
@@ -1423,8 +1417,8 @@ const Home = () => {
             <div>
               <Link to="/" className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#1E1035] border border-[#7C3AED] flex items-center justify-center p-[2px]">
-                  <div className="w-full h-full bg-[#080B0E] rounded-full flex items-center justify-center">
-                    <span className="text-[#00F5A0] font-black text-xl italic">w</span>
+                  <div className="w-full h-full bg-[#060608] rounded-full flex items-center justify-center">
+                    <span className="text-[#A78BFA] font-black text-xl italic">w</span>
                   </div>
                 </div>
                 <span className="text-2xl font-bold tracking-tight text-white">
@@ -1452,7 +1446,7 @@ const Home = () => {
                     key={ai}
                     onClick={() => handleCopyPrompt(ai)}
                     title={`Click to copy prompt for ${ai}`}
-                    className="w-9 h-9 rounded-xl bg-[#0E141B] border border-[#1E2B37] hover:border-[#7C3AED] flex items-center justify-center text-zinc-300 hover:text-white text-xs font-mono transition-colors cursor-pointer"
+                    className="w-9 h-9 rounded-xl bg-[#0E0E15] border border-[#222234] hover:border-[#7C3AED] flex items-center justify-center text-zinc-300 hover:text-white text-xs font-mono transition-colors cursor-pointer"
                   >
                     <Bot size={16} />
                   </button>
@@ -1467,41 +1461,41 @@ const Home = () => {
           </div>
 
           {/* Email & Connect Today */}
-          <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-zinc-400 mb-8 border-b border-[#1E2B37] pb-4">
+          <div className="flex items-center justify-between text-xs font-mono uppercase tracking-widest text-zinc-400 mb-8 border-b border-[#222234] pb-4">
             <a href="mailto:info@wepublicise.com" className="hover:text-white transition-colors font-bold">
               info@wepublicise.com
             </a>
-            <Link to="/contact" className="text-[#00F5A0] hover:text-[#A78BFA] transition-colors flex items-center gap-1 font-bold">
+            <Link to="/contact" className="text-[#A78BFA] hover:text-white transition-colors flex items-center gap-1 font-bold">
               <span>Connect Today</span>
               <span>&rarr;</span>
             </Link>
           </div>
 
-          {/* Giant "THINK LIMITLESS" Typography (Solid High-Tech Titanium Slate with Mint & Violet transitions) */}
+          {/* Giant "THINK LIMITLESS" Typography */}
           <div className="w-full overflow-hidden select-none my-6">
             <motion.h1
               style={{
                 letterSpacing: limitlessLetterSpacing,
               }}
-              className="text-5xl sm:text-7xl md:text-9xl lg:text-[145px] font-black tracking-tighter uppercase text-center text-[#182632] hover:text-[#A78BFA] transition-colors duration-700 leading-none cursor-default"
+              className="text-5xl sm:text-7xl md:text-9xl lg:text-[145px] font-black tracking-tighter uppercase text-center text-[#181826] hover:text-[#A78BFA] transition-colors duration-700 leading-none cursor-default"
             >
               Think Limitless
             </motion.h1>
           </div>
 
           {/* Bottom Bar: Social Icons & Credits */}
-          <div className="pt-8 border-t border-[#1E2B37] flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
+          <div className="pt-8 border-t border-[#222234] flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-zinc-400">
             <p>&copy; {new Date().getFullYear()} we Publicise. All rights reserved.</p>
             <div className="flex flex-wrap items-center gap-5 text-zinc-300 font-mono text-xs">
               <a href="#" className="hover:text-[#A78BFA] transition-colors">Instagram</a>
-              <a href="#" className="hover:text-[#00F5A0] transition-colors">LinkedIn</a>
+              <a href="#" className="hover:text-[#A78BFA] transition-colors">LinkedIn</a>
               <a href="#" className="hover:text-[#A78BFA] transition-colors">YouTube</a>
-              <a href="#" className="hover:text-[#00F5A0] transition-colors">X (Twitter)</a>
+              <a href="#" className="hover:text-[#A78BFA] transition-colors">X (Twitter)</a>
               <a href="#" className="hover:text-[#A78BFA] transition-colors">Behance</a>
             </div>
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0E141B] border border-[#1E2B37] hover:border-[#00F5A0] text-zinc-300 hover:text-white transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#0E0E15] border border-[#222234] hover:border-[#7C3AED] text-zinc-300 hover:text-white transition-colors cursor-pointer"
             >
               <ArrowUp size={12} />
               <span>Back To Top</span>
@@ -1519,7 +1513,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#080B0E]/90 flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 bg-[#060608]/90 flex items-center justify-center p-6"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -1528,9 +1522,9 @@ const Home = () => {
               exit={{ scale: 0.94, opacity: 0, y: 15 }}
               transition={{ duration: 0.3, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#0E141B] border-2 border-[#7C3AED] rounded-3xl max-w-2xl w-full overflow-hidden relative"
+              className="bg-[#0E0E15] border-2 border-[#7C3AED] rounded-3xl max-w-2xl w-full overflow-hidden relative"
             >
-              <div className="relative aspect-video w-full overflow-hidden bg-[#080B0E]">
+              <div className="relative aspect-video w-full overflow-hidden bg-[#060608]">
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
@@ -1538,7 +1532,7 @@ const Home = () => {
                 />
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#080B0E] border border-white/20 text-white flex items-center justify-center hover:bg-[#7C3AED] hover:text-white transition-colors cursor-pointer"
+                  className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#060608] border border-white/20 text-white flex items-center justify-center hover:bg-[#7C3AED] hover:text-white transition-colors cursor-pointer"
                 >
                   ✕
                 </button>
@@ -1549,7 +1543,7 @@ const Home = () => {
                   <span className={`text-xs font-mono uppercase px-3 py-1 rounded-full ${selectedProject.badgeStyle}`}>
                     {selectedProject.badge} &bull; {selectedProject.year}
                   </span>
-                  <span className="text-xs font-mono text-[#00F5A0] font-bold">
+                  <span className="text-xs font-mono text-[#A78BFA] font-bold">
                     {selectedProject.result}
                   </span>
                 </div>
@@ -1564,12 +1558,13 @@ const Home = () => {
                   {selectedProject.summary}
                 </p>
 
-                <div className="pt-4 flex items-center justify-between border-t border-[#1E2B37]">
+                <div className="pt-4 flex items-center justify-between border-t border-[#222234]">
                   <LiquidButton
                     to="/contact"
                     onClick={() => setSelectedProject(null)}
                     size="sm"
-                    className="gap-2 bg-[#00F5A0] border-[#00F5A0] text-[#080B0E] font-bold hover:text-[#080B0E]"
+                    variant="violet"
+                    className="gap-2 text-white font-bold"
                   >
                     <span>Request Similar Case Study</span>
                     <ArrowRight size={14} />
@@ -1596,7 +1591,7 @@ const Home = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-[#080B0E]/90 flex items-center justify-center p-6"
+            className="fixed inset-0 z-50 bg-[#060608]/90 flex items-center justify-center p-6"
             onClick={() => setIsVideoModalOpen(false)}
           >
             <motion.div
@@ -1604,7 +1599,7 @@ const Home = () => {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.92, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#0E141B] border-2 border-[#7C3AED] p-6 rounded-3xl max-w-3xl w-full text-center relative"
+              className="bg-[#0E0E15] border-2 border-[#7C3AED] p-6 rounded-3xl max-w-3xl w-full text-center relative"
             >
               <button
                 onClick={() => setIsVideoModalOpen(false)}
@@ -1616,7 +1611,7 @@ const Home = () => {
               <p className="text-sm text-zinc-400 mb-6">
                 Dynamic 2D Motion & Scroll Interaction Showcase
               </p>
-              <div className="aspect-video bg-black rounded-2xl overflow-hidden flex items-center justify-center border border-[#1E2B37]">
+              <div className="aspect-video bg-black rounded-2xl overflow-hidden flex items-center justify-center border border-[#222234]">
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=1"

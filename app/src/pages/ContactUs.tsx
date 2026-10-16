@@ -4,7 +4,7 @@ import LiquidButton from '../components/LiquidButton';
 
 const ContactUs = () => {
   return (
-    <PageWrapper className="bg-[#080B0E] text-white py-12">
+    <PageWrapper className="bg-[#060608] text-white py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -12,7 +12,7 @@ const ContactUs = () => {
           className="text-center mb-16"
         >
           <span className="text-xs uppercase font-mono tracking-widest text-[#A78BFA] font-bold inline-flex items-center gap-2 mb-3">
-            <span className="w-2 h-2 rounded-full bg-[#00F5A0] animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-[#7C3AED] animate-pulse" />
             Start A Conversation
           </span>
           <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">Let's Build Something Iconic</h1>
@@ -23,7 +23,7 @@ const ContactUs = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-[#0E141B] border border-[#1E2B37] hover:border-[#7C3AED]/50 p-8 sm:p-12 rounded-3xl shadow-2xl transition-colors"
+          className="bg-[#0E0E15] border border-[#222234] hover:border-[#7C3AED]/70 p-8 sm:p-12 rounded-3xl shadow-2xl transition-colors"
         >
           <form className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -32,7 +32,7 @@ const ContactUs = () => {
                 <input 
                   type="text" 
                   id="name" 
-                  className="w-full px-4 py-3 rounded-xl bg-[#141C24] border border-[#1E2B37] text-white focus:border-[#00F5A0] focus:ring-1 focus:ring-[#7C3AED] outline-none transition" 
+                  className="w-full px-4 py-3 rounded-xl bg-[#141420] border border-[#222234] text-white focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED] outline-none transition" 
                   placeholder="John Doe" 
                 />
               </div>
@@ -41,7 +41,7 @@ const ContactUs = () => {
                 <input 
                   type="email" 
                   id="email" 
-                  className="w-full px-4 py-3 rounded-xl bg-[#141C24] border border-[#1E2B37] text-white focus:border-[#00F5A0] focus:ring-1 focus:ring-[#7C3AED] outline-none transition" 
+                  className="w-full px-4 py-3 rounded-xl bg-[#141420] border border-[#222234] text-white focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED] outline-none transition" 
                   placeholder="john@company.com" 
                 />
               </div>
@@ -51,7 +51,7 @@ const ContactUs = () => {
               <input 
                 type="text" 
                 id="subject" 
-                className="w-full px-4 py-3 rounded-xl bg-[#141C24] border border-[#1E2B37] text-white focus:border-[#00F5A0] focus:ring-1 focus:ring-[#7C3AED] outline-none transition" 
+                className="w-full px-4 py-3 rounded-xl bg-[#141420] border border-[#222234] text-white focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED] outline-none transition" 
                 placeholder="Website, SaaS Software, or Growth Ads Campaign" 
               />
             </div>
@@ -60,13 +60,14 @@ const ContactUs = () => {
               <textarea 
                 id="message" 
                 rows={5} 
-                className="w-full px-4 py-3 rounded-xl bg-[#141C24] border border-[#1E2B37] text-white focus:border-[#00F5A0] focus:ring-1 focus:ring-[#7C3AED] outline-none transition" 
+                className="w-full px-4 py-3 rounded-xl bg-[#141420] border border-[#222234] text-white focus:border-[#7C3AED] focus:ring-1 focus:ring-[#7C3AED] outline-none transition" 
                 placeholder="Tell us about your brand goals, target timeline, and budget..."
               ></textarea>
             </div>
             <LiquidButton
               type="button"
-              className="w-full justify-center bg-[#00F5A0] border-[#00F5A0] text-[#080B0E] py-4 rounded-xl font-bold text-lg hover:text-[#080B0E]"
+              variant="white"
+              className="w-full justify-center py-4 rounded-xl font-bold text-lg"
             >
               <span>Submit Inquiry</span>
             </LiquidButton>
