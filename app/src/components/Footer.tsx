@@ -62,12 +62,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/dashboard" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
-                  <span>Dashboard</span>
-                  <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#00F5A0]" />
-                </Link>
-              </li>
-              <li>
                 <Link to="/contact" className="hover:text-white transition-colors inline-flex items-center gap-1 group">
                   <span>Contact</span>
                   <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity text-[#A78BFA]" />
